@@ -294,8 +294,9 @@ export default function Home() {
         </div>
         <div className="container mt-8 flex flex-col items-center justify-between gap-4 border-t border-gray-700 pt-6 px-4 md:flex-row md:px-6">
             <p className="text-xs">
-            &copy; 2026 SAP Security Expert. All rights reserved.
+            © 2026 SAP Security Expert. All rights reserved.
             </p>
+            <p className="text-xs">Developed by @Web Anatomy</p>
             <nav className="flex gap-4 text-xs sm:gap-6">
                 <Link href="#" className="hover:underline">Privacy Policy</Link>
                 <Link href="#" className="hover:underline">Terms of Service</Link>
