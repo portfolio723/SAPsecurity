@@ -7,6 +7,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { ChevronDown } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export function Header() {
   return (
@@ -20,7 +21,7 @@ export function Header() {
             </span>
           </Link>
         </div>
-        <div className="flex flex-1 items-center justify-start space-x-2">
+        <div className="flex flex-1 items-center justify-between space-x-2">
           <nav className="hidden items-center gap-4 text-sm lg:flex lg:gap-6">
             <Link
               href="#"
@@ -88,6 +89,10 @@ export function Header() {
               Other Tools
             </Link>
           </nav>
+          <div className="hidden items-center gap-4 lg:flex">
+            <Link href="#" className="text-sm font-medium text-muted-foreground/70 transition-colors hover:text-foreground">Login</Link>
+            <Button size="sm">Become a Contributor</Button>
+          </div>
         </div>
       </div>
     </header>
