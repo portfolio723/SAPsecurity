@@ -31,7 +31,7 @@ export function MobileNav({ isOpen, setIsOpen, navLinks }: MobileNavProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-black/60 animate-fade-in lg:hidden"
+      className="fixed inset-0 z-50 bg-black/60 animate-fade-in md:hidden"
       onClick={closeMenu}
     >
       <div

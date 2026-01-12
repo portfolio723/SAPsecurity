@@ -39,7 +39,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col bg-white text-foreground">
       <Header />
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-40">
+        <section className="w-full py-12 md:py-20 lg:py-28">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-6 text-center">
               <div className="space-y-4">
@@ -68,28 +68,28 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-3 md:gap-8">
               {articles.slice(0, 3).map(article => (
                 <ArticleCard key={article.id} article={article} isTopArticle={true} />
               ))}
             </div>
 
-            <div className="mt-12 grid grid-cols-2 gap-8 border-t pt-8 text-center md:grid-cols-4 lg:mt-24 lg:pb-12">
+            <div className="mt-12 grid grid-cols-2 gap-8 border-t pt-8 text-center md:grid-cols-4 lg:mt-20 lg:pt-12">
               <div>
-                <p className="text-4xl font-bold">500+</p>
-                <p className="text-muted-foreground">Expert Articles</p>
+                <p className="text-3xl font-bold md:text-4xl">500+</p>
+                <p className="text-sm text-muted-foreground md:text-base">Expert Articles</p>
               </div>
               <div>
-                <p className="text-4xl font-bold">50K+</p>
-                <p className="text-muted-foreground">Monthly Readers</p>
+                <p className="text-3xl font-bold md:text-4xl">50K+</p>
+                <p className="text-sm text-muted-foreground md:text-base">Monthly Readers</p>
               </div>
               <div>
-                <p className="text-4xl font-bold">15+</p>
-                <p className="text-muted-foreground">Years Experience</p>
+                <p className="text-3xl font-bold md:text-4xl">15+</p>
+                <p className="text-sm text-muted-foreground md:text-base">Years Experience</p>
               </div>
               <div>
-                <p className="text-4xl font-bold">100%</p>
-                <p className="text-muted-foreground">Vendor Neutral</p>
+                <p className="text-3xl font-bold md:text-4xl">100%</p>
+                <p className="text-sm text-muted-foreground md:text-base">Vendor Neutral</p>
               </div>
             </div>
           </div>
@@ -97,11 +97,11 @@ export default function Home() {
 
         <section
           id="featured-insights"
-          className="w-full bg-muted/50 py-12 md:py-24 lg:py-32"
+          className="w-full bg-muted/50 py-12 md:py-20 lg:py-28"
         >
           <div className="container px-4 md:px-6">
-            <div className="mb-8 text-center">
-              <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">
+            <div className="mb-8 text-center md:mb-12">
+              <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Featured Insights
               </h2>
               <p className="mx-auto mt-2 max-w-[700px] text-muted-foreground md:text-xl">
@@ -109,7 +109,7 @@ export default function Home() {
               </p>
             </div>
             <Tabs defaultValue="all" className="w-full text-center">
-              <TabsList className="mb-8 inline-flex h-auto flex-wrap justify-center">
+              <TabsList className="mb-8 inline-flex h-auto flex-wrap justify-center md:mb-12">
                 <TabsTrigger value="all">All</TabsTrigger>
                 <TabsTrigger value="grc">GRC</TabsTrigger>
                 <TabsTrigger value="iam">IAM</TabsTrigger>
@@ -118,14 +118,14 @@ export default function Home() {
                 <TabsTrigger value="hardening">Hardening</TabsTrigger>
               </TabsList>
               <TabsContent value="all">
-                <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 sm:grid-cols-2 lg:max-w-7xl lg:grid-cols-4 lg:gap-8">
+                <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-6 sm:grid-cols-2 md:py-8 lg:max-w-none lg:grid-cols-4 lg:gap-8">
                   {articles.slice(0, 4).map(article => (
                     <ArticleCard key={article.id} article={article} />
                   ))}
                 </div>
               </TabsContent>
             </Tabs>
-            <div className="text-center">
+            <div className="mt-8 text-center md:mt-12">
               <Button variant="outline">View All Insights</Button>
             </div>
           </div>
@@ -133,15 +133,15 @@ export default function Home() {
 
         <section
           id="articles"
-          className="w-full py-12 md:py-24 lg:py-32"
+          className="w-full py-12 md:py-20 lg:py-28"
         >
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">
+                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">
                   Latest Blogs & Activity
                 </h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
                   Stay updated with the newest insights from our community of SAP security experts.
                 </p>
                  <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
@@ -150,7 +150,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 sm:grid-cols-2 lg:max-w-7xl lg:grid-cols-3 lg:gap-8">
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-8 sm:grid-cols-2 md:py-12 lg:max-w-none lg:grid-cols-3 lg:gap-8">
               {articles.map(article => (
                 <ArticleCard key={article.id} article={article} />
               ))}
@@ -160,11 +160,11 @@ export default function Home() {
 
         <section
           id="expertise"
-          className="w-full bg-muted/50 py-12 md:py-24 lg:py-32"
+          className="w-full bg-muted/50 py-12 md:py-20 lg:py-28"
         >
           <div className="container px-4 md:px-6">
-            <div className="mb-12 text-center">
-              <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">
+            <div className="mb-8 text-center md:mb-12">
+              <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Explore by Expertise
               </h2>
               <p className="mx-auto mt-2 max-w-[700px] text-muted-foreground md:text-xl">
@@ -210,11 +210,11 @@ export default function Home() {
 
         <section
           id="testimonials"
-          className="w-full bg-gray-800 py-12 text-white md:py-24 lg:py-32"
+          className="w-full bg-gray-800 py-12 text-white md:py-20 lg:py-28"
         >
           <div className="container px-4 md:px-6">
-            <div className="mb-12 text-center">
-              <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">
+            <div className="mb-8 text-center md:mb-12">
+              <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Why SAP Professionals Trust Us
               </h2>
               <p className="mx-auto mt-2 max-w-[700px] text-gray-400 md:text-xl">
@@ -225,7 +225,7 @@ export default function Home() {
               {testimonials.map(testimonial => (
                 <Card
                   key={testimonial.name}
-                  className="flex flex-col items-start bg-gray-900 p-8 text-left text-white"
+                  className="flex flex-col items-start bg-gray-900 p-6 text-left text-white md:p-8"
                 >
                   <div className="mb-4 rounded-full bg-primary/20 p-3 text-primary">
                     {testimonial.icon === 'CheckCircle' && <CheckCircle size={28} />}
@@ -247,7 +247,7 @@ export default function Home() {
         <NewsletterSignup />
       </main>
 
-      <footer className="w-full shrink-0 border-t bg-gray-900 py-12 text-gray-400">
+      <footer className="w-full shrink-0 border-t bg-gray-900 py-8 text-gray-400 md:py-12">
         <div className="container grid grid-cols-2 gap-8 px-4 md:grid-cols-5 md:px-6">
           <div className="col-span-2 space-y-4 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
