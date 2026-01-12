@@ -13,8 +13,7 @@ type CommunityActivityCardProps = {
 
 export function CommunityActivityCard({ activity }: CommunityActivityCardProps) {
   return (
-    <Link href="#" className="group">
-      <Card className="flex h-full flex-col overflow-hidden transition-shadow duration-300 hover:shadow-lg text-left p-6">
+      <Card className="flex h-full flex-col overflow-hidden transition-shadow duration-300 hover:shadow-lg text-left p-6 group">
         <div className="flex gap-4">
           <Avatar>
             <AvatarFallback>{activity.author.charAt(0)}</AvatarFallback>
@@ -41,9 +40,7 @@ export function CommunityActivityCard({ activity }: CommunityActivityCardProps) 
               </div>
             </div>
             <CardContent className="p-0 pt-4">
-              <h3 className="font-bold group-hover:text-primary mb-2">
-                {activity.title}
-              </h3>
+                <Link href="#" className="font-bold group-hover:text-primary mb-2 block">{activity.title}</Link>
               <p className="text-sm text-muted-foreground line-clamp-2">{activity.excerpt}</p>
               <div className="mt-4 text-xs text-muted-foreground">
                 <span>{activity.postedTime}</span> | Posted in <Link href="#" className="text-primary hover:underline">{activity.category}</Link>
@@ -52,6 +49,5 @@ export function CommunityActivityCard({ activity }: CommunityActivityCardProps) 
           </div>
         </div>
       </Card>
-    </Link>
   );
 }
