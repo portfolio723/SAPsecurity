@@ -19,7 +19,7 @@ export const articles: Article[] = [
     title: "Complete Guide to SAP Access Control 12.0: What's New and How to Upgrade",
     description:
       'A comprehensive walkthrough of the latest SAP GRC Access Control features and migration best practices.',
-    imageUrl: 'https://picsum.photos/seed/sap1/600/400',
+    imageUrl: '/1.jpg',
     stats: {
       views: '2,345',
       comments: '12',
@@ -33,7 +33,7 @@ export const articles: Article[] = [
     title: 'Protecting SAP Systems from Ransomware: Best Practices for 2026',
     description:
       'Learn essential strategies to safeguard your SAP infrastructure against modern cyber threats.',
-    imageUrl: 'https://picsum.photos/seed/sap2/600/400',
+    imageUrl: '/2.jpg',
     stats: {
       views: '1,890',
       comments: '8',
@@ -47,7 +47,7 @@ export const articles: Article[] = [
     title: 'Role Mining Strategies for Large SAP Environments',
     description:
       'Data-driven approaches to optimize your SAP authorization model.',
-    imageUrl: 'https://picsum.photos/seed/sap3/600/400',
+    imageUrl: '/3.jpg',
     stats: {
       views: '1,567',
       comments: '6',
@@ -61,7 +61,7 @@ export const articles: Article[] = [
     title: 'Static Code Analysis for Custom ABAP Development',
     description:
       'Secure your custom code from vulnerabilities by integrating static analysis into your development lifecycle.',
-    imageUrl: 'https://picsum.photos/seed/sap4/600/400',
+    imageUrl: '/4.jpg',
     stats: {
       views: '1,203',
       comments: '5',
