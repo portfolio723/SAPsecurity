@@ -141,21 +141,21 @@ export const expertise = [
 export const testimonials = [
   {
     name: 'Real-World Experience',
-    title: 'CISO, Fortune 500 Manufacturing',
     quote:
-      "Their team's deep, hands-on experience in both SAP and cybersecurity is unparalleled. They don't just talk theory; they provide practical, actionable solutions that work in complex, real-world environments.",
+      'Content authored by practitioners with hands-on SAP security implementation experience across Fortune 500 companies.',
+    icon: 'CheckCircle',
   },
   {
-    name: 'Threat-Informed',
-    title: 'Head of SAP Security, Global Retailer',
+    name: 'Vendor Neutral',
     quote:
-      'Their threat intelligence is always current and relevant. They help us stay ahead of attackers by understanding their tactics and techniques, allowing us to proactively defend our critical systems.',
+      'Unbiased insights without commercial influence. We recommend solutions based on merit, not partnerships.',
+    icon: 'Award',
   },
   {
-    name: 'Actionable & Pragmatic',
-    title: 'SAP Basis Manager, Healthcare Provider',
+    name: 'Actionable Frameworks',
     quote:
-      'What I appreciate most is their pragmatic approach. They provide clear, step-by-step guidance that our team can actually implement. No fluff, just results.',
+      'Ready-to-use templates, checklists, and step-by-step guides you can implement immediately.',
+    icon: 'Target',
   },
 ];
 

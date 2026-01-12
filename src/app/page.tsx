@@ -21,7 +21,10 @@ import {
   FileCheck,
   Cloud,
   KeyRound,
-  Network
+  Network,
+  CheckCircle,
+  Award,
+  Target
 } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
@@ -205,29 +208,24 @@ export default function Home() {
                 Why SAP Professionals Trust Us
               </h2>
               <p className="mx-auto mt-2 max-w-[700px] text-gray-400 md:text-xl">
-                Real feedback from real customers.
+                Built by SAP security experts, for SAP security experts.
               </p>
             </div>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               {testimonials.map(testimonial => (
                 <Card
                   key={testimonial.name}
-                  className="bg-gray-900 text-white"
+                  className="flex flex-col items-center bg-gray-900 p-8 text-center text-white"
                 >
-                  <CardHeader>
-                    <div className="flex items-center">
-                      <div className="rounded-full bg-primary p-3">
-                        <Users size={20} />
-                      </div>
-                      <div className="ml-4">
-                        <h3 className="text-lg font-semibold">{testimonial.name}</h3>
-                        <CardDescription className="text-gray-400">
-                          {testimonial.title}
-                        </CardDescription>
-                      </div>
-                    </div>
+                  <div className="mb-4 rounded-full bg-blue-500 p-3 text-white">
+                    {testimonial.icon === 'CheckCircle' && <CheckCircle size={28} />}
+                    {testimonial.icon === 'Award' && <Award size={28} />}
+                    {testimonial.icon === 'Target' && <Target size={28} />}
+                  </div>
+                  <CardHeader className="p-0">
+                    <h3 className="text-xl font-bold">{testimonial.name}</h3>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex-grow p-0 pt-4">
                     <p className="text-gray-300">{testimonial.quote}</p>
                   </CardContent>
                 </Card>
