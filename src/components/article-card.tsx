@@ -30,7 +30,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
           />
            <Badge variant="secondary" className="absolute top-4 left-4 bg-blue-600 text-white">{article.category}</Badge>
         </div>
-        <div className="flex flex-1 flex-col p-6">
+        <div className="flex flex-1 flex-col p-6 text-left">
           <CardTitle className="font-headline pt-4 text-lg font-bold">{article.title}</CardTitle>
           <CardContent className="flex-grow p-0 pt-4">
             <CardDescription>{article.description}</CardDescription>
