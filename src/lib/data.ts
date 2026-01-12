@@ -75,7 +75,7 @@ export const articles: Article[] = [
     title: 'Securing Your SAP BTP Environment: A Checklist',
     description:
       'A comprehensive checklist to ensure your Business Technology Platform is configured for maximum security.',
-    imageUrl: 'https://picsum.photos/seed/sap5/600/400',
+    imageUrl: '/5.jpg',
     stats: {
       views: '987',
       comments: '3',
@@ -89,7 +89,7 @@ export const articles: Article[] = [
     title: 'Forensic Analysis of an SAP System Breach',
     description:
       'A step-by-step guide to investigating and responding to a security incident within your SAP landscape.',
-    imageUrl: 'https://picsum.photos/seed/sap6/600/400',
+    imageUrl: '/6.png',
     stats: {
       views: '2,845',
       comments: '15',
