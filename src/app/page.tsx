@@ -73,25 +73,6 @@ export default function Home() {
                 <ArticleCard key={article.id} article={article} isTopArticle={true} />
               ))}
             </div>
-
-            <div className="mt-12 grid grid-cols-2 gap-8 border-t pt-8 text-center md:grid-cols-4 lg:mt-20 lg:pt-12">
-              <div>
-                <p className="text-3xl font-bold md:text-4xl">500+</p>
-                <p className="text-sm text-muted-foreground md:text-base">Expert Articles</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold md:text-4xl">50K+</p>
-                <p className="text-sm text-muted-foreground md:text-base">Monthly Readers</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold md:text-4xl">15+</p>
-                <p className="text-sm text-muted-foreground md:text-base">Years Experience</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold md:text-4xl">100%</p>
-                <p className="text-sm text-muted-foreground md:text-base">Vendor Neutral</p>
-              </div>
-            </div>
           </div>
         </section>
 
