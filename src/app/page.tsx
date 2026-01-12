@@ -25,6 +25,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
+import { Logo } from '@/components/icons';
 
 export default function Home() {
   return (
@@ -301,8 +302,8 @@ export default function Home() {
         <div className="container grid grid-cols-2 gap-8 px-4 md:grid-cols-5 md:px-6">
           <div className="col-span-2 space-y-4 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
-              <Briefcase className="h-6 w-6 text-white" />
-              <span className="font-bold text-white">SAP Security Hub</span>
+              <Logo className="h-8 w-8 text-primary" />
+              <span className="font-bold text-white">SAP Security Expert Hub</span>
             </Link>
             <p>
               The definitive resource for SAP Security excellence.

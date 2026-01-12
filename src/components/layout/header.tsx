@@ -15,8 +15,8 @@ export function Header() {
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Logo className="h-6 w-6 text-sap-blue" />
-            <span className="hidden font-bold sm:inline-block font-headline text-sap-blue">
+            <Logo className="h-8 w-8 text-primary" />
+            <span className="hidden font-bold sm:inline-block font-headline text-foreground">
               SAP Security Expert Hub
             </span>
           </Link>
