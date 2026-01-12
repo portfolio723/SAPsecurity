@@ -75,7 +75,7 @@ export const articles: Article[] = [
     title: 'Securing Your SAP BTP Environment: A Checklist',
     description:
       'A comprehensive checklist to ensure your Business Technology Platform is configured for maximum security.',
-    imageUrl: '/5.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
     stats: {
       views: '987',
       comments: '3',
