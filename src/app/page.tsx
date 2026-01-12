@@ -123,7 +123,7 @@ export default function Home() {
                 <div className="sticky top-24 space-y-8">
                     <Card>
                         <CardHeader>
-                            <CardTitle className="font-headline text-lg">Welcome To SAP Community!</CardTitle>
+                            <CardTitle className="font-headline text-lg">Welcome To SAP Security Expert Community!</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <p className="text-sm text-muted-foreground mb-4">These materials will help you participate and connect with other members.</p>
