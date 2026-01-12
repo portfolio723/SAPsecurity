@@ -89,7 +89,7 @@ export const articles: Article[] = [
     title: 'Forensic Analysis of an SAP System Breach',
     description:
       'A step-by-step guide to investigating and responding to a security incident within your SAP landscape.',
-    imageUrl: '/6.png',
+    imageUrl: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop',
     stats: {
       views: '2,845',
       comments: '15',
