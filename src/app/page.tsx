@@ -40,6 +40,7 @@ import {
   Book,
   Hand,
   Tag,
+  Search,
 } from 'lucide-react';
 import {
   Select,
@@ -53,6 +54,7 @@ import { Badge } from '@/components/ui/badge';
 import { CommunityActivityCard } from '@/components/community-activity-card';
 import { TopContributorItem } from '@/components/top-contributor-item';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Input } from '@/components/ui/input';
 
 
 export default function Home() {
@@ -69,6 +71,10 @@ export default function Home() {
                   </h2>
               </div>
               <div className='flex items-center gap-4'>
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input type="search" placeholder="Search..." className="pl-9" />
+                </div>
                 <Select defaultValue="creation-date">
                   <SelectTrigger className="w-[180px]">
                     <SelectValue placeholder="Sort by" />
