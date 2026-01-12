@@ -29,6 +29,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Logo } from '@/components/icons';
+import { Input } from '@/components/ui/input';
 
 export default function Home() {
   return (
@@ -228,75 +229,6 @@ export default function Home() {
                   <CardContent className="flex-grow p-0 pt-4">
                     <p className="text-gray-300">{testimonial.quote}</p>
                   </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="starter-kit"
-          className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 py-12 text-white md:py-24 lg:py-32"
-        >
-          <div className="container flex flex-col items-center justify-between gap-8 px-4 text-center md:flex-row md:px-6 md:text-left">
-            <div className="max-w-xl">
-              <p className="font-semibold text-white/80">
-                <span className="mr-2 rounded-full bg-white/20 px-3 py-1">
-                  Free Download
-                </span>
-                SAP Security Starter Kit
-              </p>
-              <h2 className="mt-2 text-3xl font-bold md:text-4xl">
-                Get a comprehensive guide to kickstart your SAP security journey
-                and learn how to manage your risk and compliance.
-              </h2>
-            </div>
-            <form className="w-full max-w-sm space-y-2">
-              <div className="flex flex-col gap-2 sm:flex-row">
-                <input
-                  type="email"
-                  placeholder="email@company.com"
-                  className="h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base text-black ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm max-w-lg flex-1"
-                />
-                <Button type="submit" variant="secondary" className='text-black'>
-                  Download Kit
-                </Button>
-              </div>
-              <p className="text-xs text-white/80">
-                No credit card required. For professional use only.
-              </p>
-            </form>
-          </div>
-        </section>
-
-        <section
-          id="free-tools"
-          className="w-full py-12 md:py-24 lg:py-32"
-        >
-          <div className="container px-4 md:px-6">
-            <div className="mb-12 text-center">
-              <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">
-                Free Tools for SAP Security
-              </h2>
-              <p className="mx-auto mt-2 max-w-[700px] text-muted-foreground md:text-xl">
-                A selection of free tools to help you analyze and secure your SAP landscape.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              {tools.map(tool => (
-                <Card key={tool.title}>
-                  <CardHeader>
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-xl font-bold">{tool.title}</h3>
-                      <span className={`rounded-full px-3 py-1 text-sm ${tool.tag === 'Available' ? 'bg-blue-100 text-blue-800' : 'bg-gray-100 text-gray-800'}`}>{tool.tag}</span>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{tool.description}</p>
-                  </CardContent>
-                  <CardFooter>
-                    <Button>Try Now</Button>
-                  </CardFooter>
                 </Card>
               ))}
             </div>
