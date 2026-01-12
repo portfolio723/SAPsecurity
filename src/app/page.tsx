@@ -58,7 +58,7 @@ export default function Home() {
               </div>
               <div className="flex items-center space-x-4">
                 <Button>
-                  Subscribe Free
+                  Post Insight
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Button variant="outline">
