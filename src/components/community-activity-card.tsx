@@ -2,14 +2,10 @@ import type { CommunityActivity } from "@/lib/community-data";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { Eye, MessageSquare, ThumbsUp } from "lucide-react";
+import { MessageSquare, ThumbsUp, Bookmark } from "lucide-react";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 type CommunityActivityCardProps = {
   activity: CommunityActivity;
@@ -18,39 +14,44 @@ type CommunityActivityCardProps = {
 export function CommunityActivityCard({ activity }: CommunityActivityCardProps) {
   return (
     <Link href="#" className="group">
-        <Card className="flex h-full flex-col overflow-hidden transition-shadow duration-300 hover:shadow-lg text-left">
-            <CardHeader>
-                <CardTitle className="font-headline text-xl group-hover:text-primary">
-                    {activity.title}
-                </CardTitle>
-                 <CardDescription>{activity.excerpt}</CardDescription>
-            </CardHeader>
-            <CardContent>
-                <div className="text-sm text-muted-foreground">
-                    By: <span className="font-semibold text-foreground">{activity.author}</span> • {activity.authorRole}
+      <Card className="flex h-full flex-col overflow-hidden transition-shadow duration-300 hover:shadow-lg text-left p-6">
+        <div className="flex gap-4">
+          <Avatar>
+            <AvatarFallback>{activity.author.charAt(0)}</AvatarFallback>
+          </Avatar>
+          <div className="flex-grow">
+            <div className="flex justify-between items-start">
+              <div>
+                <p className="text-sm font-semibold">{activity.author}</p>
+                <p className="text-xs text-muted-foreground">{activity.authorRole}</p>
+              </div>
+              <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+                <div className="flex items-center">
+                  <MessageSquare className="mr-1 h-4 w-4" />
+                  <span>{activity.replies}</span>
                 </div>
-                <div className="mt-2 flex items-center gap-2">
-                    <Badge variant="secondary">{activity.category}</Badge>
-                    <span className="text-xs text-muted-foreground">{activity.postedTime}</span>
+                <div className="flex items-center">
+                  <ThumbsUp className="mr-1 h-4 w-4" />
+                  <span>{activity.likes}</span>
                 </div>
+                <div className="flex items-center">
+                  <Bookmark className="mr-1 h-4 w-4" />
+                  <span>0</span>
+                </div>
+              </div>
+            </div>
+            <CardContent className="p-0 pt-4">
+              <h3 className="font-bold group-hover:text-primary mb-2">
+                {activity.title}
+              </h3>
+              <p className="text-sm text-muted-foreground line-clamp-2">{activity.excerpt}</p>
+              <div className="mt-4 text-xs text-muted-foreground">
+                <span>{activity.postedTime}</span> | Posted in <Link href="#" className="text-primary hover:underline">{activity.category}</Link>
+              </div>
             </CardContent>
-            <CardFooter className="flex items-center space-x-4 text-sm text-muted-foreground">
-                <div className="flex items-center">
-                    <Eye className="mr-1 h-4 w-4" />
-                    <span>{activity.views} views</span>
-                </div>
-                <div className="flex items-center">
-                    <MessageSquare className="mr-1 h-4 w-4" />
-                    <span>{activity.replies} replies</span>
-                </div>
-                <div className="flex items-center">
-                    <ThumbsUp className="mr-1 h-4 w-4" />
-                    <span>{activity.likes} likes</span>
-                </div>
-            </CardFooter>
-        </Card>
+          </div>
+        </div>
+      </Card>
     </Link>
   );
 }
-
-    

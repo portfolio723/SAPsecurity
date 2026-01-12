@@ -15,14 +15,11 @@ export function TopContributorItem({ contributor }: TopContributorItemProps) {
       </Avatar>
       <div className="flex-grow">
         <p className="font-semibold text-sm">{contributor.name}</p>
-        <p className="text-xs text-muted-foreground">{contributor.role}</p>
       </div>
       <div className="flex items-center text-sm text-muted-foreground">
-        <ThumbsUp className="mr-1 h-4 w-4 text-primary" />
+        <ThumbsUp className="mr-1 h-4 w-4 text-muted-foreground" />
         <span>{contributor.likes}</span>
       </div>
     </div>
   );
 }
-
-    

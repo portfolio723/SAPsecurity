@@ -36,7 +36,18 @@ import {
   Eye,
   MessageSquare,
   ThumbsUp,
+  HelpCircle,
+  Book,
+  Hand,
+  Tag,
 } from 'lucide-react';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { CommunityActivityCard } from '@/components/community-activity-card';
@@ -88,28 +99,35 @@ export default function Home() {
 
         <section id="community-spotlight" className="w-full bg-muted/50 py-12 md:py-20 lg:py-28">
           <div className="container px-4 md:px-6">
-            <div className="mb-8 text-center md:mb-12">
-                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                    SAP Security Community Live
-                </h2>
-                <p className="mx-auto mt-2 max-w-[700px] text-muted-foreground md:text-xl">
-                    Live discussions from SAP security practitioners worldwide
-                </p>
+            <div className="mb-8 flex flex-col items-center justify-between gap-4 md:flex-row md:gap-8">
+              <div className="text-center md:text-left">
+                  <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">
+                      Recent Activity
+                  </h2>
+              </div>
+              <div className='flex items-center gap-4'>
+                <Select defaultValue="creation-date">
+                  <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder="Sort by" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="creation-date">Creation date</SelectItem>
+                    <SelectItem value="popular">Popular</SelectItem>
+                  </SelectContent>
+                </Select>
+                <Button>Sign In to Post</Button>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
               <div className="lg:col-span-8">
-                <div>
-                  <h3 className="mb-2 text-xl font-bold font-headline">Recent Community Activity</h3>
-                  <p className="mb-6 text-muted-foreground">Ask questions, share insights, and learn from real SAP security scenarios.</p>
-                </div>
                 <div className="space-y-6">
                   {communityActivity.map(activity => (
                     <CommunityActivityCard key={activity.id} activity={activity} />
                   ))}
                 </div>
                 <div className="mt-8 text-center lg:text-left">
-                  <Button variant="outline">View All Community Discussions <ArrowRight className="ml-2" /></Button>
+                  <Button variant="link">View all</Button>
                 </div>
               </div>
 
@@ -117,47 +135,22 @@ export default function Home() {
                 <div className="sticky top-24 space-y-8">
                     <Card>
                         <CardHeader>
-                            <CardTitle className="font-headline text-lg">Welcome to the SAP Security Community</CardTitle>
+                            <CardTitle className="font-headline text-lg">Welcome To SAP Community!</CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <p className="text-sm text-muted-foreground">A professional space to ask questions, share experiences, and collaborate with SAP security experts across GRC, IAG, and Cybersecurity.</p>
+                            <p className="text-sm text-muted-foreground mb-4">These materials will help you participate and connect with other members.</p>
+                            <ul className="space-y-3 text-sm">
+                              <li className="flex items-center gap-3"><HelpCircle className="h-5 w-5 text-primary" /> <div><b>FAQs</b><br/>Find answers to basic questions...</div></li>
+                              <li className="flex items-center gap-3"><Book className="h-5 w-5 text-primary" /> <div><b>Resources</b><br/>Learn about community rules...</div></li>
+                              <li className="flex items-center gap-3"><Hand className="h-5 w-5 text-primary" /> <div><b>Welcome Corner</b><br/>Introduce yourself...</div></li>
+                              <li className="flex items-center gap-3"><Tag className="h-5 w-5 text-primary" /> <div><b>All SAP Managed Tags</b><br/>Check out the comprehensive A-Z list...</div></li>
+                            </ul>
                         </CardContent>
-                        <CardFooter className="flex-col items-stretch gap-2">
-                             <Button style={{ backgroundColor: '#003472', color: 'white' }}>Sign in to Join the Discussion</Button>
-                             <Button variant="outline">Create Free Account</Button>
-                        </CardFooter>
-                    </Card>
-
-                    <Card>
-                         <CardHeader>
-                            <CardTitle className="font-headline text-lg">Quick Actions</CardTitle>
-                        </CardHeader>
-                        <CardContent className="flex flex-col gap-2">
-                            <Button variant="outline"><MessageCircle className="mr-2"/>Ask a Question</Button>
-                            <Button variant="outline"><Pencil className="mr-2"/>Share an Insight</Button>
-                            <Button variant="outline"><BrainCircuit className="mr-2"/>Start a Discussion</Button>
-                        </CardContent>
-                    </Card>
-
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="font-headline text-lg">Trending Topics</CardTitle>
-                        </CardHeader>
-                        <CardContent className="flex flex-wrap gap-2">
-                           {trendingTopics.map(topic => (
-                                <Badge key={topic} variant="secondary">{topic}</Badge>
-                           ))}
-                        </CardContent>
-                        <CardFooter>
-                            <Link href="#" className="text-sm font-semibold text-primary hover:underline flex items-center">
-                                Browse All Topics <ArrowRight className="ml-1 h-4 w-4" />
-                            </Link>
-                        </CardFooter>
                     </Card>
                     
                     <Card>
                          <CardHeader>
-                            <CardTitle className="font-headline text-lg">Top Contributors This Week</CardTitle>
+                            <CardTitle className="font-headline text-lg">Top Liked Authors</CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
                            {topContributors.map(contributor => (
@@ -166,7 +159,7 @@ export default function Home() {
                         </CardContent>
                          <CardFooter>
                             <Link href="#" className="text-sm font-semibold text-primary hover:underline flex items-center">
-                                View Leaderboard <ArrowRight className="ml-1 h-4 w-4" />
+                                View all <ArrowRight className="ml-1 h-4 w-4" />
                             </Link>
                         </CardFooter>
                     </Card>
