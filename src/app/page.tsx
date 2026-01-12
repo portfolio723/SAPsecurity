@@ -23,8 +23,8 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
 
 export default function Home() {
   return (
@@ -40,7 +40,8 @@ export default function Home() {
                   Trusted by 10,000+ SAP Professionals
                 </div>
                 <h1 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                  The Definitive Resource for{' '}
+                  The Definitive Resource for
+                  <br />
                   <span className="text-blue-600">SAP</span>{' '}
                   <span className="text-cyan-500">Security</span> Excellence
                 </h1>
