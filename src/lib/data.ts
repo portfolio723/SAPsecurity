@@ -4,6 +4,7 @@ export type Article = {
   title: string;
   description: string;
   readTime: string;
+  imageUrl: string;
 };
 
 export const articles: Article[] = [
@@ -14,6 +15,7 @@ export const articles: Article[] = [
     description:
       'A deep dive into methodologies for identifying stealthy attackers within your core ERP system.',
     readTime: '12 min read',
+    imageUrl: 'https://picsum.photos/seed/sap1/600/400',
   },
   {
     id: 2,
@@ -22,6 +24,7 @@ export const articles: Article[] = [
     description:
       'Learn how to implement robust SoD rules to mitigate fraud risk in modern SAP environments.',
     readTime: '8 min read',
+    imageUrl: 'https://picsum.photos/seed/sap2/600/400',
   },
   {
     id: 3,
@@ -30,6 +33,7 @@ export const articles: Article[] = [
     description:
       'Strategies and tools for ensuring your SAP Human Capital Management system adheres to data privacy regulations.',
     readTime: '7 min read',
+    imageUrl: 'https://picsum.photos/seed/sap3/600/400',
   },
   {
     id: 4,
@@ -38,6 +42,7 @@ export const articles: Article[] = [
     description:
       'Secure your custom code from vulnerabilities by integrating static analysis into your development lifecycle.',
     readTime: '10 min read',
+    imageUrl: 'https://picsum.photos/seed/sap4/600/400',
   },
   {
     id: 5,
@@ -46,6 +51,7 @@ export const articles: Article[] = [
     description:
       'A comprehensive checklist to ensure your Business Technology Platform is configured for maximum security.',
     readTime: '9 min read',
+    imageUrl: 'https://picsum.photos/seed/sap5/600/400',
   },
   {
     id: 6,
@@ -54,6 +60,7 @@ export const articles: Article[] = [
     description:
       'A step-by-step guide to investigating and responding to a security incident within your SAP landscape.',
     readTime: '15 min read',
+    imageUrl: 'https://picsum.photos/seed/sap6/600/400',
   },
 ];
 

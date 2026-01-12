@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "article-1",
+      "description": "An image representing threat detection in SAP S/4HANA.",
+      "imageUrl": "https://images.unsplash.com/photo-1762340915700-356b34475448?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0aHJlYXQlMjBkZXRlY3Rpb258ZW58MHx8fHwxNzY4MTk5ODU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "threat detection"
+    },
+    {
+      "id": "article-2",
+      "description": "An image for best practices for Segregation of Duties (SoD) in Fiori.",
+      "imageUrl": "https://images.unsplash.com/photo-1626427403459-4425cbabdc3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YWNjZXNzJTIwY29udHJvbHxlbnwwfHx8fDE3NjgxOTU3Nzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "access control"
+    },
+    {
+      "id": "article-3",
+      "description": "An image for automating GDPR compliance checks for SAP HR.",
+      "imageUrl": "https://images.unsplash.com/photo-1577228159816-2ab72a38c22b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb21wbGlhbmNlfGVufDB8fHx8MTc2ODE5OTg1OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "compliance"
+    },
+    {
+      "id": "article-4",
+      "description": "An image for static code analysis for custom ABAP development.",
+      "imageUrl": "https://images.unsplash.com/photo-1754039984985-ef607d80113a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb2RlJTIwc2VjdXJpdHl8ZW58MHx8fHwxNzY4MTk5ODU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "code security"
+    },
+    {
+      "id": "article-5",
+      "description": "An image for securing your SAP BTP environment.",
+      "imageUrl": "https://images.unsplash.com/photo-1715405079311-40508a1be5ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG91ZCUyMHNlY3VyaXR5fGVufDB8fHx8MTc2ODE5OTg1OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cloud security"
+    },
+    {
+      "id": "article-6",
+      "description": "An image for forensic analysis of an SAP system breach.",
+      "imageUrl": "https://images.unsplash.com/photo-1762813269521-74f1966d6fb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxpbmNpZGVudCUyMHJlc3BvbnNlfGVufDB8fHx8MTc2ODExMDUxOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "incident response"
+    }
+  ]
 }
