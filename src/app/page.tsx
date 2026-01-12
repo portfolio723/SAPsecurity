@@ -32,22 +32,21 @@ import { Logo } from '@/components/icons';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-6 text-center">
               <div className="space-y-4">
-                <div className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
+                <div className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900/20 dark:text-blue-300">
                   <span className="mr-2 h-2 w-2 rounded-full bg-blue-500"></span>
                   Trusted by 10,000+ SAP Professionals
                 </div>
                 <h1 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
                   The Definitive Resource for
                   <br />
-                  <span className="text-blue-600">SAP</span>{' '}
-                  <span className="text-cyan-500">Security</span> Excellence
+                  <span className="text-primary">SAP Security</span> Excellence
                 </h1>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                   Expert insights, actionable frameworks, and practical tools for SAP GRC, IAM, cybersecurity, and compliance professionals worldwide.
@@ -99,7 +98,7 @@ export default function Home() {
               </p>
             </div>
             <Tabs defaultValue="all" className="w-full text-center">
-              <TabsList className="mb-8">
+              <TabsList className="mb-8 inline-flex h-auto flex-wrap justify-center">
                 <TabsTrigger value="all">All</TabsTrigger>
                 <TabsTrigger value="grc">GRC</TabsTrigger>
                 <TabsTrigger value="iam">IAM</TabsTrigger>
@@ -168,7 +167,7 @@ export default function Home() {
                   className="flex flex-col items-start p-6 transition-shadow duration-300 hover:shadow-lg"
                 >
                   <CardHeader className="flex flex-row items-center gap-4 p-0">
-                    <div className="rounded-lg bg-blue-100 p-3 text-blue-600">
+                    <div className="rounded-lg bg-primary/10 p-3 text-primary">
                       {item.icon === 'Shield' && <Shield size={24} />}
                       {item.icon === 'Network' && <Network size={24} />}
                       {item.icon === 'Lock' && <Lock size={24} />}
@@ -177,7 +176,7 @@ export default function Home() {
                       {item.icon === 'KeyRound' && <KeyRound size={24} />}
                     </div>
                     <div>
-                      <CardTitle className="text-xl">{item.title}</CardTitle>
+                      <CardTitle className="text-xl font-headline">{item.title}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="flex-grow p-0 pt-4">
@@ -217,13 +216,13 @@ export default function Home() {
                   key={testimonial.name}
                   className="flex flex-col items-center bg-gray-900 p-8 text-center text-white"
                 >
-                  <div className="mb-4 rounded-full bg-blue-500 p-3 text-white">
+                  <div className="mb-4 rounded-full bg-primary/20 p-3 text-primary">
                     {testimonial.icon === 'CheckCircle' && <CheckCircle size={28} />}
                     {testimonial.icon === 'Award' && <Award size={28} />}
                     {testimonial.icon === 'Target' && <Target size={28} />}
                   </div>
                   <CardHeader className="p-0">
-                    <h3 className="text-xl font-bold">{testimonial.name}</h3>
+                    <CardTitle className="text-xl font-headline">{testimonial.name}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow p-0 pt-4">
                     <p className="text-gray-300">{testimonial.quote}</p>
@@ -241,7 +240,7 @@ export default function Home() {
         <div className="container grid grid-cols-2 gap-8 px-4 md:grid-cols-5 md:px-6">
           <div className="col-span-2 space-y-4 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
-              <Logo className="h-8 w-8" />
+              <Logo />
               <span className="font-bold text-white">SAP Security Expert Hub</span>
             </Link>
             <p>
