@@ -60,7 +60,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col bg-white text-foreground">
       <Header />
       <main className="flex-1">
-        <section id="community-spotlight" className="w-full bg-muted/50 py-12 md:py-20 lg:py-28">
+        <section id="community-spotlight" className="w-full py-12 md:py-20 lg:py-28 bg-muted/50">
           <div className="container px-4 md:px-6">
             <div className="mb-8 flex flex-col items-center justify-between gap-4 md:flex-row md:gap-8">
               <div className="text-center md:text-left">
@@ -89,8 +89,13 @@ export default function Home() {
                     <CommunityActivityCard key={activity.id} activity={activity} />
                   ))}
                 </div>
-                <div className="mt-8 text-center lg:text-left">
-                  <Button variant="link">View all</Button>
+                <div className="mt-8 text-center">
+                  <Button variant="outline" asChild className="group">
+                    <Link href="#">
+                      View all
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Link>
+                  </Button>
                 </div>
               </div>
 
