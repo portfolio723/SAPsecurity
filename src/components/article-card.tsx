@@ -13,9 +13,10 @@ import { ArrowRight, Clock, Eye, MessageSquare, ThumbsUp } from "lucide-react";
 
 type ArticleCardProps = {
   article: Article;
+  isTopArticle?: boolean;
 };
 
-export function ArticleCard({ article }: ArticleCardProps) {
+export function ArticleCard({ article, isTopArticle }: ArticleCardProps) {
   return (
     <Link href="#" className="group">
       <Card className="flex h-full flex-col overflow-hidden transition-shadow duration-300 hover:shadow-lg">
@@ -28,7 +29,14 @@ export function ArticleCard({ article }: ArticleCardProps) {
             className="w-full object-cover"
             data-ai-hint="article image"
           />
-           <Badge variant="secondary" className="absolute top-4 left-4 bg-blue-600 text-white">{article.category}</Badge>
+           <div className="absolute top-4 left-4 flex gap-2">
+            <Badge variant="secondary" className="bg-blue-600 text-white">{article.category}</Badge>
+            {isTopArticle && (
+              <Badge style={{ backgroundColor: '#F25140', color: 'white' }}>
+                Top Article
+              </Badge>
+            )}
+          </div>
         </div>
         <div className="flex flex-1 flex-col p-6 text-left">
           <CardTitle className="font-headline pt-4 text-lg font-bold">{article.title}</CardTitle>

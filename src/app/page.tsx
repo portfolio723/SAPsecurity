@@ -70,7 +70,7 @@ export default function Home() {
 
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
               {articles.slice(0, 3).map(article => (
-                <ArticleCard key={article.id} article={article} />
+                <ArticleCard key={article.id} article={article} isTopArticle={true} />
               ))}
             </div>
 
