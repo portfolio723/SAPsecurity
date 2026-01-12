@@ -244,7 +244,6 @@ export default function Home() {
         <div className="container grid grid-cols-2 gap-8 px-4 md:grid-cols-5 md:px-6">
           <div className="col-span-2 space-y-4 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
-              <Logo className="h-10 w-10" />
               <span className="font-bold text-white">SAP Security Expert Hub</span>
             </Link>
             <p>
@@ -307,5 +306,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
