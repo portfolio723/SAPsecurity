@@ -66,35 +66,15 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <section className="w-full border-b">
-          <div className="relative h-48 w-full md:h-64">
-            <Image
-              src="https://picsum.photos/seed/banner/1600/400"
-              alt="Community Banner"
-              layout="fill"
-              objectFit="cover"
-              data-ai-hint="abstract banner"
-            />
-          </div>
           <div className="container px-4 md:px-6">
-            <div className="relative -mt-16 flex flex-col items-start gap-4 md:-mt-24 md:flex-row md:items-end">
-              <Avatar className="h-32 w-32 border-4 border-white md:h-48 md:w-48">
-                <AvatarImage src="https://i.pravatar.cc/150?u=profile" alt="User" />
-                <AvatarFallback>U</AvatarFallback>
-              </Avatar>
-              <div className="flex-grow py-4">
-                <h1 className="text-2xl font-bold font-headline md:text-3xl">Jane Doe</h1>
-                <p className="text-muted-foreground">SAP Security Architect @ MegaCorp</p>
-              </div>
-              <div className="flex gap-2 pb-4">
-                <Button>
-                  <PlusCircle className="mr-2" />
-                  Follow
-                </Button>
-                <Button variant="outline">
-                  <Rss className="mr-2" />
-                  Subscribe
-                </Button>
-              </div>
+            <div className="relative h-48 w-full md:h-64">
+                <Image
+                src="https://picsum.photos/seed/banner/1600/400"
+                alt="Community Banner"
+                layout="fill"
+                objectFit="cover"
+                data-ai-hint="abstract banner"
+                />
             </div>
           </div>
         </section>
