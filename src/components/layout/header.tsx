@@ -56,7 +56,7 @@ export function Header() {
         <div className="container flex h-16 max-w-screen-2xl items-center justify-between md:h-20">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <Logo className="h-10 w-10 rounded-full bg-white p-1 md:h-12 md:w-12" />
+              <Logo className="h-12 w-12 bg-white p-1 md:h-14 md:w-14" />
             </Link>
           </div>
           
