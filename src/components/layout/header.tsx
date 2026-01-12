@@ -1,6 +1,12 @@
-import Link from "next/link";
-import { Logo } from "@/components/icons";
-import { Button } from "@/components/ui/button";
+import Link from 'next/link';
+import { Logo } from '@/components/icons';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { ChevronDown } from 'lucide-react';
 
 export function Header() {
   return (
@@ -14,24 +20,74 @@ export function Header() {
             </span>
           </Link>
         </div>
-        <div className="flex flex-1 items-center justify-end space-x-2">
-            <nav className="flex items-center gap-4 text-sm lg:gap-6">
-                <Link
-                    href="#articles"
-                    className="text-muted-foreground/70 transition-colors hover:text-foreground"
-                >
-                    Content
-                </Link>
-                <Link
-                    href="#"
-                    className="text-muted-foreground/70 transition-colors hover:text-foreground"
-                >
-                    Login
-                </Link>
-                <Button variant="default" size="sm" asChild>
-                    <Link href="#newsletter">Subscription</Link>
-                </Button>
-            </nav>
+        <div className="flex flex-1 items-center justify-start space-x-2">
+          <nav className="hidden items-center gap-4 text-sm lg:flex lg:gap-6">
+            <Link
+              href="#"
+              className="font-medium text-muted-foreground/70 transition-colors hover:text-foreground"
+            >
+              Home
+            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 font-medium text-muted-foreground/70 transition-colors hover:text-foreground focus:outline-none">
+                SAP Security
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>
+                  <Link href="#">SAP Security Audits</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="#">SAP Penetration Testing</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="#">SAP Vulnerability Management</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="#">SAP Custom Code Scanning</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="#">SAP Role Redesign</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Link
+              href="#"
+              className="font-medium text-muted-foreground/70 transition-colors hover:text-foreground"
+            >
+              SAP IAG
+            </Link>
+            <Link
+              href="#"
+              className="font-medium text-muted-foreground/70 transition-colors hover:text-foreground"
+            >
+              SAP GRC
+            </Link>
+            <Link
+              href="#"
+              className="font-medium text-muted-foreground/70 transition-colors hover:text-foreground"
+            >
+              SAP Cybersecurity
+            </Link>
+            <Link
+              href="#"
+              className="font-medium text-muted-foreground/70 transition-colors hover:text-foreground"
+            >
+              Product Reviews
+            </Link>
+            <Link
+              href="#"
+              className="font-medium text-muted-foreground/70 transition-colors hover:text-foreground"
+            >
+              Podcasts
+            </Link>
+            <Link
+              href="#"
+              className="font-medium text-muted-foreground/70 transition-colors hover:text-foreground"
+            >
+              Other Tools
+            </Link>
+          </nav>
         </div>
       </div>
     </header>
