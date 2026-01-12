@@ -65,22 +65,19 @@ export default function Home() {
     <div className="flex min-h-screen flex-col bg-white text-foreground">
       <Header />
       <main className="flex-1">
-        <section className="w-full border-b">
+        
+        <section id="community-spotlight" className="w-full bg-muted/50">
           <div className="container px-4 md:px-6">
-            <div className="relative h-48 w-full md:h-64">
+             <div className="relative h-48 w-full md:h-64 my-12">
                 <Image
                 src="https://picsum.photos/seed/banner/1600/400"
                 alt="Community Banner"
                 layout="fill"
                 objectFit="cover"
+                className="rounded-lg"
                 data-ai-hint="abstract banner"
                 />
             </div>
-          </div>
-        </section>
-        
-        <section id="community-spotlight" className="w-full py-12 md:py-20 lg:py-28 bg-muted/50">
-          <div className="container px-4 md:px-6">
             <div className="mb-8 flex flex-col items-center justify-between gap-4 md:flex-row md:gap-8">
               <div className="text-center md:text-left">
                   <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">
