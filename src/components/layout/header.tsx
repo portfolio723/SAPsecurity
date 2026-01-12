@@ -56,6 +56,7 @@ export function Header() {
         <div className="container flex h-16 max-w-screen-2xl items-center justify-between md:h-20">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
+               <span className="font-bold text-lg" style={{ color: '#F25140' }}>SAP Security Expert</span>
             </Link>
           </div>
           
