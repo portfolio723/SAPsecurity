@@ -13,15 +13,15 @@ import {
   CardFooter,
 } from '@/components/ui/card';
 import {
-  Briefcase,
-  Cloud,
-  Code,
-  ShieldCheck,
-  UserCheck,
-  Users,
-  Play,
   ArrowRight,
-  Lock
+  Play,
+  Lock,
+  Shield,
+  Users,
+  FileCheck,
+  Cloud,
+  KeyRound,
+  Network
 } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
@@ -155,30 +155,40 @@ export default function Home() {
                 Explore by Expertise
               </h2>
               <p className="mx-auto mt-2 max-w-[700px] text-muted-foreground md:text-xl">
-                Find the right solutions for your specific SAP security needs.
+                Deep-dive into specialized SAP security domains with expert-curated content.
               </p>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {expertise.map(item => (
                 <Card
                   key={item.title}
-                  className="flex flex-col items-start p-6"
+                  className="flex flex-col items-start p-6 transition-shadow duration-300 hover:shadow-lg"
                 >
-                  <div className="mb-4 rounded-full bg-primary/10 p-3 text-primary">
-                    {item.icon === 'UserCheck' && <UserCheck size={24} />}
-                    {item.icon === 'ShieldCheck' && <ShieldCheck size={24} />}
-                    {item.icon === 'Briefcase' && <Briefcase size={24} />}
-                    {item.icon === 'Cloud' && <Cloud size={24} />}
-                    {item.icon === 'Code' && <Code size={24} />}
-                    {item.icon === 'Users' && <Users size={24} />}
-                  </div>
-                  <h3 className="mb-2 text-xl font-bold">{item.title}</h3>
-                  <p className="mb-4 text-muted-foreground">
-                    {item.description}
-                  </p>
-                  <Button variant="link" className="p-0">
-                    Learn More
-                  </Button>
+                  <CardHeader className="flex flex-row items-center gap-4 p-0">
+                    <div className="rounded-lg bg-blue-100 p-3 text-blue-600">
+                      {item.icon === 'Shield' && <Shield size={24} />}
+                      {item.icon === 'Network' && <Network size={24} />}
+                      {item.icon === 'Lock' && <Lock size={24} />}
+                      {item.icon === 'FileCheck' && <FileCheck size={24} />}
+                      {item.icon === 'Cloud' && <Cloud size={24} />}
+                      {item.icon === 'KeyRound' && <KeyRound size={24} />}
+                    </div>
+                    <div>
+                      <CardTitle className="text-xl">{item.title}</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="flex-grow p-0 pt-4">
+                    <p className="text-muted-foreground">{item.description}</p>
+                  </CardContent>
+                  <CardFooter className="p-0 pt-4">
+                    <Link
+                      href="#"
+                      className="flex items-center text-sm font-semibold text-primary hover:underline"
+                    >
+                      {item.articles} articles
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </Link>
+                  </CardFooter>
                 </Card>
               ))}
             </div>

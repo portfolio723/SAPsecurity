@@ -101,40 +101,40 @@ export const articles: Article[] = [
 
 export const expertise = [
   {
-    icon: 'UserCheck',
+    icon: 'Shield',
     title: 'SAP GRC',
-    description:
-      'Streamline Governance, Risk, and Compliance processes with our expert guidance.',
+    description: 'Access Control, Process Control, Risk Management',
+    articles: 124,
   },
   {
-    icon: 'ShieldCheck',
-    title: 'SAP IAM',
-    description:
-      'Implement robust Identity and Access Management solutions for your SAP systems.',
+    icon: 'Network',
+    title: 'SAP IAG',
+    description: 'Identity Access Governance in the cloud',
+    articles: 67,
   },
   {
-    icon: 'Users',
+    icon: 'Lock',
     title: 'Cybersecurity',
-    description:
-      'Protect your SAP landscape from internal and external threats.',
+    description: 'Threat detection, vulnerability management',
+    articles: 89,
   },
   {
-    icon: 'Briefcase',
-    title: 'Secure Operations',
-    description:
-      'Ensure the ongoing security of your SAP systems with our operational best practices.',
+    icon: 'FileCheck',
+    title: 'License Compliance',
+    description: 'SAP licensing optimization strategies',
+    articles: 45,
   },
   {
     icon: 'Cloud',
     title: 'Cloud Security',
-    description:
-      'Secure your SAP applications and data in the cloud with our proven methodologies.',
+    description: 'S/4HANA Cloud, BTP security',
+    articles: 78,
   },
   {
-    icon: 'Code',
-    title: 'DevOps',
-    description:
-      'Integrate security into your SAP development lifecycle with our DevSecOps expertise.',
+    icon: 'KeyRound',
+    title: 'IAM',
+    description: 'Identity & Access Management best practices',
+    articles: 92,
   },
 ];
 
