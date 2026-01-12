@@ -32,10 +32,10 @@ import { Logo } from '@/components/icons';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
+    <div className="flex min-h-screen flex-col bg-white text-foreground">
       <Header />
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-40">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-6 text-center">
               <div className="space-y-4">
@@ -63,7 +63,7 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="mt-12 grid grid-cols-2 gap-8 border-t pt-8 text-center md:grid-cols-4">
+            <div className="mt-12 grid grid-cols-2 gap-8 border-t pt-8 text-center md:grid-cols-4 lg:mt-24">
               <div>
                 <p className="text-4xl font-bold">500+</p>
                 <p className="text-muted-foreground">Expert Articles</p>
