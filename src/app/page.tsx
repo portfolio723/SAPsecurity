@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Header } from '@/components/layout/header';
 import { ArticleCard } from '@/components/article-card';
 import { NewsletterSignup } from '@/components/newsletter-signup';
-import { articles, expertise, tools, testimonials } from '@/lib/data';
+import { articles, expertise, testimonials } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -29,7 +29,6 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Logo } from '@/components/icons';
-import { Input } from '@/components/ui/input';
 
 export default function Home() {
   return (
