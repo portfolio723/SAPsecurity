@@ -98,10 +98,11 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-              {/* Left Column */}
               <div className="lg:col-span-8">
-                <h3 className="mb-2 text-xl font-bold font-headline">Recent Community Activity</h3>
-                <p className="mb-6 text-muted-foreground">Ask questions, share insights, and learn from real SAP security scenarios.</p>
+                <div>
+                  <h3 className="mb-2 text-xl font-bold font-headline">Recent Community Activity</h3>
+                  <p className="mb-6 text-muted-foreground">Ask questions, share insights, and learn from real SAP security scenarios.</p>
+                </div>
                 <div className="space-y-6">
                   {communityActivity.map(activity => (
                     <CommunityActivityCard key={activity.id} activity={activity} />
@@ -112,10 +113,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Right Column */}
               <div className="lg:col-span-4">
                 <div className="sticky top-24 space-y-8">
-                    {/* Welcome Block */}
                     <Card>
                         <CardHeader>
                             <CardTitle className="font-headline text-lg">Welcome to the SAP Security Community</CardTitle>
@@ -129,7 +128,6 @@ export default function Home() {
                         </CardFooter>
                     </Card>
 
-                    {/* Quick Actions */}
                     <Card>
                          <CardHeader>
                             <CardTitle className="font-headline text-lg">Quick Actions</CardTitle>
@@ -141,7 +139,6 @@ export default function Home() {
                         </CardContent>
                     </Card>
 
-                    {/* Trending Topics */}
                     <Card>
                         <CardHeader>
                             <CardTitle className="font-headline text-lg">Trending Topics</CardTitle>
@@ -158,7 +155,6 @@ export default function Home() {
                         </CardFooter>
                     </Card>
                     
-                    {/* Top Contributors */}
                     <Card>
                          <CardHeader>
                             <CardTitle className="font-headline text-lg">Top Contributors This Week</CardTitle>
@@ -399,5 +395,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
