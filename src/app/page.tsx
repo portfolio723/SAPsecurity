@@ -19,9 +19,12 @@ import {
   ShieldCheck,
   UserCheck,
   Users,
+  Play,
+  ArrowRight
 } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Input } from '@/components/ui/input';
+import { Badge } from '@/components/ui/badge';
 
 export default function Home() {
   return (
@@ -32,39 +35,46 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-6 text-center">
               <div className="space-y-4">
-                <p className="text-primary font-semibold">
-                  SAP SECURITY & COMPLIANCE
-                </p>
+                <div className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
+                  <span className="mr-2 h-2 w-2 rounded-full bg-blue-500"></span>
+                  Trusted by 10,000+ SAP Professionals
+                </div>
                 <h1 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
                   The Definitive Resource for{' '}
-                  <span className="text-primary">SAP Security</span> Excellence
+                  <span className="text-blue-600">SAP</span>{' '}
+                  <span className="text-cyan-500">Security</span> Excellence
                 </h1>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  Expert insights, actionable threat intelligence, and compliance
-                  best practices to protect your critical SAP systems.
+                  Expert insights, actionable frameworks, and practical tools for SAP GRC, IAM, cybersecurity, and compliance professionals worldwide.
                 </p>
               </div>
-              <div className="space-x-4">
-                <Button>Explore Content</Button>
-                <Button variant="outline">Explore Insights</Button>
+              <div className="flex items-center space-x-4">
+                <Button>
+                  Subscribe Free
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+                <Button variant="outline">
+                  <Play className="mr-2 h-4 w-4 fill-current" />
+                  Explore Insights
+                </Button>
               </div>
             </div>
-            <div className="mt-12 grid grid-cols-2 gap-8 text-center md:grid-cols-4">
+            <div className="mt-12 grid grid-cols-2 gap-8 border-t pt-8 text-center md:grid-cols-4">
               <div>
                 <p className="text-4xl font-bold">500+</p>
-                <p className="text-muted-foreground">Enterprises Secured</p>
+                <p className="text-muted-foreground">Expert Articles</p>
               </div>
               <div>
                 <p className="text-4xl font-bold">50K+</p>
-                <p className="text-muted-foreground">Security Issues Fixed</p>
+                <p className="text-muted-foreground">Monthly Readers</p>
               </div>
               <div>
                 <p className="text-4xl font-bold">15+</p>
-                <p className="text-muted-foreground">Years of Experience</p>
+                <p className="text-muted-foreground">Years Experience</p>
               </div>
               <div>
                 <p className="text-4xl font-bold">100%</p>
-                <p className="text-muted-foreground">Customer Satisfaction</p>
+                <p className="text-muted-foreground">Vendor Neutral</p>
               </div>
             </div>
           </div>
@@ -198,7 +208,7 @@ export default function Home() {
                         <Users size={20} />
                       </div>
                       <div className="ml-4">
-                        <CardTitle>{testimonial.name}</CardTitle>
+                        <h3 className="text-lg font-semibold">{testimonial.name}</h3>
                         <CardDescription className="text-gray-400">
                           {testimonial.title}
                         </CardDescription>
