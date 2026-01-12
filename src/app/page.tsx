@@ -70,10 +70,10 @@ export default function Home() {
           <div className="container px-4 md:px-6">
              <div className="relative h-48 w-full md:h-64 my-12">
                 <Image
-                src="https://picsum.photos/seed/banner/1600/400"
+                src="/banner.jpg"
                 alt="Community Banner"
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{objectFit: "cover"}}
                 className="rounded-lg"
                 data-ai-hint="abstract banner"
                 />
