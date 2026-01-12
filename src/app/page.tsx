@@ -24,7 +24,11 @@ import {
   Network,
   CheckCircle,
   Award,
-  Target
+  Target,
+  Twitter,
+  Linkedin,
+  Youtube,
+  Mail,
 } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
@@ -246,10 +250,11 @@ export default function Home() {
             <p>
               The definitive resource for SAP Security excellence.
             </p>
-            <div className="flex space-x-4">
-              <Link href="#"><Users className="h-5 w-5" /></Link>
-              <Link href="#"><Users className="h-5 w-5" /></Link>
-              <Link href="#"><Users className="h-5 w-5" /></Link>
+            <div className="flex space-x-2">
+              <Link href="#" className="p-2 rounded-md hover:bg-gray-700"><Twitter className="h-5 w-5" /></Link>
+              <Link href="#" className="p-2 rounded-md hover:bg-gray-700"><Linkedin className="h-5 w-5" /></Link>
+              <Link href="#" className="p-2 rounded-md hover:bg-gray-700"><Youtube className="h-5 w-5" /></Link>
+              <Link href="#" className="p-2 rounded-md hover:bg-gray-700"><Mail className="h-5 w-5" /></Link>
             </div>
           </div>
           <div>
