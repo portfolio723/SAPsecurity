@@ -63,7 +63,7 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="mt-12 grid grid-cols-2 gap-8 border-t pt-8 text-center md:grid-cols-4 lg:mt-24">
+            <div className="mt-12 grid grid-cols-2 gap-8 border-t pt-8 text-center md:grid-cols-4 lg:mt-24 lg:pb-12">
               <div>
                 <p className="text-4xl font-bold">500+</p>
                 <p className="text-muted-foreground">Expert Articles</p>
@@ -214,7 +214,7 @@ export default function Home() {
               {testimonials.map(testimonial => (
                 <Card
                   key={testimonial.name}
-                  className="flex flex-col items-center bg-gray-900 p-8 text-center text-white"
+                  className="flex flex-col items-start bg-gray-900 p-8 text-left text-white"
                 >
                   <div className="mb-4 rounded-full bg-primary/20 p-3 text-primary">
                     {testimonial.icon === 'CheckCircle' && <CheckCircle size={28} />}
@@ -240,7 +240,7 @@ export default function Home() {
         <div className="container grid grid-cols-2 gap-8 px-4 md:grid-cols-5 md:px-6">
           <div className="col-span-2 space-y-4 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
-              <Logo />
+              <Logo className="h-10 w-10 bg-white rounded-md p-1" />
               <span className="font-bold text-white">SAP Security Expert Hub</span>
             </Link>
             <p>
