@@ -20,11 +20,11 @@ import {
   UserCheck,
   Users,
   Play,
-  ArrowRight
+  ArrowRight,
+  Lock
 } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
 import { Logo } from '@/components/icons';
 
 export default function Home() {
@@ -129,18 +129,18 @@ export default function Home() {
                   Latest Blogs & Activity
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Stay up-to-date with the latest research, trends and activity from
-                  our team of experts.
+                  Stay updated with the newest insights from our community of SAP security experts.
                 </p>
+                 <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
+                  <Lock className="h-4 w-4" />
+                  <span>Login required to read full articles</span>
+                </div>
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 sm:grid-cols-2 lg:max-w-7xl lg:grid-cols-3 lg:gap-8">
               {articles.map(article => (
                 <ArticleCard key={article.id} article={article} />
               ))}
-            </div>
-            <div className="text-center">
-                <Button variant="outline">Load More</Button>
             </div>
           </div>
         </section>
@@ -245,10 +245,10 @@ export default function Home() {
             </div>
             <form className="w-full max-w-sm space-y-2">
               <div className="flex flex-col gap-2 sm:flex-row">
-                <Input
+                <input
                   type="email"
                   placeholder="email@company.com"
-                  className="max-w-lg flex-1 text-black"
+                  className="h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base text-black ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm max-w-lg flex-1"
                 />
                 <Button type="submit" variant="secondary" className='text-black'>
                   Download Kit
@@ -302,7 +302,7 @@ export default function Home() {
         <div className="container grid grid-cols-2 gap-8 px-4 md:grid-cols-5 md:px-6">
           <div className="col-span-2 space-y-4 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
-              <Logo className="h-8 w-8 text-primary" />
+              <Logo className="h-8 w-8" />
               <span className="font-bold text-white">SAP Security Expert Hub</span>
             </Link>
             <p>
