@@ -19,11 +19,9 @@ const navLinks = [
     label: 'SAP Security',
     hasDropdown: true,
     dropdownItems: [
-      { label: 'SAP Security Audits', href: '#' },
-      { label: 'SAP Penetration Testing', href: '#' },
-      { label: 'SAP Vulnerability Management', href: '#' },
-      { label: 'SAP Custom Code Scanning', href: '#' },
-      { label: 'SAP Role Redesign', href: '#' },
+      { label: 'Access Control', href: '#' },
+      { label: 'Authorization', href: '#' },
+      { label: 'Security Notes', href: '#' },
     ],
   },
   { label: 'SAP IAG', href: '#' },
@@ -55,14 +53,15 @@ export function Header() {
             : 'bg-background border-b'
         }`}
       >
-        <div className="container flex h-16 max-w-screen-2xl items-center md:h-20">
-          <div className="mr-4 flex">
-            <Link href="/" className="mr-6 flex items-center space-x-2">
-              <Logo className="h-10 w-10 md:h-12 md:w-12" />
+        <div className="container flex h-16 max-w-screen-2xl items-center justify-between md:h-20">
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center space-x-2">
+              <Logo className="h-10 w-10 rounded-full bg-white p-1 md:h-12 md:w-12" />
             </Link>
           </div>
-          <div className="flex flex-1 items-center justify-end space-x-2 md:justify-between">
-            <nav className="hidden items-center gap-4 text-sm lg:flex lg:gap-6">
+          
+          <div className="hidden flex-1 justify-center lg:flex">
+            <nav className="flex items-center gap-6 text-sm">
               {navLinks.map((link) => (
                 <div key={link.label} className="relative">
                   {link.hasDropdown ? (
@@ -90,7 +89,10 @@ export function Header() {
                 </div>
               ))}
             </nav>
-            <div className="hidden items-center gap-4 lg:flex">
+          </div>
+
+          <div className="flex items-center justify-end">
+             <div className="hidden items-center gap-4 lg:flex">
               <Link
                 href="#"
                 className="text-sm font-medium text-muted-foreground/70 transition-colors hover:text-foreground"
