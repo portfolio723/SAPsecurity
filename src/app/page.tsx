@@ -67,6 +67,13 @@ export default function Home() {
                 </Button>
               </div>
             </div>
+
+            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+              {articles.slice(0, 3).map(article => (
+                <ArticleCard key={article.id} article={article} />
+              ))}
+            </div>
+
             <div className="mt-12 grid grid-cols-2 gap-8 border-t pt-8 text-center md:grid-cols-4 lg:mt-24 lg:pb-12">
               <div>
                 <p className="text-4xl font-bold">500+</p>
