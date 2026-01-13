@@ -303,7 +303,7 @@ export default function Home() {
                   <CardContent className="relative flex flex-col items-center">
                     <Input
                       type="email"
-                      placeholder="YOUR EMAIL"
+                      placeholder="Enter Your Email"
                       className="rounded-none pl-4 pr-12 text-center"
                     />
                     <Button
