@@ -322,7 +322,7 @@ export default function Home() {
                     <Input
                       type="email"
                       placeholder="YOUR EMAIL"
-                      className="rounded-full pl-4 pr-12 text-center"
+                      className="rounded-none pl-4 pr-12 text-center"
                     />
                     <Button
                       type="submit"
@@ -333,10 +333,7 @@ export default function Home() {
                     </Button>
                   </CardContent>
                   <CardFooter className="flex-col items-center gap-2 text-center">
-                    <p className="text-xs text-muted-foreground flex items-center">
-                      <Info className="h-3 w-3 mr-1" />
-                      Important Notification
-                    </p>
+                    
                   </CardFooter>
                 </Card>
               </div>
