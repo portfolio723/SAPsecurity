@@ -49,6 +49,7 @@ import {
   Clock,
   MessageCircle as MessageCircleIcon,
   Bookmark,
+  Hash,
 } from 'lucide-react';
 import {
   Select,
@@ -151,7 +152,7 @@ export default function Home() {
                 <Card className="shadow-lg rounded-none">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2 font-headline text-lg">
-                      <BrainCircuit /> Recent Topics
+                      <Hash /> Recent Topics
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
@@ -176,7 +177,7 @@ export default function Home() {
               {/* Center Column */}
               <div className="col-span-12 lg:col-span-6 space-y-8">
                 <Card className="shadow-lg overflow-hidden relative text-white rounded-none">
-                  <Image src="https://picsum.photos/seed/sap/1200/500" alt="Featured Insight" width={1200} height={500} className="w-full object-cover"/>
+                  <Image src="https://picsum.photos/seed/sap/1200/500" alt="Featured Insight" width={1200} height={500} className="w-full object-cover h-[300px]"/>
                   <div className="absolute inset-0 bg-sap-blue/70 bg-gradient-to-t from-sap-blue/90 to-transparent"/>
                   <CardContent className="absolute bottom-0 p-6 space-y-3">
                      <Badge variant="secondary" className="bg-primary/80 text-primary-foreground">Featured Insight</Badge>
