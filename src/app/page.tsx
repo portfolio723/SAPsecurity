@@ -5,7 +5,7 @@ import { Header } from '@/components/layout/header';
 import { ArticleCard } from '@/components/article-card';
 import { NewsletterSignup } from '@/components/newsletter-signup';
 import { articles, expertise, testimonials } from '@/lib/data';
-import { communityActivity, topContributors, announcements, communityGroups } from '@/lib/community-data';
+import { communityActivity, topContributors, announcements, communityGroups, trendingTopics } from '@/lib/community-data';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -51,6 +51,7 @@ import {
   Hash,
   Megaphone,
   Info,
+  TrendingUp,
 } from 'lucide-react';
 import {
   Select,
@@ -115,7 +116,6 @@ export default function Home() {
                       <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
                         <Users2 /> Active Members
                       </h3>
-                      <Badge variant="secondary" className="bg-green-100 text-green-800">● 6 online</Badge>
                     </div>
                     <Tabs defaultValue="active" className="w-full">
                       <TabsList className="grid w-full grid-cols-3 h-auto">
@@ -167,12 +167,26 @@ export default function Home() {
                      <Button variant="link" className="w-full text-primary">Browse All Topics <ArrowRight className="ml-2 h-4 w-4" /></Button>
                   </CardFooter>
                 </Card>
+                
+                <Card className="shadow-lg rounded-none">
+                  <CardHeader>
+                    <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
+                      <TrendingUp /> Trending Topics
+                    </h3>
+                  </CardHeader>
+                  <CardContent className="flex flex-wrap gap-2">
+                    {trendingTopics.map(topic => (
+                      <Badge key={topic} variant="outline" className="cursor-pointer hover:bg-accent">{topic}</Badge>
+                    ))}
+                  </CardContent>
+                </Card>
+
               </div>
 
               {/* Center Column */}
               <div className="col-span-12 lg:col-span-6 space-y-8">
                 <Card className="border bg-card shadow-lg overflow-hidden relative text-white rounded-none">
-                  <Image src="/banner.jpg" alt="Featured Insight" width={1200} height={400} className="w-full object-cover h-[400px]"/>
+                  <Image src="/banner.jpg" alt="Featured Insight" width={1200} height={250} className="w-full object-cover h-[250px]"/>
                   <div className="absolute inset-0 bg-sap-blue/70 bg-gradient-to-t from-sap-blue/90 to-transparent"/>
                   <CardContent className="absolute bottom-0 p-6 space-y-3">
                      <Badge variant="secondary" className="bg-primary/80 text-primary-foreground">Featured Insight</Badge>
