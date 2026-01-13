@@ -74,37 +74,6 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         
-        <section className="w-full py-12 md:py-20 lg:py-28">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-6 text-center">
-              <div className="space-y-4">
-                <div className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900/20 dark:text-blue-300">
-                  <span className="mr-2 h-2 w-2 rounded-full bg-blue-500"></span>
-                  Trusted by 10,000+ SAP Professionals
-                </div>
-                <h1 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                  The Definitive Resource for
-                  <br />
-                  <span className="text-primary">SAP Security</span> Excellence
-                </h1>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  Expert insights, actionable frameworks, and practical tools for SAP GRC, IAM, cybersecurity, and compliance professionals worldwide.
-                </p>
-              </div>
-              <div className="flex items-center space-x-4">
-                <Button>
-                  Post Insight
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button variant="outline">
-                  <Play className="mr-2 h-4 w-4 fill-current" />
-                  Explore Insights
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section id="community" className="w-full bg-muted/50 py-12 md:py-20 lg:py-28">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
