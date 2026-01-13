@@ -116,6 +116,7 @@ export default function Home() {
                       <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
                         <Users2 /> Active Members
                       </h3>
+                      <Badge variant="secondary">● 6 online</Badge>
                     </div>
                     <Tabs defaultValue="active" className="w-full">
                       <TabsList className="grid w-full grid-cols-3 h-auto">
@@ -294,26 +295,7 @@ export default function Home() {
                 <Card className="shadow-lg rounded-none">
                   <CardHeader className="items-center text-center">
                     <div className="p-3 bg-muted rounded-full w-fit">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="lucide lucide-mail-question"
-                      >
-                        <path d="M22 10.5V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h12.5" />
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                        <path d="M18 15.28c.2-.4.5-.8.9-1.03" />
-                        <path d="M20.1 19.25c.3-.3.4-.6.3-1.02" />
-                        <path d="M16 19a3.001 3.001 0 0 1-2.12-5.12A3 3 0 0 1 19.12 15" />
-                        <path d="M19.1 19.25V22" />
-                        <path d="M19.1 14v-1" />
-                      </svg>
+                      <Mail className="h-6 w-6 text-foreground" />
                     </div>
                     <CardTitle className="font-headline text-2xl pt-2">Newsletter</CardTitle>
                     <CardDescription>Check Latest Updates</CardDescription>
