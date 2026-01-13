@@ -100,12 +100,6 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-
-            <div className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-3 md:gap-8">
-              {articles.slice(0, 3).map(article => (
-                <ArticleCard key={article.id} article={article} isTopArticle={true} />
-              ))}
-            </div>
           </div>
         </section>
 
@@ -177,7 +171,7 @@ export default function Home() {
               {/* Center Column */}
               <div className="col-span-12 lg:col-span-6 space-y-8">
                 <Card className="border bg-card shadow-lg overflow-hidden relative text-white rounded-none">
-                  <Image src="/banner.jpg" alt="Featured Insight" width={1200} height={500} className="w-full object-cover h-[500px]"/>
+                  <Image src="/banner.jpg" alt="Featured Insight" width={1200} height={400} className="w-full object-cover h-[400px]"/>
                   <div className="absolute inset-0 bg-sap-blue/70 bg-gradient-to-t from-sap-blue/90 to-transparent"/>
                   <CardContent className="absolute bottom-0 p-6 space-y-3">
                      <Badge variant="secondary" className="bg-primary/80 text-primary-foreground">Featured Insight</Badge>
