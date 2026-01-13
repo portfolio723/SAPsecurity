@@ -149,21 +149,6 @@ export default function Home() {
               <div className="lg:col-span-4">
                 <div className="sticky top-24 space-y-8">
                     <Card>
-                        <CardHeader>
-                            <CardTitle className="font-headline text-lg">Welcome To SAP Security Expert Community!</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-sm text-muted-foreground mb-4">These materials will help you participate and connect with other members.</p>
-                            <ul className="space-y-3 text-sm">
-                              <li className="flex items-center gap-3"><HelpCircle className="h-5 w-5 text-primary" /> <div><b>FAQs</b><br/>Find answers to basic questions...</div></li>
-                              <li className="flex items-center gap-3"><Book className="h-5 w-5 text-primary" /> <div><b>Resources</b><br/>Learn about community rules...</div></li>
-                              <li className="flex items-center gap-3"><Hand className="h-5 w-5 text-primary" /> <div><b>Welcome Corner</b><br/>Introduce yourself...</div></li>
-                              <li className="flex items-center gap-3"><Tag className="h-5 w-5 text-primary" /> <div><b>All SAP Managed Tags</b><br/>Check out the comprehensive A-Z list...</div></li>
-                            </ul>
-                        </CardContent>
-                    </Card>
-                    
-                    <Card>
                          <CardHeader>
                             <CardTitle className="font-headline text-lg">Top Liked Authors</CardTitle>
                         </CardHeader>
