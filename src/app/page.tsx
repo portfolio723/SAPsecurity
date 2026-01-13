@@ -137,7 +137,6 @@ export default function Home() {
                               <div>
                                 <p className="font-semibold text-sm">{contributor.name}</p>
                                 <p className="text-xs text-muted-foreground">{contributor.role}</p>
-                                <p className="text-xs text-green-600">🟢 Active {Math.floor(Math.random() * 59) + 1} mins ago</p>
                               </div>
                            </div>
                          ))}
@@ -270,7 +269,6 @@ export default function Home() {
                               </Avatar>
                               <div>
                                 <p className="font-semibold text-sm">{group.name}</p>
-                                <p className={`text-xs ${group.status.startsWith('🟢') ? 'text-green-600' : 'text-amber-600'}`}>{group.status}</p>
                               </div>
                             </div>
                           ))}
