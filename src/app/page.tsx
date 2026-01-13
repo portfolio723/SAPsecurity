@@ -5,7 +5,7 @@ import { Header } from '@/components/layout/header';
 import { ArticleCard } from '@/components/article-card';
 import { NewsletterSignup } from '@/components/newsletter-signup';
 import { articles, expertise, testimonials } from '@/lib/data';
-import { communityActivity, topContributors, trendingTopics, announcements, communityGroups } from '@/lib/community-data';
+import { communityActivity, topContributors, announcements, communityGroups } from '@/lib/community-data';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -117,9 +117,9 @@ export default function Home() {
                 <Card className="shadow-lg rounded-none">
                   <CardHeader>
                     <div className="flex items-center justify-between">
-                      <CardTitle className="flex items-center gap-2 font-headline text-lg">
+                      <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
                         <Users2 /> Active Members
-                      </CardTitle>
+                      </h3>
                       <Badge variant="secondary" className="bg-green-100 text-green-800">● 6 online</Badge>
                     </div>
                     <Tabs defaultValue="active" className="w-full">
@@ -151,9 +151,9 @@ export default function Home() {
 
                 <Card className="shadow-lg rounded-none">
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2 font-headline text-lg">
+                    <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
                       <Hash /> Recent Topics
-                    </CardTitle>
+                    </h3>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     {communityActivity.map(item => (
@@ -177,7 +177,7 @@ export default function Home() {
               {/* Center Column */}
               <div className="col-span-12 lg:col-span-6 space-y-8">
                 <Card className="shadow-lg overflow-hidden relative text-white rounded-none">
-                  <Image src="https://picsum.photos/seed/sap/1200/500" alt="Featured Insight" width={1200} height={500} className="w-full object-cover h-[300px]"/>
+                  <Image src="/banner.jpg" alt="Featured Insight" width={1200} height={500} className="w-full object-cover h-[400px]"/>
                   <div className="absolute inset-0 bg-sap-blue/70 bg-gradient-to-t from-sap-blue/90 to-transparent"/>
                   <CardContent className="absolute bottom-0 p-6 space-y-3">
                      <Badge variant="secondary" className="bg-primary/80 text-primary-foreground">Featured Insight</Badge>
@@ -193,6 +193,7 @@ export default function Home() {
                 </Card>
 
                 <div className="space-y-6">
+                  <h3 className="font-semibold tracking-tight font-headline text-lg text-left">Recent Activity</h3>
                   {communityActivity.map(item => (
                     <Card key={item.id} className="shadow-lg flex rounded-none">
                        <div className="w-1/4">
@@ -229,9 +230,9 @@ export default function Home() {
               <div className="col-span-12 lg:col-span-3 space-y-8">
                  <Card className="shadow-lg rounded-none">
                     <CardHeader>
-                      <CardTitle className="flex items-center gap-2 font-headline text-lg">
+                      <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
                         <Rss/> Announcements
-                      </CardTitle>
+                      </h3>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       {announcements.map((ann) => (
@@ -252,9 +253,9 @@ export default function Home() {
 
                  <Card className="shadow-lg rounded-none">
                     <CardHeader>
-                       <CardTitle className="flex items-center gap-2 font-headline text-lg">
+                       <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
                          <Users /> Community Groups
-                       </CardTitle>
+                       </h3>
                        <Tabs defaultValue="popular" className="w-full">
                         <TabsList className="grid w-full grid-cols-3 h-auto">
                           <TabsTrigger value="newest">Newest</TabsTrigger>
