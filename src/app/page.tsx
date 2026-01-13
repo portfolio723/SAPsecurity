@@ -44,12 +44,12 @@ import {
   Tag,
   Search,
   PlusCircle,
-  Rss,
   Users2,
   Clock,
   MessageCircle as MessageCircleIcon,
   Bookmark,
   Hash,
+  Megaphone,
 } from 'lucide-react';
 import {
   Select,
@@ -193,7 +193,7 @@ export default function Home() {
                 </Card>
 
                 <div className="space-y-6">
-                  <h3 className="font-semibold tracking-tight font-headline text-lg text-left">Recent Activity</h3>
+                  <h3 className="font-semibold tracking-tight font-headline text-lg text-left mb-6">Recent Activity</h3>
                   {communityActivity.map(item => (
                     <Card key={item.id} className="shadow-lg flex rounded-none">
                        <div className="w-1/4">
@@ -231,7 +231,7 @@ export default function Home() {
                  <Card className="shadow-lg rounded-none">
                     <CardHeader>
                       <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
-                        <Rss/> Announcements
+                        <Megaphone/> Announcements
                       </h3>
                     </CardHeader>
                     <CardContent className="space-y-4">
