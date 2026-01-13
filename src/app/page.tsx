@@ -107,6 +107,29 @@ export default function Home() {
 
         <section id="community" className="w-full bg-muted/50 py-12 md:py-20 lg:py-28">
           <div className="container mx-auto px-4 md:px-6">
+            <div className="flex justify-between items-center mb-8">
+                <h2 className="text-2xl font-bold font-headline">Community</h2>
+                <div className="flex items-center gap-4">
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                    <Input placeholder="Search Community" className="pl-10 w-64" />
+                  </div>
+                  <Select>
+                    <SelectTrigger className="w-[180px]">
+                      <SelectValue placeholder="Latest" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="latest">Latest</SelectItem>
+                      <SelectItem value="popular">Popular</SelectItem>
+                      <SelectItem value="unanswered">Unanswered</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <Button>
+                    <PlusCircle className="mr-2 h-4 w-4" />
+                    Post an Insight
+                  </Button>
+                </div>
+              </div>
             <div className="grid grid-cols-12 gap-8">
               {/* Left Column */}
               <div className="col-span-12 lg:col-span-3 space-y-8">
@@ -116,7 +139,6 @@ export default function Home() {
                       <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
                         <Users2 /> Active Members
                       </h3>
-                      <Badge variant="secondary">● 6 online</Badge>
                     </div>
                     <Tabs defaultValue="active" className="w-full">
                       <TabsList className="grid w-full grid-cols-3 h-auto">
