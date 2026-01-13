@@ -69,8 +69,8 @@ export type TopContributor = {
 export const topContributors: TopContributor[] = [
     {
         avatarUrl: "https://i.pravatar.cc/150?u=a042581f4e29026704d",
-        name: "Lakshmi_Pathi",
-        role: "SAP Security Lead",
+        name: "Ramesh_K",
+        role: "SAP GRC Consultant",
         likes: 46,
     },
     {
@@ -81,10 +81,59 @@ export const topContributors: TopContributor[] = [
     },
     {
         avatarUrl: "https://i.pravatar.cc/150?u=a042581f4e29026706d",
-        name: "Kinsbrunner",
-        role: "SAP Cloud Security",
+        name: "Lakshmi_Pathi",
+        role: "SAP IAM Specialist",
         likes: 34,
     },
 ];
 
-    
+export type Announcement = {
+    title: string;
+    date: string;
+    likes: number;
+    comments: number;
+};
+
+export const announcements: Announcement[] = [
+    {
+        title: "10 Best Practices for SAP GRC Role Design",
+        date: "April 2026",
+        likes: 18,
+        comments: 7,
+    },
+    {
+        title: "SAP IAG Roadmap – What to Expect Next",
+        date: "March 2026",
+        likes: 23,
+        comments: 11,
+    }
+];
+
+export type CommunityGroup = {
+    avatarUrl: string;
+    name: string;
+    status: string;
+};
+
+export const communityGroups: CommunityGroup[] = [
+    {
+        avatarUrl: "https://i.pravatar.cc/150?u=a042581f4e29026707d",
+        name: "SAP GRC Practitioners",
+        status: "🟢 Active 20 mins ago",
+    },
+    {
+        avatarUrl: "https://i.pravatar.cc/150?u=a042581f4e29026708d",
+        name: "SAP Cloud Security",
+        status: "🟡 Active 3 hours ago",
+    },
+    {
+        avatarUrl: "https://i.pravatar.cc/150?u=a042581f4e29026709d",
+        name: "SAP License Optimization",
+        status: "🟢 Active today",
+    },
+    {
+        avatarUrl: "https://i.pravatar.cc/150?u=a042581f4e29026710d",
+        name: "IAM & IAG Experts",
+        status: "🟡 Active yesterday",
+    },
+];

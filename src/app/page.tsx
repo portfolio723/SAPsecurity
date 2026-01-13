@@ -4,7 +4,7 @@ import { Header } from '@/components/layout/header';
 import { ArticleCard } from '@/components/article-card';
 import { NewsletterSignup } from '@/components/newsletter-signup';
 import { articles, expertise, testimonials } from '@/lib/data';
-import { communityActivity, topContributors, trendingTopics } from '@/lib/community-data';
+import { communityActivity, topContributors, trendingTopics, announcements, communityGroups } from '@/lib/community-data';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -44,6 +44,10 @@ import {
   Search,
   PlusCircle,
   Rss,
+  Users2,
+  Clock,
+  MessageCircle as MessageCircleIcon,
+  Bookmark,
 } from 'lucide-react';
 import {
   Select,
@@ -99,6 +103,184 @@ export default function Home() {
               {articles.slice(0, 3).map(article => (
                 <ArticleCard key={article.id} article={article} isTopArticle={true} />
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="community" className="w-full bg-muted/50 py-12 md:py-20 lg:py-28">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-12 gap-8">
+              {/* Left Column */}
+              <div className="col-span-12 lg:col-span-3 space-y-8">
+                <Card className="shadow-lg">
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="flex items-center gap-2 font-headline text-lg">
+                        <Users2 /> Active Members
+                      </CardTitle>
+                      <Badge variant="secondary" className="bg-green-100 text-green-800">● 6 online</Badge>
+                    </div>
+                    <Tabs defaultValue="active" className="w-full">
+                      <TabsList className="grid w-full grid-cols-3 h-auto">
+                        <TabsTrigger value="newest">Newest</TabsTrigger>
+                        <TabsTrigger value="active">Active</TabsTrigger>
+                        <TabsTrigger value="top">Top</TabsTrigger>
+                      </TabsList>
+                      <TabsContent value="active" className="mt-4 space-y-4">
+                         {topContributors.map(contributor => (
+                           <div key={contributor.name} className="flex items-center gap-3">
+                              <Avatar className="h-10 w-10">
+                                <AvatarImage src={contributor.avatarUrl} alt={contributor.name} />
+                                <AvatarFallback>{contributor.name.charAt(0)}</AvatarFallback>
+                              </Avatar>
+                              <div>
+                                <p className="font-semibold text-sm">{contributor.name}</p>
+                                <p className="text-xs text-muted-foreground">{contributor.role}</p>
+                                <p className="text-xs text-green-600">🟢 Active {Math.floor(Math.random() * 59) + 1} mins ago</p>
+                              </div>
+                           </div>
+                         ))}
+                      </TabsContent>
+                    </Tabs>
+                  </CardHeader>
+                  <CardFooter>
+                    <Button variant="link" className="w-full text-primary">View All Members <ArrowRight className="ml-2 h-4 w-4" /></Button>
+                  </CardFooter>
+                </Card>
+
+                <Card className="shadow-lg">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 font-headline text-lg">
+                      <BrainCircuit /> Recent Topics
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    {communityActivity.map(item => (
+                       <div key={item.id} className="flex items-start gap-3 text-sm">
+                          <Avatar className="h-8 w-8">
+                            <AvatarFallback>{item.author.charAt(0)}</AvatarFallback>
+                          </Avatar>
+                          <div>
+                            <p className="font-semibold hover:text-primary cursor-pointer">{item.title.substring(0, 30)}...</p>
+                            <p className="text-xs text-muted-foreground">By {item.author}</p>
+                          </div>
+                       </div>
+                    ))}
+                  </CardContent>
+                  <CardFooter>
+                     <Button variant="link" className="w-full text-primary">Browse All Topics <ArrowRight className="ml-2 h-4 w-4" /></Button>
+                  </CardFooter>
+                </Card>
+              </div>
+
+              {/* Center Column */}
+              <div className="col-span-12 lg:col-span-6 space-y-8">
+                <Card className="shadow-lg overflow-hidden relative text-white">
+                  <Image src="https://picsum.photos/seed/sap/1200/400" alt="Featured Insight" width={1200} height={400} className="w-full object-cover"/>
+                  <div className="absolute inset-0 bg-sap-blue/70 bg-gradient-to-t from-sap-blue/90 to-transparent"/>
+                  <CardContent className="absolute bottom-0 p-6 space-y-3">
+                     <Badge variant="secondary" className="bg-primary/80 text-primary-foreground">Featured Insight</Badge>
+                     <h2 className="text-2xl font-bold font-headline">Optimizing SAP License Compliance: STAR vs LAW Explained</h2>
+                     <p className="text-sm text-white/80">Understand how SAP licensing measurements actually work in real audits and how to reduce compliance risk without over-licensing.</p>
+                     <div className="flex items-center gap-4 text-xs text-white/80">
+                       <span className="flex items-center gap-1"><Clock size={14} /> 6 min read</span>
+                       <span className="flex items-center gap-1"><ThumbsUp size={14} /> 48</span>
+                       <span className="flex items-center gap-1"><MessageCircleIcon size={14} /> 12</span>
+                     </div>
+                      <Button variant="default" className="bg-primary">Read Full Insight <ArrowRight className="ml-2 h-4 w-4" /></Button>
+                  </CardContent>
+                </Card>
+
+                <div className="space-y-6">
+                  {communityActivity.map(item => (
+                    <Card key={item.id} className="shadow-lg flex">
+                       <div className="w-1/4">
+                          <Image src={`https://picsum.photos/seed/${item.id}/200/200`} alt={item.title} width={200} height={200} className="object-cover h-full w-full"/>
+                       </div>
+                       <div className="w-3/4 p-4 flex flex-col">
+                          <Badge variant="outline" className="w-fit mb-2">{item.category === 'SAP GRC' ? 'Security Q&A' : 'Community Insight'}</Badge>
+                          <h3 className="font-bold font-headline">{item.title}</h3>
+                          <p className="text-sm text-muted-foreground flex-grow my-2">{item.excerpt}</p>
+                          <div className="text-xs text-muted-foreground flex items-center justify-between">
+                            <span>👤 {item.author} • {item.postedTime}</span>
+                            <div className="flex items-center gap-3">
+                              <span className="flex items-center gap-1"><ThumbsUp size={14} /> {item.likes}</span>
+                              <span className="flex items-center gap-1"><MessageCircleIcon size={14} /> {item.replies}</span>
+                            </div>
+                          </div>
+                          <Button variant="link" className="p-0 h-auto justify-start mt-2 text-primary">
+                            {item.category === 'SAP GRC' ? 'View Answers' : 'Read & Join Discussion'}
+                            <ArrowRight className="ml-1 h-4 w-4" />
+                          </Button>
+                       </div>
+                    </Card>
+                  ))}
+                </div>
+                 <div className="text-center">
+                    <Button variant="outline">
+                      View All Community Activity
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Button>
+                  </div>
+              </div>
+
+              {/* Right Column */}
+              <div className="col-span-12 lg:col-span-3 space-y-8">
+                 <Card className="shadow-lg">
+                    <CardHeader>
+                      <CardTitle className="flex items-center gap-2 font-headline text-lg">
+                        <Rss/> Announcements
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      {announcements.map((ann) => (
+                        <div key={ann.title} className="text-sm">
+                           <p className="font-semibold hover:text-primary cursor-pointer">{ann.title}</p>
+                           <div className="flex items-center gap-4 text-xs text-muted-foreground mt-1">
+                             <span>{ann.date}</span>
+                             <span className="flex items-center gap-1"><ThumbsUp size={12} /> {ann.likes}</span>
+                             <span className="flex items-center gap-1"><MessageCircleIcon size={12} /> {ann.comments}</span>
+                           </div>
+                        </div>
+                      ))}
+                    </CardContent>
+                    <CardFooter>
+                       <Button variant="link" className="w-full text-primary">View All Announcements <ArrowRight className="ml-2 h-4 w-4" /></Button>
+                    </CardFooter>
+                 </Card>
+
+                 <Card className="shadow-lg">
+                    <CardHeader>
+                       <CardTitle className="flex items-center gap-2 font-headline text-lg">
+                         <Users /> Community Groups
+                       </CardTitle>
+                       <Tabs defaultValue="popular" className="w-full">
+                        <TabsList className="grid w-full grid-cols-3 h-auto">
+                          <TabsTrigger value="newest">Newest</TabsTrigger>
+                          <TabsTrigger value="active">Active</TabsTrigger>
+                          <TabsTrigger value="popular">Popular</TabsTrigger>
+                        </TabsList>
+                        <TabsContent value="popular" className="mt-4 space-y-4">
+                          {communityGroups.map(group => (
+                            <div key={group.name} className="flex items-center gap-3">
+                              <Avatar className="h-10 w-10">
+                                <AvatarImage src={group.avatarUrl} alt={group.name} />
+                                <AvatarFallback>{group.name.charAt(0)}</AvatarFallback>
+                              </Avatar>
+                              <div>
+                                <p className="font-semibold text-sm">{group.name}</p>
+                                <p className={`text-xs ${group.status.startsWith('🟢') ? 'text-green-600' : 'text-amber-600'}`}>{group.status}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </TabsContent>
+                       </Tabs>
+                    </CardHeader>
+                    <CardFooter>
+                      <Button variant="link" className="w-full text-primary">View All Groups <ArrowRight className="ml-2 h-4 w-4" /></Button>
+                    </CardFooter>
+                 </Card>
+              </div>
             </div>
           </div>
         </section>
