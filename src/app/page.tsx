@@ -103,18 +103,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="community-spotlight" className="w-full bg-muted/50">
+        <section id="community-spotlight" className="w-full bg-muted/50 py-12 md:py-20">
           <div className="container px-4 md:px-6">
-             <div className="relative h-48 w-full md:h-64 my-12">
-                <Image
-                src="/banner.jpg"
-                alt="Community Banner"
-                fill
-                style={{objectFit: "cover"}}
-                className="rounded-lg"
-                data-ai-hint="abstract banner"
-                />
-            </div>
             <div className="mb-8 flex flex-col items-center justify-between gap-4 md:flex-row md:gap-8">
               <div className="text-center md:text-left">
                   <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">
