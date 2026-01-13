@@ -107,15 +107,15 @@ export default function Home() {
 
         <section id="community" className="w-full bg-muted/50 py-12 md:py-20 lg:py-28">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="flex justify-between items-center mb-8">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
                 <h2 className="text-2xl font-bold font-headline">Community</h2>
-                <div className="flex items-center gap-4">
-                  <div className="relative">
+                <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 w-full md:w-auto">
+                  <div className="relative flex-grow">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                    <Input placeholder="Search Community" className="pl-10 w-64" />
+                    <Input placeholder="Search Community" className="pl-10 w-full" />
                   </div>
                   <Select>
-                    <SelectTrigger className="w-[180px]">
+                    <SelectTrigger className="w-full md:w-[180px]">
                       <SelectValue placeholder="Latest" />
                     </SelectTrigger>
                     <SelectContent>
@@ -124,7 +124,7 @@ export default function Home() {
                       <SelectItem value="unanswered">Unanswered</SelectItem>
                     </SelectContent>
                   </Select>
-                  <Button>
+                  <Button className="w-full md:w-auto">
                     <PlusCircle className="mr-2 h-4 w-4" />
                     Post an Insight
                   </Button>
