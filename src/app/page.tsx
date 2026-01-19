@@ -1,4 +1,5 @@
 
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Header } from '@/components/layout/header';
@@ -66,6 +67,7 @@ import { CommunityActivityCard } from '@/components/community-activity-card';
 import { TopContributorItem } from '@/components/top-contributor-item';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Input } from '@/components/ui/input';
+import { Logo } from '@/components/icons';
 
 
 export default function Home() {
@@ -470,6 +472,7 @@ export default function Home() {
         <div className="container grid grid-cols-2 gap-8 px-4 md:grid-cols-5 md:px-6">
           <div className="col-span-2 space-y-4 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
+              <Logo />
               <span className="font-bold text-white">SAP Security Expert</span>
             </Link>
             <p>
