@@ -473,7 +473,6 @@ export default function Home() {
           <div className="col-span-2 space-y-4 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
               <Logo />
-              <span className="font-bold text-white">SAP Security Expert</span>
             </Link>
             <p>
               The definitive resource for SAP Security excellence.
