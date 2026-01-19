@@ -1,5 +1,4 @@
 
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { Header } from '@/components/layout/header';
@@ -182,7 +181,7 @@ export default function Home() {
               {/* Center Column */}
               <div className="col-span-12 lg:col-span-6 space-y-8">
                 <Card className="border bg-card shadow-lg overflow-hidden relative text-white rounded-none">
-                  <Image src="/banner.jpg" alt="Featured Insight" width={1200} height={300} className="w-full object-cover h-[300px]"/>
+                  <Image src="/banner.jpg" alt="Featured Insight" width={1200} height={350} className="w-full object-cover h-[350px]"/>
                   <div className="absolute inset-0 bg-sap-blue/70 bg-gradient-to-t from-sap-blue/90 to-transparent"/>
                   <CardContent className="absolute bottom-0 p-6 space-y-3">
                      <Badge variant="secondary" className="bg-primary/80 text-primary-foreground">Featured Insight</Badge>
@@ -233,6 +232,7 @@ export default function Home() {
 
               {/* Right Column */}
               <div className="col-span-12 lg:col-span-3 space-y-8">
+                 <AdsensePlaceholder height={280} />
                  <Card className="shadow-lg rounded-none">
                     <CardHeader>
                       <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
