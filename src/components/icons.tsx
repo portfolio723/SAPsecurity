@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 
 export function Logo(props: Omit<React.ComponentProps<typeof Image>, 'src' | 'alt'>) {
@@ -11,5 +13,3 @@ export function Logo(props: Omit<React.ComponentProps<typeof Image>, 'src' | 'al
     />
   );
 }
-
-    
