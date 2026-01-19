@@ -19,7 +19,7 @@ type ArticleCardProps = {
 export function ArticleCard({ article, isTopArticle }: ArticleCardProps) {
   return (
     <Link href="#" className="group">
-      <Card className="flex h-full flex-col overflow-hidden transition-shadow duration-300 hover:shadow-lg">
+      <Card className="flex h-full flex-col overflow-hidden transition-shadow duration-300 hover:shadow-lg text-left">
         <div className="relative">
           <Image
             src={article.imageUrl}
@@ -38,7 +38,7 @@ export function ArticleCard({ article, isTopArticle }: ArticleCardProps) {
             )}
           </div>
         </div>
-        <div className="flex flex-1 flex-col p-6 text-left">
+        <div className="flex flex-1 flex-col p-6">
           <CardTitle className="font-headline pt-4 text-lg font-bold">{article.title}</CardTitle>
           <CardContent className="flex-grow p-0 pt-4">
             <CardDescription>{article.description}</CardDescription>
