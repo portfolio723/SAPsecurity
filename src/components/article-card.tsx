@@ -40,7 +40,7 @@ export function ArticleCard({ article, isTopArticle }: ArticleCardProps) {
         </div>
         <div className="flex flex-1 flex-col p-6">
           <CardTitle className="font-headline pt-4 text-lg font-bold">{article.title}</CardTitle>
-          <CardContent className="flex-grow p-0 pt-4">
+          <CardContent className="flex-grow p-0 pt-4 text-left">
             <CardDescription>{article.description}</CardDescription>
             <div className="mt-4 flex items-center space-x-4 text-sm text-muted-foreground">
                 <div className="flex items-center">
