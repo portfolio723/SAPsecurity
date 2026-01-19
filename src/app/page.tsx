@@ -104,7 +104,7 @@ export default function Home() {
             <div className="grid grid-cols-12 gap-8">
               {/* Left Column */}
               <div className="col-span-12 lg:col-span-3 space-y-8">
-                <AdsensePlaceholder height={280} />
+                
                 <Card className="shadow-lg rounded-none">
                   <CardHeader>
                     <div className="flex items-center justify-between">
@@ -138,6 +138,8 @@ export default function Home() {
                     <Button variant="link" className="w-full text-primary">View All Members <ArrowRight className="ml-2 h-4 w-4" /></Button>
                   </CardFooter>
                 </Card>
+
+                <AdsensePlaceholder height={280} />
 
                 <Card className="shadow-lg rounded-none">
                   <CardHeader>
@@ -232,7 +234,7 @@ export default function Home() {
 
               {/* Right Column */}
               <div className="col-span-12 lg:col-span-3 space-y-8">
-                 <AdsensePlaceholder height={280} />
+                 
                  <Card className="shadow-lg rounded-none">
                     <CardHeader>
                       <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
@@ -255,7 +257,7 @@ export default function Home() {
                        <Button variant="link" className="w-full text-primary">View All Announcements <ArrowRight className="ml-2 h-4 w-4" /></Button>
                     </CardFooter>
                  </Card>
-
+                 <AdsensePlaceholder height={280} />
                  <Card className="shadow-lg rounded-none">
                     <CardHeader>
                        <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
