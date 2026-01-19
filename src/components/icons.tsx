@@ -7,8 +7,8 @@ export function Logo(props: Omit<React.ComponentProps<typeof Image>, 'src' | 'al
     <Image
       src="/we.png"
       alt="SAP Security Expert Hub Logo"
-      width={50}
-      height={50}
+      width={150}
+      height={150}
       {...props}
     />
   );
