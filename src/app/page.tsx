@@ -68,6 +68,7 @@ import { TopContributorItem } from '@/components/top-contributor-item';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Input } from '@/components/ui/input';
 import { Logo } from '@/components/icons';
+import { AdsensePlaceholder } from '@/components/adsense-placeholder';
 
 
 export default function Home() {
@@ -254,6 +255,8 @@ export default function Home() {
                     </CardFooter>
                  </Card>
 
+                 <AdsensePlaceholder height={280} />
+
                  <Card className="shadow-lg rounded-none">
                     <CardHeader>
                        <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
@@ -349,6 +352,12 @@ export default function Home() {
             <div className="mt-8 text-center md:mt-12">
               <Button variant="outline">View All Insights</Button>
             </div>
+          </div>
+        </section>
+
+        <section className="w-full py-12 md:py-16">
+          <div className="container px-4 md:px-6">
+            <AdsensePlaceholder height={100} />
           </div>
         </section>
 
