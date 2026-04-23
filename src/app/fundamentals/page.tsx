@@ -25,7 +25,9 @@ import {
   Twitter,
   Mail,
   Zap,
-  ChevronRight
+  ChevronRight,
+  Target,
+  Trophy
 } from 'lucide-react';
 import { Logo } from '@/components/icons';
 
@@ -54,17 +56,32 @@ export default function FundamentalsPage() {
           <div className="container px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-headline font-bold mb-4">Your Learning Roadmap</h2>
-              <p className="text-muted-foreground max-w-[600px] mx-auto mb-8">
+              <p className="text-muted-foreground max-w-[600px] mx-auto mb-10">
                 Follow this guided sequence to build your knowledge. Complete each phase to unlock the next level of expertise.
               </p>
               
-              {/* Progress Indicator */}
-              <div className="max-w-md mx-auto mb-16 space-y-2">
-                <div className="flex justify-between text-sm font-medium">
-                  <span>Your Progress</span>
-                  <span>Step 1 of 5 (20%)</span>
+              {/* Progress & Milestone Tracker */}
+              <div className="max-w-xl mx-auto mb-16 space-y-4 bg-white p-6 border shadow-sm relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-2 opacity-5">
+                   <Trophy className="w-24 h-24" />
                 </div>
-                <Progress value={20} className="h-2" />
+                <div className="flex items-center justify-between text-sm font-bold uppercase tracking-tight relative z-10">
+                  <div className="flex items-center gap-2">
+                    <Target className="w-5 h-5 text-primary" />
+                    <span className="text-muted-foreground">Current Goal:</span>
+                    <span className="text-foreground">Step 1 — SAP Basics</span>
+                  </div>
+                  <span className="text-primary font-mono">20% COMPLETE</span>
+                </div>
+                <Progress value={20} className="h-3 rounded-none bg-muted" />
+                <div className="flex justify-between items-center pt-2 relative z-10">
+                   <p className="text-xs text-muted-foreground font-medium">
+                     You are here: <span className="text-primary">Phase 1</span>
+                   </p>
+                   <p className="text-xs font-bold text-foreground flex items-center gap-1">
+                     Next Milestone: <span className="text-muted-foreground font-normal">Cybersecurity 101</span> <ArrowRight className="w-3 h-3 text-primary" />
+                   </p>
+                </div>
               </div>
             </div>
             
@@ -84,11 +101,17 @@ export default function FundamentalsPage() {
                 </CardHeader>
                 <CardContent className="text-sm font-medium flex-grow">
                   Understand SAP system concepts, navigation, and core business modules. This is the bedrock of your career.
+                  <div className="mt-4 p-2 bg-muted/50 border-l-2 border-primary text-[11px] text-muted-foreground">
+                    Estimated Time: 4 Hours
+                  </div>
                 </CardContent>
-                <CardFooter className="pt-4">
+                <CardFooter className="pt-4 flex flex-col gap-2">
                   <Button className="w-full bg-primary hover:bg-primary/90 rounded-none group py-6 text-base font-bold">
                     Start Here <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Button>
+                  <p className="text-[10px] text-center text-muted-foreground uppercase tracking-tighter">
+                    Unlocks Step 2: Cybersecurity 101
+                  </p>
                 </CardFooter>
               </Card>
 
