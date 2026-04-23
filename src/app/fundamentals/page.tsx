@@ -24,9 +24,6 @@ import {
   UserPlus,
   Settings,
   Info,
-  Linkedin,
-  Youtube,
-  Twitter,
   UserCircle,
   HardHat,
   ShieldAlert
@@ -60,78 +57,83 @@ export default function FundamentalsPage() {
     <div className="flex min-h-screen flex-col bg-white text-foreground">
       <Header />
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="w-full bg-sap-blue py-16 md:py-24 text-white">
+        {/* 1. Hero Section - Strong & Clear */}
+        <section className="w-full bg-sap-blue py-20 md:py-32 text-white">
           <div className="container px-4 md:px-6 text-center">
-            <h1 className="text-4xl md:text-6xl font-headline font-bold mb-6">
-              SAP Security Fundamentals
+            <h1 className="text-4xl md:text-7xl font-headline font-bold mb-6 tracking-tight">
+              Master SAP Security
             </h1>
-            <p className="max-w-[800px] mx-auto text-lg md:text-xl text-white/80 mb-8">
-              Start your journey to becoming an SAP Security expert. A structured, one-stop resource for novices and IT professionals pivoting to the SAP ecosystem.
+            <p className="max-w-[800px] mx-auto text-lg md:text-2xl text-white/80 mb-10 leading-relaxed">
+              Your structured journey from novice to SAP Security expert. One stop, zero clutter.
             </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-none px-8" asChild>
-              <a href="#path-selector">Get Started</a>
-            </Button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-none px-10 py-8 text-lg font-bold uppercase tracking-wider" asChild>
+                <a href="#path-selector">Start Learning Now</a>
+              </Button>
+              <Button variant="outline" size="lg" className="rounded-none px-10 py-8 border-white text-white hover:bg-white hover:text-sap-blue text-lg" asChild>
+                <a href="#roadmap">View Roadmap</a>
+              </Button>
+            </div>
           </div>
         </section>
 
-        {/* Persona Selector - Personalization */}
-        <section id="path-selector" className="w-full py-12 bg-white border-b">
+        {/* 2. Choose Your Path - Personalization First */}
+        <section id="path-selector" className="w-full py-20 bg-white border-b">
           <div className="container px-4 md:px-6">
-            <div className="text-center mb-10">
-              <h2 className="text-2xl font-headline font-bold mb-2">👉 Choose Your Path</h2>
-              <p className="text-muted-foreground">Select who you are to personalize your learning experience.</p>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">👉 Step 0: Choose Your Persona</h2>
+              <p className="text-muted-foreground text-lg">Tell us who you are so we can tailor your starting point.</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <button 
                 onClick={() => setPersona('beginner')}
-                className={`p-6 border-2 text-left transition-all hover:shadow-md flex flex-col items-center text-center gap-4 ${persona === 'beginner' ? 'border-primary bg-primary/5' : 'border-muted hover:border-primary/50'}`}
+                className={`p-8 border-2 text-left transition-all hover:shadow-xl flex flex-col items-center text-center gap-6 ${persona === 'beginner' ? 'border-primary bg-primary/5 shadow-lg' : 'border-muted hover:border-primary/50'}`}
               >
-                <div className={`p-3 rounded-full ${persona === 'beginner' ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'}`}>
-                  <UserCircle className="w-8 h-8" />
+                <div className={`p-5 rounded-full ${persona === 'beginner' ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'}`}>
+                  <UserCircle className="w-10 h-10" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg">I am a Beginner</h3>
-                  <p className="text-xs text-muted-foreground mt-1">New to IT or SAP environment</p>
+                  <h3 className="font-bold text-xl mb-2">I am a Beginner</h3>
+                  <p className="text-sm text-muted-foreground">New to IT or SAP environment</p>
                 </div>
               </button>
 
               <button 
                 onClick={() => setPersona('basis')}
-                className={`p-6 border-2 text-left transition-all hover:shadow-md flex flex-col items-center text-center gap-4 ${persona === 'basis' ? 'border-primary bg-primary/5' : 'border-muted hover:border-primary/50'}`}
+                className={`p-8 border-2 text-left transition-all hover:shadow-xl flex flex-col items-center text-center gap-6 ${persona === 'basis' ? 'border-primary bg-primary/5 shadow-lg' : 'border-muted hover:border-primary/50'}`}
               >
-                <div className={`p-3 rounded-full ${persona === 'basis' ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'}`}>
-                  <HardHat className="w-8 h-8" />
+                <div className={`p-5 rounded-full ${persona === 'basis' ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'}`}>
+                  <HardHat className="w-10 h-10" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg">I am Basis Admin</h3>
-                  <p className="text-xs text-muted-foreground mt-1">Experienced in SAP Operations</p>
+                  <h3 className="font-bold text-xl mb-2">I am Basis Admin</h3>
+                  <p className="text-sm text-muted-foreground">Experienced in SAP Operations</p>
                 </div>
               </button>
 
               <button 
                 onClick={() => setPersona('cyber')}
-                className={`p-6 border-2 text-left transition-all hover:shadow-md flex flex-col items-center text-center gap-4 ${persona === 'cyber' ? 'border-primary bg-primary/5' : 'border-muted hover:border-primary/50'}`}
+                className={`p-8 border-2 text-left transition-all hover:shadow-xl flex flex-col items-center text-center gap-6 ${persona === 'cyber' ? 'border-primary bg-primary/5 shadow-lg' : 'border-muted hover:border-primary/50'}`}
               >
-                <div className={`p-3 rounded-full ${persona === 'cyber' ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'}`}>
-                  <ShieldAlert className="w-8 h-8" />
+                <div className={`p-5 rounded-full ${persona === 'cyber' ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'}`}>
+                  <ShieldAlert className="w-10 h-10" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg">I am Cyber Pro</h3>
-                  <p className="text-xs text-muted-foreground mt-1">New to SAP specific security</p>
+                  <h3 className="font-bold text-xl mb-2">I am Cyber Pro</h3>
+                  <p className="text-sm text-muted-foreground">New to SAP specific security</p>
                 </div>
               </button>
             </div>
 
-            <div className="mt-12 p-8 bg-muted/30 border-l-4 border-primary max-w-4xl mx-auto animate-fade-in">
-              <div className="flex gap-4 items-start">
+            <div className="mt-16 p-10 bg-muted/30 border-l-8 border-primary max-w-5xl mx-auto animate-fade-in shadow-sm">
+              <div className="flex gap-6 items-start">
                 <div className="mt-1">
-                  <Badge variant="outline" className="rounded-none border-primary text-primary uppercase font-bold text-[10px]">Your Strategy</Badge>
+                  <Badge variant="outline" className="rounded-none border-primary text-primary uppercase font-black text-xs px-3 py-1">Your Recommended Strategy</Badge>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold mb-2">Welcome, {personaContent[persona].title}</h4>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <h4 className="text-2xl font-bold mb-3">Welcome, {personaContent[persona].title}</h4>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
                     {personaContent[persona].desc} <span className="text-foreground font-bold">{personaContent[persona].strategy}</span>
                   </p>
                 </div>
@@ -140,254 +142,203 @@ export default function FundamentalsPage() {
           </div>
         </section>
 
-        {/* Learning Roadmap */}
-        <section id="roadmap" className="w-full py-16 md:py-24 bg-muted/30">
+        {/* 3. Learning Roadmap - Progress & Sequence */}
+        <section id="roadmap" className="w-full py-20 md:py-28 bg-muted/20">
           <div className="container px-4 md:px-6">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-headline font-bold mb-4">Your Learning Roadmap</h2>
-              <p className="text-muted-foreground max-w-[600px] mx-auto mb-10">
-                Follow this guided sequence to build your knowledge. Complete each phase to unlock the next level of expertise.
-              </p>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-headline font-bold mb-6">Your Step-by-Step Roadmap</h2>
               
-              {/* Progress & Milestone Tracker */}
-              <div className="max-w-xl mx-auto mb-16 space-y-4 bg-white p-6 border shadow-sm relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-2 opacity-5">
-                   <Trophy className="w-24 h-24" />
+              {/* Progress System Card */}
+              <div className="max-w-2xl mx-auto mb-20 bg-white p-8 border shadow-xl relative">
+                <div className="absolute top-0 right-0 p-4 opacity-10">
+                   <Trophy className="w-32 h-32" />
                 </div>
-                <div className="flex items-center justify-between text-sm font-bold uppercase tracking-tight relative z-10">
+                <div className="flex items-center justify-between text-xs font-black uppercase tracking-widest mb-4 relative z-10">
                   <div className="flex items-center gap-2">
                     <Target className="w-5 h-5 text-primary" />
-                    <span className="text-muted-foreground">Current Goal:</span>
+                    <span className="text-muted-foreground">Current Milestone:</span>
                     <span className="text-foreground">Step 1 — SAP Basics</span>
                   </div>
-                  <span className="text-primary font-mono">20% COMPLETE</span>
+                  <span className="text-primary font-mono text-sm">20% COMPLETE</span>
                 </div>
-                <Progress value={20} className="h-3 rounded-none bg-muted" />
-                <div className="flex justify-between items-center pt-2 relative z-10">
-                   <p className="text-xs text-muted-foreground font-medium">
+                <Progress value={20} className="h-4 rounded-none bg-muted mb-6" />
+                <div className="flex justify-between items-center relative z-10">
+                   <p className="text-sm text-muted-foreground font-semibold">
                      You are here: <span className="text-primary font-bold">Step 1</span>
                    </p>
-                   <p className="text-xs font-bold text-foreground flex items-center gap-1">
-                     Next Milestone: <span className="text-muted-foreground font-normal">Cybersecurity 101</span> <ArrowRight className="w-3 h-3 text-primary" />
+                   <p className="text-sm font-bold text-foreground flex items-center gap-2">
+                     Goal: <span className="text-muted-foreground font-normal">Cybersecurity 101</span> <ArrowRight className="w-4 h-4 text-primary" />
                    </p>
                 </div>
               </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-6 relative items-stretch">
-              {/* Step 1 - ACTIVE/UNLOCKED */}
-              <Card className="rounded-none border-2 border-primary shadow-[0_0_25px_rgba(242,81,64,0.3)] scale-105 z-10 relative bg-white flex flex-col">
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <Badge className="bg-primary text-white border-none px-4 py-1 rounded-none uppercase text-[10px] font-bold tracking-widest shadow-lg">
-                    CURRENT STEP
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-stretch">
+              {/* Step 1 - DOMINANT START */}
+              <Card className="rounded-none border-4 border-primary shadow-[0_0_40px_rgba(242,81,64,0.25)] scale-110 z-20 relative bg-white flex flex-col">
+                <div className="absolute -top-5 left-1/2 -translate-x-1/2">
+                  <Badge className="bg-primary text-white border-none px-6 py-2 rounded-none uppercase text-xs font-black tracking-widest shadow-xl">
+                    START HERE
                   </Badge>
                 </div>
-                <CardHeader className="pb-2 pt-8 text-center">
-                  <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold mb-4 text-xl shadow-md mx-auto">
+                <CardHeader className="pb-4 pt-10 text-center">
+                  <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center font-black mb-6 text-2xl shadow-lg mx-auto">
                     1
                   </div>
-                  <CardTitle className="text-xl font-headline font-bold">SAP Basics</CardTitle>
+                  <CardTitle className="text-2xl font-headline font-bold">SAP Basics</CardTitle>
                 </CardHeader>
-                <CardContent className="text-sm font-medium flex-grow text-center px-6">
-                  Understand SAP system concepts, navigation, and core business modules. This is the bedrock of your career.
-                  <div className="mt-4 p-2 bg-muted/50 border-l-2 border-primary text-[11px] text-muted-foreground text-left italic">
-                    Estimated Time: 4 Hours
+                <CardContent className="text-base font-medium flex-grow text-center px-6 leading-relaxed">
+                  Understand navigation, system architecture and core business modules.
+                  <div className="mt-6 p-3 bg-muted/50 border-l-2 border-primary text-xs text-muted-foreground text-left italic">
+                    <Clock className="w-3 h-3 inline mr-1" /> Est: 4 Hours
                   </div>
                 </CardContent>
-                <CardFooter className="pt-4 flex flex-col gap-2">
-                  <Button className="w-full bg-primary hover:bg-primary/90 rounded-none group py-6 text-base font-bold">
-                    Start Here <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                <CardFooter className="pt-6">
+                  <Button className="w-full bg-primary hover:bg-primary/90 rounded-none group py-8 text-lg font-black uppercase tracking-tight shadow-md">
+                    Action: Enroll <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
                   </Button>
-                  <p className="text-[10px] text-center text-muted-foreground uppercase tracking-tighter">
-                    Unlocks Step 2: Cybersecurity 101
-                  </p>
                 </CardFooter>
               </Card>
 
-              {/* Step 2 - LOCKED */}
-              <Card className="rounded-none border-dashed border-2 opacity-60 bg-muted/50 flex flex-col grayscale pointer-events-none relative group">
-                <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-                  <div className="bg-white/90 p-2 rounded-full shadow-sm">
-                    <Lock className="w-6 h-6 text-muted-foreground" />
+              {/* Step 2+ Locked Preview */}
+              {[
+                { n: 2, title: "Cybersecurity 101", desc: "Fundamental security concepts that underpin SAP protection." },
+                { n: 3, title: "Core SAP Security", desc: "PFCG roles, authorizations, and user administration." },
+                { n: 4, title: "Hands-On Labs", desc: "Practice role configuration and audits in a sandbox." },
+                { n: 5, title: "Certifications", desc: "Validate your skills with official SAP Security exams." }
+              ].map((step) => (
+                <Card key={step.n} className="rounded-none border-dashed border-2 opacity-60 bg-white/50 flex flex-col grayscale pointer-events-none relative group transition-opacity hover:opacity-100">
+                  <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+                    <div className="bg-white/90 p-4 rounded-full shadow-md border">
+                      <Lock className="w-8 h-8 text-muted-foreground/50" />
+                    </div>
                   </div>
-                </div>
-                <CardHeader className="pb-2 text-center">
-                  <div className="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4 mx-auto">2</div>
-                  <CardTitle className="text-lg font-headline">Cybersecurity 101</CardTitle>
-                </CardHeader>
-                <CardContent className="text-sm text-muted-foreground flex-grow text-center">
-                  Learn fundamental security concepts that underpin SAP system protection.
-                </CardContent>
-                <CardFooter className="pt-4 opacity-50">
-                  <Button variant="outline" className="w-full rounded-none" disabled>Locked</Button>
-                </CardFooter>
-              </Card>
-
-              {/* Step 3 - LOCKED */}
-              <Card className="rounded-none border-dashed border-2 opacity-60 bg-muted/50 flex flex-col grayscale pointer-events-none relative group">
-                <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-                  <div className="bg-white/90 p-2 rounded-full shadow-sm">
-                    <Lock className="w-6 h-6 text-muted-foreground" />
-                  </div>
-                </div>
-                <CardHeader className="pb-2 text-center">
-                  <div className="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4 mx-auto">3</div>
-                  <CardTitle className="text-lg font-headline">Core SAP Security</CardTitle>
-                </CardHeader>
-                <CardContent className="text-sm text-muted-foreground flex-grow text-center">
-                  Dive into PFCG roles, authorizations, and user administration.
-                </CardContent>
-                <CardFooter className="pt-4 opacity-50">
-                  <Button variant="outline" className="w-full rounded-none" disabled>Locked</Button>
-                </CardFooter>
-              </Card>
-
-              {/* Step 4 - LOCKED */}
-              <Card className="rounded-none border-dashed border-2 opacity-60 bg-muted/50 flex flex-col grayscale pointer-events-none relative group">
-                <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-                  <div className="bg-white/90 p-2 rounded-full shadow-sm">
-                    <Lock className="w-6 h-6 text-muted-foreground" />
-                  </div>
-                </div>
-                <CardHeader className="pb-2 text-center">
-                  <div className="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4 mx-auto">4</div>
-                  <CardTitle className="text-lg font-headline">Hands-On Labs</CardTitle>
-                </CardHeader>
-                <CardContent className="text-sm text-muted-foreground flex-grow text-center">
-                  Practice role configuration and audits in a sandbox environment.
-                </CardContent>
-                <CardFooter className="pt-4 opacity-50">
-                  <Button variant="outline" className="w-full rounded-none" disabled>Locked</Button>
-                </CardFooter>
-              </Card>
-
-              {/* Step 5 - LOCKED */}
-              <Card className="rounded-none border-dashed border-2 opacity-60 bg-muted/50 flex flex-col grayscale pointer-events-none relative group">
-                <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-                  <div className="bg-white/90 p-2 rounded-full shadow-sm">
-                    <Lock className="w-6 h-6 text-muted-foreground" />
-                  </div>
-                </div>
-                <CardHeader className="pb-2 text-center">
-                  <div className="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4 mx-auto">5</div>
-                  <CardTitle className="text-lg font-headline">Certifications</CardTitle>
-                </CardHeader>
-                <CardContent className="text-sm text-muted-foreground flex-grow text-center">
-                  Validate your skills with official SAP Security exams.
-                </CardContent>
-                <CardFooter className="pt-4 opacity-50">
-                  <Button variant="outline" className="w-full rounded-none" disabled>Locked</Button>
-                </CardFooter>
-              </Card>
+                  <CardHeader className="pb-4 text-center">
+                    <div className="w-12 h-12 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4 mx-auto">{step.n}</div>
+                    <CardTitle className="text-xl font-headline">{step.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground flex-grow text-center px-4">
+                    {step.desc}
+                  </CardContent>
+                  <CardFooter className="pt-6 opacity-30">
+                    <Button variant="outline" className="w-full rounded-none" disabled>Locked</Button>
+                  </CardFooter>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Foundational Courses */}
-        <section className="w-full py-16 md:py-24">
+        {/* 4. Foundational Courses - Next Action Content */}
+        <section className="w-full py-24 md:py-32 bg-white">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-4">
-              <h2 className="text-3xl font-headline font-bold flex items-center gap-2">
-                <BookOpen className="text-primary" /> Foundational Courses
-              </h2>
-              <Badge variant="outline" className="w-fit rounded-none border-primary text-primary font-bold uppercase tracking-widest text-[10px] px-3">
-                Recommended for Phase 1
-              </Badge>
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 border-b pb-8">
+              <div className="space-y-4">
+                <Badge variant="outline" className="rounded-none border-primary text-primary font-black uppercase tracking-[0.2em] text-xs px-4 py-1">
+                  Phase 1 Content
+                </Badge>
+                <h2 className="text-4xl md:text-5xl font-headline font-black flex items-center gap-4">
+                  <BookOpen className="text-primary w-12 h-12" /> Foundational Courses
+                </h2>
+              </div>
+              <p className="max-w-[400px] text-muted-foreground font-medium text-lg leading-relaxed">
+                Start these two courses immediately to complete Step 1 of your journey.
+              </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Course 1 */}
-              <Card className="rounded-none hover:shadow-xl transition-all border-t-4 border-t-primary flex flex-col group">
-                <CardHeader className="pb-2">
-                  <div className="flex justify-between items-start mb-3">
-                    <Badge className="bg-sap-blue rounded-none uppercase text-[10px] font-bold">Beginner</Badge>
-                    <span className="flex items-center text-[10px] font-bold text-muted-foreground uppercase tracking-tighter">
-                      <Clock className="w-3 h-3 mr-1 text-primary" /> 4h 30m
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {/* Course 1 - HIGHLIGHTED */}
+              <Card className="rounded-none hover:shadow-2xl transition-all border-t-8 border-t-primary flex flex-col group scale-105 shadow-lg bg-white relative z-10">
+                <CardHeader className="pb-4">
+                  <div className="flex justify-between items-start mb-4">
+                    <Badge className="bg-primary text-white rounded-none uppercase text-[10px] font-black px-3 py-1">Highly Recommended</Badge>
+                    <span className="flex items-center text-xs font-black text-muted-foreground uppercase tracking-widest">
+                      <Clock className="w-4 h-4 mr-1 text-primary" /> 4h 30m
                     </span>
                   </div>
-                  <CardTitle className="font-headline text-xl font-bold group-hover:text-primary transition-colors">SAP Overview (SAPTEC)</CardTitle>
-                  <CardDescription className="text-xs font-medium">The essential starting point for all SAP professionals.</CardDescription>
+                  <CardTitle className="font-headline text-2xl font-black group-hover:text-primary transition-colors mb-2">SAP Overview (SAPTEC)</CardTitle>
+                  <CardDescription className="text-sm font-semibold uppercase tracking-tight text-muted-foreground">The Absolute First Step</CardDescription>
                 </CardHeader>
-                <CardContent className="flex-grow space-y-5 pt-4">
-                  <div className="space-y-2">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1">
-                      <Target className="w-3 h-3" /> Outcome
+                <CardContent className="flex-grow space-y-8 pt-6 border-t border-muted/50">
+                  <div className="space-y-4">
+                    <p className="text-xs font-black uppercase tracking-[0.2em] text-muted-foreground flex items-center gap-2">
+                      <Target className="w-4 h-4 text-primary" /> Core Outcome
                     </p>
-                    <p className="text-sm font-medium leading-relaxed">
-                      Master S/4HANA navigation, understand system architecture and core business modules.
+                    <p className="text-lg font-bold leading-tight">
+                      Master S/4HANA navigation and understand how modules talk to each other.
                     </p>
                   </div>
-                  <div className="p-3 bg-muted/30 text-[11px] font-medium italic border-l-2 border-primary leading-snug">
-                    "Enroll in this first to understand the landscape you'll be securing."
+                  <div className="p-5 bg-muted/30 text-sm font-medium italic border-l-4 border-primary leading-relaxed shadow-inner">
+                    "Enroll in this first. It provides the essential context for all security work."
                   </div>
                 </CardContent>
-                <CardFooter className="pt-6">
-                  <Button className="w-full rounded-none font-bold py-6 text-sm group" variant="default">
-                    Start Course <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <CardFooter className="pt-8 bg-muted/5">
+                  <Button className="w-full rounded-none font-black py-8 text-lg group bg-primary" variant="default">
+                    Start Course <ArrowRight className="ml-2 w-6 h-6 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </CardFooter>
               </Card>
 
               {/* Course 2 */}
-              <Card className="rounded-none hover:shadow-xl transition-all border-t-4 border-t-sap-blue flex flex-col group">
-                <CardHeader className="pb-2">
-                  <div className="flex justify-between items-start mb-3">
-                    <Badge className="bg-muted text-foreground rounded-none uppercase text-[10px] font-bold">Intermediate</Badge>
-                    <span className="flex items-center text-[10px] font-bold text-muted-foreground uppercase tracking-tighter">
-                      <Clock className="w-3 h-3 mr-1 text-primary" /> 8h 00m
+              <Card className="rounded-none hover:shadow-xl transition-all border-t-8 border-t-sap-blue flex flex-col group">
+                <CardHeader className="pb-4">
+                  <div className="flex justify-between items-start mb-4">
+                    <Badge className="bg-sap-blue text-white rounded-none uppercase text-[10px] font-black px-3 py-1">Intermediate</Badge>
+                    <span className="flex items-center text-xs font-black text-muted-foreground uppercase tracking-widest">
+                      <Clock className="w-4 h-4 mr-1 text-primary" /> 8h 00m
                     </span>
                   </div>
-                  <CardTitle className="font-headline text-xl font-bold group-hover:text-sap-blue transition-colors">Security & Authorizations</CardTitle>
-                  <CardDescription className="text-xs font-medium">Core technical training for SAP Security admins.</CardDescription>
+                  <CardTitle className="font-headline text-2xl font-black group-hover:text-sap-blue transition-colors mb-2">Security & Authorizations</CardTitle>
+                  <CardDescription className="text-sm font-semibold uppercase tracking-tight text-muted-foreground">Technical Foundation</CardDescription>
                 </CardHeader>
-                <CardContent className="flex-grow space-y-5 pt-4">
-                  <div className="space-y-2">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1">
-                      <Target className="w-3 h-3" /> Outcome
+                <CardContent className="flex-grow space-y-8 pt-6 border-t border-muted/50">
+                  <div className="space-y-4">
+                    <p className="text-xs font-black uppercase tracking-[0.2em] text-muted-foreground flex items-center gap-2">
+                      <Target className="w-4 h-4 text-sap-blue" /> Core Outcome
                     </p>
-                    <p className="text-sm font-medium leading-relaxed">
-                      Deep dive into PFCG transactions, authorization objects, and role maintenance best practices.
+                    <p className="text-lg font-bold leading-tight">
+                      Deep dive into PFCG transactions, authorization objects, and role maintenance.
                     </p>
                   </div>
-                  <div className="p-3 bg-muted/30 text-[11px] font-medium italic border-l-2 border-sap-blue leading-snug">
-                    "Follows Phase 1. Learn to translate business needs into technical roles."
+                  <div className="p-5 bg-muted/30 text-sm font-medium italic border-l-4 border-sap-blue leading-relaxed">
+                    "Take this after SAPTEC. This is where you learn the technical knobs."
                   </div>
                 </CardContent>
-                <CardFooter className="pt-6">
-                  <Button className="w-full rounded-none font-bold py-6 text-sm group bg-sap-blue hover:bg-sap-blue/90" variant="default">
-                    Start Course <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <CardFooter className="pt-8">
+                  <Button className="w-full rounded-none font-black py-8 text-lg group bg-sap-blue hover:bg-sap-blue/90" variant="default">
+                    Start Course <ArrowRight className="ml-2 w-6 h-6 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </CardFooter>
               </Card>
 
               {/* Course 3 */}
-              <Card className="rounded-none hover:shadow-xl transition-all border-t-4 border-t-foreground flex flex-col group">
-                <CardHeader className="pb-2">
-                  <div className="flex justify-between items-start mb-3">
-                    <Badge className="bg-foreground text-background rounded-none uppercase text-[10px] font-bold">Fundamental</Badge>
-                    <span className="flex items-center text-[10px] font-bold text-muted-foreground uppercase tracking-tighter">
-                      <Clock className="w-3 h-3 mr-1 text-primary" /> 3h 15m
+              <Card className="rounded-none hover:shadow-xl transition-all border-t-8 border-t-foreground flex flex-col group opacity-90">
+                <CardHeader className="pb-4">
+                  <div className="flex justify-between items-start mb-4">
+                    <Badge className="bg-foreground text-background rounded-none uppercase text-[10px] font-black px-3 py-1">Fundamental</Badge>
+                    <span className="flex items-center text-xs font-black text-muted-foreground uppercase tracking-widest">
+                      <Clock className="w-4 h-4 mr-1 text-primary" /> 3h 15m
                     </span>
                   </div>
-                  <CardTitle className="font-headline text-xl font-bold group-hover:text-primary transition-colors">Cybersecurity 101</CardTitle>
-                  <CardDescription className="text-xs font-medium">Contextual security knowledge for IT professionals.</CardDescription>
+                  <CardTitle className="font-headline text-2xl font-black group-hover:text-primary transition-colors mb-2">Cybersecurity 101</CardTitle>
+                  <CardDescription className="text-sm font-semibold uppercase tracking-tight text-muted-foreground">General Context</CardDescription>
                 </CardHeader>
-                <CardContent className="flex-grow space-y-5 pt-4">
-                  <div className="space-y-2">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1">
-                      <Target className="w-3 h-3" /> Outcome
+                <CardContent className="flex-grow space-y-8 pt-6 border-t border-muted/50">
+                  <div className="space-y-4">
+                    <p className="text-xs font-black uppercase tracking-[0.2em] text-muted-foreground flex items-center gap-2">
+                      <Target className="w-4 h-4 text-foreground" /> Core Outcome
                     </p>
-                    <p className="text-sm font-medium leading-relaxed">
+                    <p className="text-lg font-bold leading-tight">
                       Understand encryption, firewalls, and network security to protect the whole landscape.
                     </p>
                   </div>
-                  <div className="p-3 bg-muted/30 text-[11px] font-medium italic border-l-2 border-foreground leading-snug">
-                    "Crucial context. Understand what's happening outside the SAP application."
+                  <div className="p-5 bg-muted/30 text-sm font-medium italic border-l-4 border-foreground leading-relaxed">
+                    "Crucial for context. Understand what's happening outside the SAP application."
                   </div>
                 </CardContent>
-                <CardFooter className="pt-6">
-                  <Button className="w-full rounded-none font-bold py-6 text-sm group bg-foreground hover:bg-foreground/90" variant="default">
-                    Start Course <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <CardFooter className="pt-8">
+                  <Button className="w-full rounded-none font-black py-8 text-lg group bg-foreground hover:bg-foreground/90" variant="default">
+                    Start Course <ArrowRight className="ml-2 w-6 h-6 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </CardFooter>
               </Card>
@@ -395,49 +346,49 @@ export default function FundamentalsPage() {
           </div>
         </section>
 
-        {/* Visual Core Concepts Cards */}
-        <section className="w-full py-16 md:py-24 bg-muted/20">
+        {/* 5. Core Concepts - Visual Discovery */}
+        <section className="w-full py-24 md:py-32 bg-muted/10">
           <div className="container px-4 md:px-6">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-headline font-bold mb-4">Core SAP Security Concepts</h2>
-              <p className="text-muted-foreground max-w-[600px] mx-auto">
-                Master these fundamental pillars before moving to advanced GRC and cloud security topics.
+            <div className="text-center mb-16 max-w-3xl mx-auto">
+              <h2 className="text-4xl font-headline font-black mb-6">Core SAP Security Concepts</h2>
+              <p className="text-muted-foreground text-xl leading-relaxed">
+                Master these four fundamental pillars. They represent 80% of daily security operations in the SAP ecosystem.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
               {[
                 {
                   title: "Role-Based Access Control (RBAC)",
                   desc: "The standard way to manage permissions. Users are assigned roles containing authorization objects.",
-                  icon: <ShieldCheck className="w-8 h-8 text-primary" />,
+                  icon: <ShieldCheck className="w-12 h-12 text-primary" />,
                   color: "border-t-primary"
                 },
                 {
                   title: "Segregation of Duties (SoD)",
                   desc: "Internal controls preventing fraud by splitting critical tasks between multiple users.",
-                  icon: <Users className="w-8 h-8 text-sap-blue" />,
+                  icon: <Users className="w-12 h-12 text-sap-blue" />,
                   color: "border-t-sap-blue"
                 },
                 {
                   title: "Profiles vs Roles",
                   desc: "Technical relationship between PFCG roles and the runtime profiles checked by the system.",
-                  icon: <FileCheck className="w-8 h-8 text-foreground" />,
+                  icon: <FileCheck className="w-12 h-12 text-foreground" />,
                   color: "border-t-foreground"
                 },
                 {
                   title: "System Auditing (SM19/SM20)",
                   desc: "Setting up security audit logs to track logins, transaction executions, and critical events.",
-                  icon: <Search className="w-8 h-8 text-primary" />,
+                  icon: <Search className="w-12 h-12 text-primary" />,
                   color: "border-t-primary"
                 }
               ].map((concept, idx) => (
-                <Card key={idx} className={`rounded-none border-t-4 ${concept.color} hover:shadow-lg transition-shadow`}>
+                <Card key={idx} className={`rounded-none border-t-8 ${concept.color} hover:shadow-2xl transition-all p-4`}>
                   <CardHeader>
-                    <div className="mb-4">{concept.icon}</div>
-                    <CardTitle className="text-lg font-headline font-bold">{concept.title}</CardTitle>
+                    <div className="mb-6">{concept.icon}</div>
+                    <CardTitle className="text-xl font-headline font-black leading-tight">{concept.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-base text-muted-foreground leading-relaxed">
                       {concept.desc}
                     </p>
                   </CardContent>
@@ -447,52 +398,53 @@ export default function FundamentalsPage() {
           </div>
         </section>
 
-        {/* Practice Like a Consultant - Full Width Section */}
-        <section className="w-full py-16 md:py-24 bg-foreground text-white">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col lg:flex-row items-center gap-12">
-              <div className="lg:w-1/2 space-y-6">
-                <Badge className="bg-primary text-white rounded-none px-4 py-1 uppercase text-xs font-bold tracking-widest mb-2">Hands-On Mastery</Badge>
-                <h2 className="text-4xl md:text-5xl font-headline font-bold">Practice Like a Real SAP Consultant</h2>
-                <p className="text-lg text-white/70 leading-relaxed">
-                  Theory is not enough. To truly learn SAP security, you must build, break, and audit in a live environment. Follow these professional steps to gain practical experience.
+        {/* 6. Hands-On Mastery - Full Width High Impact */}
+        <section className="w-full py-28 md:py-40 bg-foreground text-white overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/10 -skew-x-12 translate-x-1/2" />
+          <div className="container px-4 md:px-6 relative z-10">
+            <div className="flex flex-col lg:flex-row items-center gap-16">
+              <div className="lg:w-1/2 space-y-10">
+                <Badge className="bg-primary text-white rounded-none px-6 py-2 uppercase text-xs font-black tracking-widest mb-2 shadow-xl">The Differentiator</Badge>
+                <h2 className="text-5xl md:text-7xl font-headline font-black tracking-tight">Practice Like a Real SAP Consultant</h2>
+                <p className="text-xl text-white/70 leading-relaxed font-medium">
+                  Theory is only half the battle. To be hired, you must build, break, and audit in a live environment. We guide you through three critical real-world milestones.
                 </p>
-                <div className="pt-4">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-none px-10 py-7 text-lg font-bold uppercase tracking-wider">
-                    Access Demo Sandbox
+                <div className="pt-6">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-none px-12 py-10 text-xl font-black uppercase tracking-widest shadow-[0_10px_40px_rgba(242,81,64,0.4)]">
+                    Access Lab Guide
                   </Button>
                 </div>
               </div>
-              <div className="lg:w-1/2 grid grid-cols-1 gap-4">
+              <div className="lg:w-1/2 grid grid-cols-1 gap-6 w-full">
                 {[
                   {
                     step: "01",
                     title: "Environment Setup",
-                    desc: "Access the SAP Developer Edition or setup a Trial Cloud instance to have your own personal lab.",
-                    icon: <Cpu className="w-6 h-6" />
+                    desc: "Access the SAP Developer Edition or setup a Trial Cloud instance for your personal sandbox.",
+                    icon: <Cpu className="w-8 h-8" />
                   },
                   {
                     step: "02",
                     title: "User Administration (SU01)",
                     desc: "Learn to create users, manage passwords, and understand user types (Dialog, System, Service).",
-                    icon: <UserPlus className="w-6 h-6" />
+                    icon: <UserPlus className="w-8 h-8" />
                   },
                   {
                     step: "03",
                     title: "Role Maintenance (PFCG)",
                     desc: "Build professional role models, manage authorization objects, and generate runtime profiles.",
-                    icon: <Settings className="w-6 h-6" />
+                    icon: <Settings className="w-8 h-8" />
                   }
                 ].map((item, idx) => (
-                  <div key={idx} className="bg-white/5 border border-white/10 p-6 flex gap-6 hover:bg-white/10 transition-colors group">
-                    <div className="text-primary font-mono text-3xl font-bold opacity-50 group-hover:opacity-100 transition-opacity">
+                  <div key={idx} className="bg-white/5 border border-white/20 p-8 flex gap-8 hover:bg-white/10 transition-all group backdrop-blur-sm">
+                    <div className="text-primary font-mono text-5xl font-black opacity-30 group-hover:opacity-100 transition-opacity">
                       {item.step}
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
+                      <h3 className="text-2xl font-black mb-3 flex items-center gap-4">
                         {item.icon} {item.title}
                       </h3>
-                      <p className="text-sm text-white/60">
+                      <p className="text-lg text-white/60 leading-relaxed font-medium">
                         {item.desc}
                       </p>
                     </div>
@@ -503,50 +455,53 @@ export default function FundamentalsPage() {
           </div>
         </section>
 
-        {/* Certification Paths */}
-        <section className="w-full py-16 md:py-24">
+        {/* 7. Certification Paths - The End Goal */}
+        <section className="w-full py-24 md:py-32">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col md:flex-row items-end justify-between mb-10 gap-4">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-headline font-bold">Certification Paths</h2>
-                <p className="text-muted-foreground">Validate your expertise with industry-recognized SAP credentials.</p>
+            <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8 border-b pb-10">
+              <div className="space-y-4">
+                <h2 className="text-4xl md:text-5xl font-headline font-black">Certification Paths</h2>
+                <p className="text-muted-foreground text-xl">Validate your expertise with industry-recognized credentials.</p>
               </div>
-              <div className="flex flex-col items-end gap-2">
-                <Badge variant="outline" className="rounded-none border-primary text-primary flex items-center gap-2 py-1 px-3">
-                  <Info className="w-3 h-3" /> Recommended after completing Step 4
+              <div className="flex flex-col items-end gap-4">
+                <Badge variant="outline" className="rounded-none border-primary text-primary flex items-center gap-2 py-2 px-6 font-bold uppercase text-xs">
+                  <Info className="w-4 h-4" /> Recommended after Step 4
                 </Badge>
-                <Button variant="outline" className="rounded-none border-sap-blue text-sap-blue hover:bg-sap-blue hover:text-white">View All Exams</Button>
+                <Button variant="outline" className="rounded-none border-sap-blue text-sap-blue hover:bg-sap-blue hover:text-white px-8 font-black">View Official Exam Schedule</Button>
               </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-8 border-l-4 border-l-primary bg-muted/30">
-                <Badge variant="secondary" className="mb-4 rounded-none">Entry Level</Badge>
-                <h3 className="text-xl font-bold mb-2">Associate Level</h3>
-                <p className="text-sm text-muted-foreground mb-6">SAP Certified Technology Associate - System Security Architect. The essential first step for all security pros.</p>
-                <Link href="#" className="text-primary font-bold text-sm inline-flex items-center hover:underline">Exam Details <ArrowRight className="ml-1 w-4 h-4" /></Link>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              <div className="p-10 border-l-8 border-l-primary bg-muted/30 shadow-sm hover:shadow-md transition-shadow">
+                <Badge variant="secondary" className="mb-6 rounded-none font-black px-3 py-1 uppercase text-[10px]">Entry Level</Badge>
+                <h3 className="text-2xl font-black mb-4">Associate Level</h3>
+                <p className="text-base text-muted-foreground mb-8 leading-relaxed font-medium">SAP Certified Technology Associate - System Security Architect. The essential first step for all security pros.</p>
+                <Link href="#" className="text-primary font-black text-sm inline-flex items-center hover:underline uppercase tracking-widest">Exam Details <ArrowRight className="ml-2 w-4 h-4" /></Link>
               </div>
-              <div className="p-8 border-l-4 border-l-sap-blue bg-muted/30">
-                <Badge variant="secondary" className="mb-4 rounded-none">Specialist</Badge>
-                <h3 className="text-xl font-bold mb-2">Specialist Level</h3>
-                <p className="text-sm text-muted-foreground mb-6">SAP Certified Technology Associate - Authorization and Auditing. Focus on role management and compliance.</p>
-                <Link href="#" className="text-sap-blue font-bold text-sm inline-flex items-center hover:underline">Exam Details <ArrowRight className="ml-1 w-4 h-4" /></Link>
+              <div className="p-10 border-l-8 border-l-sap-blue bg-muted/30 shadow-sm hover:shadow-md transition-shadow">
+                <Badge variant="secondary" className="mb-6 rounded-none font-black px-3 py-1 uppercase text-[10px]">Specialist</Badge>
+                <h3 className="text-2xl font-black mb-4">Specialist Level</h3>
+                <p className="text-base text-muted-foreground mb-8 leading-relaxed font-medium">SAP Certified Technology Associate - Authorization and Auditing. Focus on role management and compliance.</p>
+                <Link href="#" className="text-sap-blue font-black text-sm inline-flex items-center hover:underline uppercase tracking-widest">Exam Details <ArrowRight className="ml-2 w-4 h-4" /></Link>
               </div>
-              <div className="p-8 border-l-4 border-l-foreground bg-muted/30">
-                <Badge variant="secondary" className="mb-4 rounded-none">Advanced</Badge>
-                <h3 className="text-xl font-bold mb-2">Professional Level</h3>
-                <p className="text-sm text-muted-foreground mb-6">SAP Certified Technology Professional - System Security Architect. For those managing enterprise-wide security.</p>
-                <Link href="#" className="text-foreground font-bold text-sm inline-flex items-center hover:underline">Exam Details <ArrowRight className="ml-1 w-4 h-4" /></Link>
+              <div className="p-10 border-l-8 border-l-foreground bg-muted/30 shadow-sm hover:shadow-md transition-shadow">
+                <Badge variant="secondary" className="mb-6 rounded-none font-black px-3 py-1 uppercase text-[10px]">Advanced</Badge>
+                <h3 className="text-2xl font-black mb-4">Professional Level</h3>
+                <p className="text-base text-muted-foreground mb-8 leading-relaxed font-medium">SAP Certified Technology Professional - System Security Architect. For those managing enterprise-wide security.</p>
+                <Link href="#" className="text-foreground font-black text-sm inline-flex items-center hover:underline uppercase tracking-widest">Exam Details <ArrowRight className="ml-2 w-4 h-4" /></Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Recommended Resources (Upgraded Visual Cards with Tags) */}
-        <section className="w-full py-16 md:py-24 bg-muted/20">
+        {/* 8. Recommended Resources - Tagged Visual Cards */}
+        <section className="w-full py-24 md:py-32 bg-muted/20">
           <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-headline font-bold mb-8 text-center">Recommended Reading</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-headline font-black mb-4">Recommended Reading</h2>
+              <p className="text-muted-foreground text-xl">Curated insights mapped to your current proficiency level.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 { title: "Introduction to SAP GRC Access Control", desc: "Understand how GRC automates compliance and SoD checks.", tag: "Beginner" },
                 { title: "Top 10 Security Transactions Every Admin Should Know", desc: "A curated list of essential T-Codes like PFCG, SU01, and SM20.", tag: "Beginner" },
@@ -555,11 +510,11 @@ export default function FundamentalsPage() {
                 { title: "How to Prepare for Your First SAP Audit", desc: "Checklists and common pitfalls to avoid during a security audit.", tag: "Advanced" },
                 { title: "The Future of SAP IAM: Cloud vs On-Premise", desc: "Comparing classic GRC with the new SAP Identity Access Governance.", tag: "Advanced" }
               ].map((res, i) => (
-                <Card key={i} className="rounded-none border-none bg-white hover:bg-muted/50 transition-colors cursor-pointer group shadow-sm flex flex-col h-full">
-                  <CardHeader className="p-5 pb-2">
+                <Card key={i} className="rounded-none border-none bg-white hover:bg-muted/50 transition-all cursor-pointer group shadow-lg flex flex-col h-full hover:-translate-y-2">
+                  <CardHeader className="p-8 pb-4">
                     <Badge 
                       variant="outline" 
-                      className={`w-fit mb-3 rounded-none text-[10px] font-bold uppercase tracking-widest ${
+                      className={`w-fit mb-6 rounded-none text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 ${
                         res.tag === 'Beginner' ? 'border-green-500 text-green-600' : 
                         res.tag === 'Intermediate' ? 'border-sap-blue text-sap-blue' : 
                         'border-primary text-primary'
@@ -567,14 +522,14 @@ export default function FundamentalsPage() {
                     >
                       {res.tag}
                     </Badge>
-                    <CardTitle className="text-lg font-headline font-bold group-hover:text-primary transition-colors leading-tight">{res.title}</CardTitle>
+                    <CardTitle className="text-2xl font-headline font-black group-hover:text-primary transition-colors leading-tight">{res.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="p-5 pt-0 flex-grow">
-                    <p className="text-sm text-muted-foreground line-clamp-3">{res.desc}</p>
+                  <CardContent className="p-8 pt-0 flex-grow">
+                    <p className="text-base text-muted-foreground leading-relaxed font-medium">{res.desc}</p>
                   </CardContent>
-                  <CardFooter className="p-5 pt-0">
-                    <span className="text-xs font-bold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                      Read Article <ArrowRight className="w-3 h-3" />
+                  <CardFooter className="p-8 pt-0">
+                    <span className="text-sm font-black text-primary flex items-center gap-2 group-hover:translate-x-2 transition-transform uppercase tracking-widest">
+                      Read Article <ArrowRight className="w-5 h-5" />
                     </span>
                   </CardFooter>
                 </Card>
@@ -584,19 +539,20 @@ export default function FundamentalsPage() {
         </section>
 
         {/* Community Section */}
-        <section className="w-full py-16 md:py-24 bg-gray-900 text-white">
+        <section className="w-full py-24 md:py-32 bg-gray-900 text-white">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="space-y-4 max-w-[600px]">
-                <h2 className="text-3xl font-headline font-bold">Join the SAP Security Community</h2>
-                <p className="text-gray-400 font-medium">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-16">
+              <div className="space-y-8 max-w-[600px]">
+                <h2 className="text-4xl md:text-5xl font-headline font-black tracking-tight">Join the SAP Security Community</h2>
+                <p className="text-xl text-gray-400 font-medium leading-relaxed">
                   New learners benefit from guidance and Q&A. Don't learn in isolation; join thousands of experts sharing insights daily.
                 </p>
               </div>
-              <div className="w-full md:w-1/3 bg-gray-800 p-8 rounded-none border border-gray-700 shadow-xl">
-                <h3 className="text-xl font-bold mb-4">Have a Question?</h3>
-                <p className="text-sm text-gray-400 mb-8 font-medium">Our experts are here to help you navigate your first steps in SAP Security.</p>
-                <Button className="w-full bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 rounded-none py-6 font-bold uppercase tracking-widest transition-colors duration-300">
+              <div className="w-full md:w-2/5 bg-gray-800 p-12 rounded-none border border-gray-700 shadow-2xl relative">
+                <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary flex items-center justify-center font-black text-2xl">?</div>
+                <h3 className="text-2xl font-black mb-6">Have a Question?</h3>
+                <p className="text-lg text-gray-400 mb-10 font-medium">Our experts are here to help you navigate your first steps in SAP Security.</p>
+                <Button className="w-full bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 rounded-none py-10 text-lg font-black uppercase tracking-widest transition-all duration-300">
                   Ask an Expert
                 </Button>
               </div>
@@ -607,67 +563,60 @@ export default function FundamentalsPage() {
         <NewsletterSignup />
       </main>
 
-      <footer className="w-full shrink-0 border-t bg-gray-900 py-8 text-gray-400 md:py-12">
-        <div className="container grid grid-cols-2 gap-8 px-4 md:grid-cols-5 md:px-6">
-          <div className="col-span-2 space-y-4 md:col-span-1">
+      <footer className="w-full shrink-0 border-t bg-gray-900 py-12 text-gray-400 md:py-20">
+        <div className="container grid grid-cols-2 gap-12 px-4 md:grid-cols-5 md:px-6">
+          <div className="col-span-2 space-y-6 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
-              <Logo width={180} height={180} />
+              <Logo width={220} height={220} />
             </Link>
-            <p className="text-sm">
+            <p className="text-base font-medium">
               The definitive resource for SAP Security excellence.
             </p>
-            <div className="flex space-x-2">
-              <Link href="#" className="p-2 rounded-md hover:bg-gray-700"><Twitter className="h-5 w-5" /></Link>
-              <Link href="#" className="p-2 rounded-md hover:bg-gray-700"><Linkedin className="h-5 w-5" /></Link>
-              <Link href="#" className="p-2 rounded-md hover:bg-gray-700"><Youtube className="h-5 w-5" /></Link>
-              <Link href="#" className="p-2 rounded-md hover:bg-gray-700"><Mail className="h-5 w-5" /></Link>
-            </div>
           </div>
           <div>
-            <h4 className="mb-4 font-semibold text-white">Solutions</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="#" className="hover:text-white">Threat Detection</Link></li>
-              <li><Link href="#" className="hover:text-white">Access Governance</Link></li>
-              <li><Link href="#" className="hover:text-white">Code Security</Link></li>
-              <li><Link href="#" className="hover:text-white">Compliance</Link></li>
+            <h4 className="mb-6 font-black text-white uppercase tracking-widest text-xs">Solutions</h4>
+            <ul className="space-y-3 text-sm font-medium">
+              <li><Link href="#" className="hover:text-white transition-colors">Threat Detection</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Access Governance</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Code Security</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Compliance</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="mb-4 font-semibold text-white">Platform</h4>
-             <ul className="space-y-2 text-sm">
-              <li><Link href="#" className="hover:text-white">Fundamentals</Link></li>
-              <li><Link href="#" className="hover:text-white">Integrations</Link></li>
-              <li><Link href="#" className="hover:text-white">Customers</Link></li>
-              <li><Link href="#" className="hover:text-white">Pricing</Link></li>
+            <h4 className="mb-6 font-black text-white uppercase tracking-widest text-xs">Platform</h4>
+             <ul className="space-y-3 text-sm font-medium">
+              <li><Link href="/fundamentals" className="hover:text-white transition-colors">Fundamentals</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Integrations</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Customers</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Pricing</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="mb-4 font-semibold text-white">Resources</h4>
-             <ul className="space-y-2 text-sm">
-              <li><Link href="#" className="hover:text-white">Blog</Link></li>
-              <li><Link href="#" className="hover:text-white">Webinars</Link></li>
-              <li><Link href="#" className="hover:text-white">Whitepapers</Link></li>
-              <li><Link href="#" className="hover:text-white">Support</Link></li>
+            <h4 className="mb-6 font-black text-white uppercase tracking-widest text-xs">Resources</h4>
+             <ul className="space-y-3 text-sm font-medium">
+              <li><Link href="#" className="hover:text-white transition-colors">Blog</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Webinars</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Whitepapers</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Support</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="mb-4 font-semibold text-white">Company</h4>
-             <ul className="space-y-2 text-sm">
-              <li><Link href="#" className="hover:text-white">About Us</Link></li>
-              <li><Link href="#" className="hover:text-white">Careers</Link></li>
-              <li><Link href="#" className="hover:text-white">Contact Us</Link></li>
+            <h4 className="mb-6 font-black text-white uppercase tracking-widest text-xs">Company</h4>
+             <ul className="space-y-3 text-sm font-medium">
+              <li><Link href="#" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Careers</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
           </div>
         </div>
-        <div className="container mt-8 flex flex-col items-center justify-between gap-4 border-t border-gray-700 pt-6 px-4 md:flex-row md:px-6">
-            <p className="text-xs">
+        <div className="container mt-16 flex flex-col items-center justify-between gap-6 border-t border-gray-700 pt-10 px-4 md:flex-row md:px-6">
+            <p className="text-xs font-medium uppercase tracking-widest">
             © 2026 SAP Security Expert. All rights reserved.
             </p>
-            <p className="text-xs">Developed by @Web Anatomy</p>
-            <nav className="flex gap-4 text-xs sm:gap-6">
-                <Link href="#" className="hover:underline">Privacy Policy</Link>
-                <Link href="#" className="hover:underline">Terms of Service</Link>
-                <Link href="#" className="hover:underline">Cookie Policy</Link>
+            <nav className="flex gap-6 text-xs font-black uppercase tracking-widest">
+                <Link href="#" className="hover:underline">Privacy</Link>
+                <Link href="#" className="hover:underline">Terms</Link>
+                <Link href="#" className="hover:underline">Cookies</Link>
             </nav>
         </div>
       </footer>
