@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Logo } from '@/components/icons';
 import { Linkedin, Twitter, Instagram } from 'lucide-react';
+import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -12,13 +12,14 @@ export function Footer() {
           {/* Brand Column */}
           <div className="space-y-6">
             <Link href="/" className="inline-block">
-              <div className="flex items-center gap-3">
-                <Logo width={40} height={40} className="brightness-0 invert" />
-                <div className="flex flex-col">
-                  <span className="text-white font-black text-xl tracking-tight leading-none uppercase">SAP SECURITY EXPERT</span>
-                  <span className="text-[10px] text-gray-500 font-bold tracking-[0.2em] uppercase mt-1">ACCESS | RISK | COMPLIANCE</span>
-                </div>
-              </div>
+              <Image 
+                src="/white.png" 
+                alt="SAP Security Expert Logo" 
+                width={200} 
+                height={60} 
+                className="h-auto w-auto max-w-[220px]"
+                priority
+              />
             </Link>
             <p className="text-sm leading-relaxed max-w-xs">
               The leading community for SAP Security, GRC, and BTP professionals. Join us to learn, share, and grow.
