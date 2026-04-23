@@ -8,7 +8,7 @@ import { NewsletterSignup } from '@/components/newsletter-signup';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Progress } from '@/components/ui/progress';
+import { Progress } from '@/ui/progress';
 import { 
   ArrowRight, 
   BookOpen, 
@@ -136,7 +136,7 @@ export default function FundamentalsPage() {
         <section id="path-selector" className="w-full py-20 bg-white border-b scroll-mt-20">
           <div className="container px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">👉 Step 0: Choose Your Persona</h2>
+              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Step 0: Choose Your Persona</h2>
               <p className="text-muted-foreground text-lg">Tell us who you are so we can tailor your starting point.</p>
             </div>
             
