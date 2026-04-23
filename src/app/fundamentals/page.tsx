@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import { Header } from '@/components/layout/header';
 import { NewsletterSignup } from '@/components/newsletter-signup';
@@ -11,32 +14,48 @@ import {
   ShieldCheck, 
   Users, 
   FileCheck, 
-  Award, 
-  GraduationCap, 
-  Globe, 
-  Laptop, 
-  CheckCircle2,
   Lock,
   Search,
-  MessageCircle,
-  Linkedin,
-  Youtube,
-  Twitter,
   Mail,
-  Zap,
-  ChevronRight,
   Target,
   Trophy,
   Clock,
-  CheckCircle,
   Cpu,
   UserPlus,
   Settings,
-  Info
+  Info,
+  Linkedin,
+  Youtube,
+  Twitter,
+  UserCircle,
+  HardHat,
+  ShieldAlert
 } from 'lucide-react';
 import { Logo } from '@/components/icons';
 
+type Persona = 'beginner' | 'basis' | 'cyber';
+
 export default function FundamentalsPage() {
+  const [persona, setPersona] = useState<Persona>('beginner');
+
+  const personaContent = {
+    beginner: {
+      title: "New to IT / SAP",
+      desc: "Focus on understanding the landscape first. Don't worry about technical code yet.",
+      strategy: "Start with SAP Basics and Cybersecurity 101."
+    },
+    basis: {
+      title: "SAP Basis Admin",
+      desc: "You know the system; now learn to secure it. Pivot your career to GRC.",
+      strategy: "Focus on Step 3: Core SAP Security and PFCG management."
+    },
+    cyber: {
+      title: "Cybersecurity Pro",
+      desc: "Apply your security knowledge to the SAP stack. Bridge the gap.",
+      strategy: "Learn how SAP's proprietary authorization model works in Step 3."
+    }
+  };
+
   return (
     <div className="flex min-h-screen flex-col bg-white text-foreground">
       <Header />
@@ -51,8 +70,73 @@ export default function FundamentalsPage() {
               Start your journey to becoming an SAP Security expert. A structured, one-stop resource for novices and IT professionals pivoting to the SAP ecosystem.
             </p>
             <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-none px-8" asChild>
-              <a href="#roadmap">Get Started</a>
+              <a href="#path-selector">Get Started</a>
             </Button>
+          </div>
+        </section>
+
+        {/* Persona Selector - Personalization */}
+        <section id="path-selector" className="w-full py-12 bg-white border-b">
+          <div className="container px-4 md:px-6">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl font-headline font-bold mb-2">👉 Choose Your Path</h2>
+              <p className="text-muted-foreground">Select who you are to personalize your learning experience.</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <button 
+                onClick={() => setPersona('beginner')}
+                className={`p-6 border-2 text-left transition-all hover:shadow-md flex flex-col items-center text-center gap-4 ${persona === 'beginner' ? 'border-primary bg-primary/5' : 'border-muted hover:border-primary/50'}`}
+              >
+                <div className={`p-3 rounded-full ${persona === 'beginner' ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'}`}>
+                  <UserCircle className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">I am a Beginner</h3>
+                  <p className="text-xs text-muted-foreground mt-1">New to IT or SAP environment</p>
+                </div>
+              </button>
+
+              <button 
+                onClick={() => setPersona('basis')}
+                className={`p-6 border-2 text-left transition-all hover:shadow-md flex flex-col items-center text-center gap-4 ${persona === 'basis' ? 'border-primary bg-primary/5' : 'border-muted hover:border-primary/50'}`}
+              >
+                <div className={`p-3 rounded-full ${persona === 'basis' ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'}`}>
+                  <HardHat className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">I am Basis Admin</h3>
+                  <p className="text-xs text-muted-foreground mt-1">Experienced in SAP Operations</p>
+                </div>
+              </button>
+
+              <button 
+                onClick={() => setPersona('cyber')}
+                className={`p-6 border-2 text-left transition-all hover:shadow-md flex flex-col items-center text-center gap-4 ${persona === 'cyber' ? 'border-primary bg-primary/5' : 'border-muted hover:border-primary/50'}`}
+              >
+                <div className={`p-3 rounded-full ${persona === 'cyber' ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'}`}>
+                  <ShieldAlert className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">I am Cyber Pro</h3>
+                  <p className="text-xs text-muted-foreground mt-1">New to SAP specific security</p>
+                </div>
+              </button>
+            </div>
+
+            <div className="mt-12 p-8 bg-muted/30 border-l-4 border-primary max-w-4xl mx-auto animate-fade-in">
+              <div className="flex gap-4 items-start">
+                <div className="mt-1">
+                  <Badge variant="outline" className="rounded-none border-primary text-primary uppercase font-bold text-[10px]">Your Strategy</Badge>
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold mb-2">Welcome, {personaContent[persona].title}</h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {personaContent[persona].desc} <span className="text-foreground font-bold">{personaContent[persona].strategy}</span>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -81,7 +165,7 @@ export default function FundamentalsPage() {
                 <Progress value={20} className="h-3 rounded-none bg-muted" />
                 <div className="flex justify-between items-center pt-2 relative z-10">
                    <p className="text-xs text-muted-foreground font-medium">
-                     You are here: <span className="text-primary">Phase 1</span>
+                     You are here: <span className="text-primary font-bold">Step 1</span>
                    </p>
                    <p className="text-xs font-bold text-foreground flex items-center gap-1">
                      Next Milestone: <span className="text-muted-foreground font-normal">Cybersecurity 101</span> <ArrowRight className="w-3 h-3 text-primary" />
@@ -98,15 +182,15 @@ export default function FundamentalsPage() {
                     CURRENT STEP
                   </Badge>
                 </div>
-                <CardHeader className="pb-2 pt-8">
-                  <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold mb-4 text-xl shadow-md">
+                <CardHeader className="pb-2 pt-8 text-center">
+                  <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold mb-4 text-xl shadow-md mx-auto">
                     1
                   </div>
                   <CardTitle className="text-xl font-headline font-bold">SAP Basics</CardTitle>
                 </CardHeader>
-                <CardContent className="text-sm font-medium flex-grow">
+                <CardContent className="text-sm font-medium flex-grow text-center px-6">
                   Understand SAP system concepts, navigation, and core business modules. This is the bedrock of your career.
-                  <div className="mt-4 p-2 bg-muted/50 border-l-2 border-primary text-[11px] text-muted-foreground">
+                  <div className="mt-4 p-2 bg-muted/50 border-l-2 border-primary text-[11px] text-muted-foreground text-left italic">
                     Estimated Time: 4 Hours
                   </div>
                 </CardContent>
@@ -127,11 +211,11 @@ export default function FundamentalsPage() {
                     <Lock className="w-6 h-6 text-muted-foreground" />
                   </div>
                 </div>
-                <CardHeader className="pb-2">
-                  <div className="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4">2</div>
+                <CardHeader className="pb-2 text-center">
+                  <div className="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4 mx-auto">2</div>
                   <CardTitle className="text-lg font-headline">Cybersecurity 101</CardTitle>
                 </CardHeader>
-                <CardContent className="text-sm text-muted-foreground flex-grow">
+                <CardContent className="text-sm text-muted-foreground flex-grow text-center">
                   Learn fundamental security concepts that underpin SAP system protection.
                 </CardContent>
                 <CardFooter className="pt-4 opacity-50">
@@ -146,12 +230,12 @@ export default function FundamentalsPage() {
                     <Lock className="w-6 h-6 text-muted-foreground" />
                   </div>
                 </div>
-                <CardHeader className="pb-2">
-                  <div className="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4">3</div>
+                <CardHeader className="pb-2 text-center">
+                  <div className="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4 mx-auto">3</div>
                   <CardTitle className="text-lg font-headline">Core SAP Security</CardTitle>
                 </CardHeader>
-                <CardContent className="text-sm text-muted-foreground flex-grow">
-                  Dive into PFCG roles, authorizations, user administration, and profiles.
+                <CardContent className="text-sm text-muted-foreground flex-grow text-center">
+                  Dive into PFCG roles, authorizations, and user administration.
                 </CardContent>
                 <CardFooter className="pt-4 opacity-50">
                   <Button variant="outline" className="w-full rounded-none" disabled>Locked</Button>
@@ -165,12 +249,12 @@ export default function FundamentalsPage() {
                     <Lock className="w-6 h-6 text-muted-foreground" />
                   </div>
                 </div>
-                <CardHeader className="pb-2">
-                  <div className="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4">4</div>
+                <CardHeader className="pb-2 text-center">
+                  <div className="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4 mx-auto">4</div>
                   <CardTitle className="text-lg font-headline">Hands-On Labs</CardTitle>
                 </CardHeader>
-                <CardContent className="text-sm text-muted-foreground flex-grow">
-                  Practice role configuration and audits in a safe sandbox environment.
+                <CardContent className="text-sm text-muted-foreground flex-grow text-center">
+                  Practice role configuration and audits in a sandbox environment.
                 </CardContent>
                 <CardFooter className="pt-4 opacity-50">
                   <Button variant="outline" className="w-full rounded-none" disabled>Locked</Button>
@@ -184,12 +268,12 @@ export default function FundamentalsPage() {
                     <Lock className="w-6 h-6 text-muted-foreground" />
                   </div>
                 </div>
-                <CardHeader className="pb-2">
-                  <div className="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4">5</div>
+                <CardHeader className="pb-2 text-center">
+                  <div className="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4 mx-auto">5</div>
                   <CardTitle className="text-lg font-headline">Certifications</CardTitle>
                 </CardHeader>
-                <CardContent className="text-sm text-muted-foreground flex-grow">
-                  Validate your skills with official SAP Security and GRC exams.
+                <CardContent className="text-sm text-muted-foreground flex-grow text-center">
+                  Validate your skills with official SAP Security exams.
                 </CardContent>
                 <CardFooter className="pt-4 opacity-50">
                   <Button variant="outline" className="w-full rounded-none" disabled>Locked</Button>
@@ -512,7 +596,9 @@ export default function FundamentalsPage() {
               <div className="w-full md:w-1/3 bg-gray-800 p-8 rounded-none border border-gray-700 shadow-xl">
                 <h3 className="text-xl font-bold mb-4">Have a Question?</h3>
                 <p className="text-sm text-gray-400 mb-8 font-medium">Our experts are here to help you navigate your first steps in SAP Security.</p>
-                <Button className="w-full bg-primary hover:bg-primary/90 rounded-none py-6 font-bold uppercase tracking-widest">Ask an Expert</Button>
+                <Button className="w-full bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 rounded-none py-6 font-bold uppercase tracking-widest transition-colors duration-300">
+                  Ask an Expert
+                </Button>
               </div>
             </div>
           </div>
