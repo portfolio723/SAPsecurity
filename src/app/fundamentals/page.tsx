@@ -119,7 +119,7 @@ export default function FundamentalsPage() {
         <section className="w-full py-16 md:py-24">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-headline font-bold mb-8 flex items-center gap-2">
-              <BookOpen className="text-primary" /> Foundational Courses
+              < BookOpen className="text-primary" /> Foundational Courses
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <Card className="rounded-none hover:shadow-lg transition-shadow">
@@ -273,14 +273,6 @@ export default function FundamentalsPage() {
                 <p className="text-gray-400">
                   New learners benefit from guidance and Q&A. Don't learn in isolation; join thousands of experts sharing insights daily.
                 </p>
-                <div className="flex gap-4">
-                  <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-gray-900 transition-colors rounded-none">
-                    <Linkedin className="mr-2 h-4 w-4" /> LinkedIn Group
-                  </Button>
-                  <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-gray-900 transition-colors rounded-none">
-                    <MessageCircle className="mr-2 h-4 w-4" /> SAP Forums
-                  </Button>
-                </div>
               </div>
               <div className="w-full md:w-1/3 bg-gray-800 p-8 rounded-none border border-gray-700">
                 <h3 className="text-xl font-bold mb-4">Have a Question?</h3>
