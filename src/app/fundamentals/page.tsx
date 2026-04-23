@@ -274,10 +274,10 @@ export default function FundamentalsPage() {
                   New learners benefit from guidance and Q&A. Don't learn in isolation; join thousands of experts sharing insights daily.
                 </p>
                 <div className="flex gap-4">
-                  <Button variant="outline" className="border-gray-700 text-white hover:bg-gray-800 rounded-none">
+                  <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-gray-900 transition-colors rounded-none">
                     <Linkedin className="mr-2 h-4 w-4" /> LinkedIn Group
                   </Button>
-                  <Button variant="outline" className="border-gray-700 text-white hover:bg-gray-800 rounded-none">
+                  <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-gray-900 transition-colors rounded-none">
                     <MessageCircle className="mr-2 h-4 w-4" /> SAP Forums
                   </Button>
                 </div>
