@@ -27,7 +27,9 @@ import {
   Zap,
   ChevronRight,
   Target,
-  Trophy
+  Trophy,
+  Clock,
+  CheckCircle
 } from 'lucide-react';
 import { Logo } from '@/components/icons';
 
@@ -197,46 +199,109 @@ export default function FundamentalsPage() {
         {/* Foundational Courses */}
         <section className="w-full py-16 md:py-24">
           <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-headline font-bold mb-8 flex items-center gap-2">
-              < BookOpen className="text-primary" /> Foundational Courses
-            </h2>
+            <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-4">
+              <h2 className="text-3xl font-headline font-bold flex items-center gap-2">
+                <BookOpen className="text-primary" /> Foundational Courses
+              </h2>
+              <Badge variant="outline" className="w-fit rounded-none border-primary text-primary font-bold uppercase tracking-widest text-[10px] px-3">
+                Recommended for Phase 1
+              </Badge>
+            </div>
+            
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="rounded-none hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <Badge variant="outline" className="w-fit mb-2">Level: Beginner</Badge>
-                  <CardTitle className="font-headline">SAP Overview (SAPTEC)</CardTitle>
+              {/* Course 1 */}
+              <Card className="rounded-none hover:shadow-xl transition-all border-t-4 border-t-primary flex flex-col group">
+                <CardHeader className="pb-2">
+                  <div className="flex justify-between items-start mb-3">
+                    <Badge className="bg-sap-blue rounded-none uppercase text-[10px] font-bold">Beginner</Badge>
+                    <span className="flex items-center text-[10px] font-bold text-muted-foreground uppercase tracking-tighter">
+                      <Clock className="w-3 h-3 mr-1 text-primary" /> 4h 30m
+                    </span>
+                  </div>
+                  <CardTitle className="font-headline text-xl font-bold group-hover:text-primary transition-colors">SAP Overview (SAPTEC)</CardTitle>
+                  <CardDescription className="text-xs font-medium">The essential starting point for all SAP professionals.</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm">A free introduction covering S/4HANA fundamentals, system landscape, and basic navigation tools.</p>
+                <CardContent className="flex-grow space-y-5 pt-4">
+                  <div className="space-y-2">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1">
+                      <Target className="w-3 h-3" /> Outcome
+                    </p>
+                    <p className="text-sm font-medium leading-relaxed">
+                      Master S/4HANA navigation, understand system architecture and core business modules.
+                    </p>
+                  </div>
+                  <div className="p-3 bg-muted/30 text-[11px] font-medium italic border-l-2 border-primary leading-snug">
+                    "Enroll in this first to understand the landscape you'll be securing."
+                  </div>
                 </CardContent>
-                <CardFooter>
-                  <Button variant="link" className="p-0 text-primary">View Course <ArrowRight className="ml-1 h-4 w-4" /></Button>
+                <CardFooter className="pt-6">
+                  <Button className="w-full rounded-none font-bold py-6 text-sm group" variant="default">
+                    Start Course <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
                 </CardFooter>
               </Card>
 
-              <Card className="rounded-none hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <Badge variant="outline" className="w-fit mb-2">Level: Intermediate</Badge>
-                  <CardTitle className="font-headline">SAP Security & Authorizations</CardTitle>
+              {/* Course 2 */}
+              <Card className="rounded-none hover:shadow-xl transition-all border-t-4 border-t-sap-blue flex flex-col group">
+                <CardHeader className="pb-2">
+                  <div className="flex justify-between items-start mb-3">
+                    <Badge className="bg-muted text-foreground rounded-none uppercase text-[10px] font-bold">Intermediate</Badge>
+                    <span className="flex items-center text-[10px] font-bold text-muted-foreground uppercase tracking-tighter">
+                      <Clock className="w-3 h-3 mr-1 text-primary" /> 8h 00m
+                    </span>
+                  </div>
+                  <CardTitle className="font-headline text-xl font-bold group-hover:text-sap-blue transition-colors">Security & Authorizations</CardTitle>
+                  <CardDescription className="text-xs font-medium">Core technical training for SAP Security admins.</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm">Deep dive into the PFCG transaction, authorization objects, and role maintenance best practices.</p>
+                <CardContent className="flex-grow space-y-5 pt-4">
+                  <div className="space-y-2">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1">
+                      <Target className="w-3 h-3" /> Outcome
+                    </p>
+                    <p className="text-sm font-medium leading-relaxed">
+                      Deep dive into PFCG transactions, authorization objects, and role maintenance best practices.
+                    </p>
+                  </div>
+                  <div className="p-3 bg-muted/30 text-[11px] font-medium italic border-l-2 border-sap-blue leading-snug">
+                    "Follows Phase 1. Learn to translate business needs into technical roles."
+                  </div>
                 </CardContent>
-                <CardFooter>
-                  <Button variant="link" className="p-0 text-primary">View Course <ArrowRight className="ml-1 h-4 w-4" /></Button>
+                <CardFooter className="pt-6">
+                  <Button className="w-full rounded-none font-bold py-6 text-sm group bg-sap-blue hover:bg-sap-blue/90" variant="default">
+                    Start Course <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
                 </CardFooter>
               </Card>
 
-              <Card className="rounded-none hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <Badge variant="outline" className="w-fit mb-2">Level: Fundamental</Badge>
-                  <CardTitle className="font-headline">Cybersecurity Essentials</CardTitle>
+              {/* Course 3 */}
+              <Card className="rounded-none hover:shadow-xl transition-all border-t-4 border-t-foreground flex flex-col group">
+                <CardHeader className="pb-2">
+                  <div className="flex justify-between items-start mb-3">
+                    <Badge className="bg-foreground text-background rounded-none uppercase text-[10px] font-bold">Fundamental</Badge>
+                    <span className="flex items-center text-[10px] font-bold text-muted-foreground uppercase tracking-tighter">
+                      <Clock className="w-3 h-3 mr-1 text-primary" /> 3h 15m
+                    </span>
+                  </div>
+                  <CardTitle className="font-headline text-xl font-bold group-hover:text-primary transition-colors">Cybersecurity 101</CardTitle>
+                  <CardDescription className="text-xs font-medium">Contextual security knowledge for IT professionals.</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm">General security principles including encryption, firewalls, and IDS/IPS to provide context for SAP security.</p>
+                <CardContent className="flex-grow space-y-5 pt-4">
+                  <div className="space-y-2">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1">
+                      <Target className="w-3 h-3" /> Outcome
+                    </p>
+                    <p className="text-sm font-medium leading-relaxed">
+                      Understand encryption, firewalls, and network security to protect the whole landscape.
+                    </p>
+                  </div>
+                  <div className="p-3 bg-muted/30 text-[11px] font-medium italic border-l-2 border-foreground leading-snug">
+                    "Crucial context. Understand what's happening outside the SAP application."
+                  </div>
                 </CardContent>
-                <CardFooter>
-                  <Button variant="link" className="p-0 text-primary">View Course <ArrowRight className="ml-1 h-4 w-4" /></Button>
+                <CardFooter className="pt-6">
+                  <Button className="w-full rounded-none font-bold py-6 text-sm group bg-foreground hover:bg-foreground/90" variant="default">
+                    Start Course <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
                 </CardFooter>
               </Card>
             </div>
@@ -280,39 +345,39 @@ export default function FundamentalsPage() {
                 </Accordion>
               </div>
               <div className="space-y-6">
-                <Card className="rounded-none border-l-4 border-l-primary p-6">
+                <Card className="rounded-none border-l-4 border-l-primary p-6 shadow-sm">
                   <h3 className="text-xl font-headline font-bold mb-4 flex items-center gap-2">
                     <Laptop className="text-primary" /> Hands-On Practice
                   </h3>
                   <p className="text-sm text-muted-foreground mb-4">
                     Theory is not enough. To truly learn, you need a sandbox environment to practice role creation and user administration.
                   </p>
-                  <ul className="space-y-2 mb-6 text-sm">
-                    <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-600" /> Use SAP Developer Edition</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-600" /> Set up an SAP Trial Cloud instance</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-600" /> Practice user creation in transaction SU01</li>
+                  <ul className="space-y-3 mb-6 text-sm">
+                    <li className="flex items-center gap-2 font-medium"><CheckCircle size={16} className="text-primary" /> Use SAP Developer Edition</li>
+                    <li className="flex items-center gap-2 font-medium"><CheckCircle size={16} className="text-primary" /> Set up an SAP Trial Cloud instance</li>
+                    <li className="flex items-center gap-2 font-medium"><CheckCircle size={16} className="text-primary" /> Practice user creation in transaction SU01</li>
                   </ul>
-                  <Button className="w-full bg-sap-blue rounded-none">Access Demo Environment</Button>
+                  <Button className="w-full bg-sap-blue rounded-none py-6 font-bold uppercase tracking-wider text-xs">Access Demo Environment</Button>
                 </Card>
-                <Card className="rounded-none border-l-4 border-l-blue-600 p-6">
+                <Card className="rounded-none border-l-4 border-l-blue-600 p-6 shadow-sm">
                   <h3 className="text-xl font-headline font-bold mb-4 flex items-center gap-2">
                     <Award className="text-blue-600" /> Certification Paths
                   </h3>
                   <div className="space-y-4 text-sm">
-                    <div>
+                    <div className="border-b pb-2">
                       <p className="font-bold">Associate Level</p>
-                      <p className="text-muted-foreground">SAP Certified Technology Associate - System Security Architect</p>
+                      <p className="text-muted-foreground text-xs font-medium">SAP Certified Technology Associate - System Security Architect</p>
                     </div>
-                    <div>
+                    <div className="border-b pb-2">
                       <p className="font-bold">Specialist Level</p>
-                      <p className="text-muted-foreground">SAP Certified Technology Associate - Authorization and Auditing</p>
+                      <p className="text-muted-foreground text-xs font-medium">SAP Certified Technology Associate - Authorization and Auditing</p>
                     </div>
                     <div>
                       <p className="font-bold">Professional Level</p>
-                      <p className="text-muted-foreground">SAP Certified Technology Professional - System Security Architect</p>
+                      <p className="text-muted-foreground text-xs font-medium">SAP Certified Technology Professional - System Security Architect</p>
                     </div>
                   </div>
-                  <Button variant="outline" className="w-full mt-6 rounded-none">View All Certifications</Button>
+                  <Button variant="outline" className="w-full mt-6 rounded-none py-6 font-bold uppercase tracking-wider text-xs border-blue-600 text-blue-600 hover:bg-blue-50">View All Certifications</Button>
                 </Card>
               </div>
             </div>
@@ -332,9 +397,9 @@ export default function FundamentalsPage() {
                 { title: "How to Prepare for Your First SAP Audit", desc: "Checklists and common pitfalls to avoid during a security audit." },
                 { title: "The Future of SAP IAM: Cloud vs On-Premise", desc: "Comparing classic GRC with the new SAP Identity Access Governance." }
               ].map((res, i) => (
-                <Card key={i} className="rounded-none border-none bg-muted/30 hover:bg-muted/50 transition-colors cursor-pointer">
+                <Card key={i} className="rounded-none border-none bg-muted/30 hover:bg-muted/50 transition-colors cursor-pointer group">
                   <CardHeader className="p-4">
-                    <CardTitle className="text-base font-headline font-bold">{res.title}</CardTitle>
+                    <CardTitle className="text-base font-headline font-bold group-hover:text-primary transition-colors">{res.title}</CardTitle>
                     <CardDescription className="text-xs line-clamp-2">{res.desc}</CardDescription>
                   </CardHeader>
                 </Card>
@@ -349,14 +414,14 @@ export default function FundamentalsPage() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="space-y-4 max-w-[600px]">
                 <h2 className="text-3xl font-headline font-bold">Join the SAP Security Community</h2>
-                <p className="text-gray-400">
+                <p className="text-gray-400 font-medium">
                   New learners benefit from guidance and Q&A. Don't learn in isolation; join thousands of experts sharing insights daily.
                 </p>
               </div>
-              <div className="w-full md:w-1/3 bg-gray-800 p-8 rounded-none border border-gray-700">
+              <div className="w-full md:w-1/3 bg-gray-800 p-8 rounded-none border border-gray-700 shadow-xl">
                 <h3 className="text-xl font-bold mb-4">Have a Question?</h3>
-                <p className="text-sm text-gray-400 mb-6">Our experts are here to help you navigate your first steps in SAP Security.</p>
-                <Button className="w-full bg-primary hover:bg-primary/90 rounded-none">Ask an Expert</Button>
+                <p className="text-sm text-gray-400 mb-8 font-medium">Our experts are here to help you navigate your first steps in SAP Security.</p>
+                <Button className="w-full bg-primary hover:bg-primary/90 rounded-none py-6 font-bold uppercase tracking-widest">Ask an Expert</Button>
               </div>
             </div>
           </div>
