@@ -29,7 +29,15 @@ const navLinks = [
   { label: 'SAP Cybersecurity', href: '#' },
   { label: 'Product Reviews', href: '#' },
   { label: 'Podcasts', href: '#' },
-  { label: 'Other Tools', href: '#' },
+  {
+    label: 'Other Tools',
+    hasDropdown: true,
+    dropdownItems: [
+      { label: 'Fundamentals', href: '/fundamentals' },
+      { label: 'License Analysis', href: '#' },
+      { label: 'SoD Review', href: '#' },
+    ],
+  },
 ];
 
 export function Header() {
@@ -56,7 +64,7 @@ export function Header() {
         <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 md:h-20 md:px-6">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-               <Logo />
+               <Logo width={180} height={180} />
             </Link>
           </div>
           
