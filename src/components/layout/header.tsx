@@ -24,20 +24,28 @@ const navLinks = [
       { label: 'Security Notes', href: '#' },
     ],
   },
-  { label: 'SAP IAG', href: '#' },
-  { label: 'SAP GRC', href: '#' },
-  { label: 'SAP Cybersecurity', href: '#' },
-  { label: 'Product Reviews', href: '#' },
-  { label: 'Podcasts', href: '#' },
   {
-    label: 'Other Tools',
+    label: 'SAP GRC & IAG',
+    hasDropdown: true,
+    dropdownItems: [
+      { label: 'SAP GRC Access Control', href: '#' },
+      { label: 'SAP GRC Process Control', href: '#' },
+      { label: 'SAP GRC Risk Management', href: '#' },
+      { label: 'SAP IAG', href: '#' },
+    ],
+  },
+  { label: 'SAP Cybersecurity', href: '#' },
+  {
+    label: 'Resources',
     hasDropdown: true,
     dropdownItems: [
       { label: 'Fundamentals', href: '/fundamentals' },
-      { label: 'License Analysis', href: '#' },
-      { label: 'SoD Review', href: '#' },
+      { label: 'Product Reviews', href: '#' },
+      { label: 'Podcasts', href: '#' },
+      { label: 'Case Studies', href: '#' },
     ],
   },
+  { label: 'Contact Us', href: '#' },
 ];
 
 export function Header() {
@@ -74,7 +82,7 @@ export function Header() {
                 <div key={link.label} className="relative">
                   {link.hasDropdown ? (
                     <DropdownMenu>
-                      <DropdownMenuTrigger className="flex items-center gap-1 font-medium text-muted-foreground/70 transition-colors hover:text-foreground focus:outline-none">
+                      <DropdownMenuTrigger className="flex items-center gap-1 font-bold text-muted-foreground/80 transition-colors hover:text-foreground focus:outline-none">
                         {link.label}
                         <ChevronDown className="h-4 w-4" />
                       </DropdownMenuTrigger>
@@ -89,7 +97,7 @@ export function Header() {
                   ) : (
                     <Link
                       href={link.href || '#'}
-                      className="font-medium text-muted-foreground/70 transition-colors hover:text-foreground"
+                      className="font-bold text-muted-foreground/80 transition-colors hover:text-foreground"
                     >
                       {link.label}
                     </Link>
@@ -101,13 +109,10 @@ export function Header() {
 
           <div className="flex items-center justify-end">
              <div className="hidden items-center gap-2 md:flex lg:gap-4">
-              <Link
-                href="#"
-                className="text-sm font-medium text-muted-foreground/70 transition-colors hover:text-foreground"
-              >
-                Login
-              </Link>
-              <Button size="sm">Become a Contributor</Button>
+              <Button variant="outline" size="sm" className="font-bold border-muted-foreground/20" asChild>
+                <Link href="#">Member Login</Link>
+              </Button>
+              <Button size="sm" className="font-bold px-6">Become a Contributor</Button>
             </div>
              <button
               onClick={() => setIsMobileMenuOpen(true)}
