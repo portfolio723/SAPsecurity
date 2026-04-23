@@ -31,7 +31,8 @@ import {
   CheckCircle,
   Cpu,
   UserPlus,
-  Settings
+  Settings,
+  Info
 } from 'lucide-react';
 import { Logo } from '@/components/icons';
 
@@ -426,7 +427,12 @@ export default function FundamentalsPage() {
                 <h2 className="text-3xl font-headline font-bold">Certification Paths</h2>
                 <p className="text-muted-foreground">Validate your expertise with industry-recognized SAP credentials.</p>
               </div>
-              <Button variant="outline" className="rounded-none border-sap-blue text-sap-blue hover:bg-sap-blue hover:text-white">View All Exams</Button>
+              <div className="flex flex-col items-end gap-2">
+                <Badge variant="outline" className="rounded-none border-primary text-primary flex items-center gap-2 py-1 px-3">
+                  <Info className="w-3 h-3" /> Recommended after completing Step 4
+                </Badge>
+                <Button variant="outline" className="rounded-none border-sap-blue text-sap-blue hover:bg-sap-blue hover:text-white">View All Exams</Button>
+              </div>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -452,24 +458,41 @@ export default function FundamentalsPage() {
           </div>
         </section>
 
-        {/* Recommended Resources */}
+        {/* Recommended Resources (Upgraded Visual Cards with Tags) */}
         <section className="w-full py-16 md:py-24 bg-muted/20">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-headline font-bold mb-8 text-center">Recommended Reading</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { title: "Introduction to SAP GRC Access Control", desc: "Understand how GRC automates compliance and SoD checks." },
-                { title: "Top 10 Security Transactions Every Admin Should Know", desc: "A curated list of essential T-Codes like PFCG, SU01, and SM20." },
-                { title: "Understanding SAP NetWeaver Security Gateway", desc: "How SAP handles external connections and API security." },
-                { title: "Best Practices for SAP Fiori Role Design", desc: "A guide to modern authorization concepts for the web interface." },
-                { title: "How to Prepare for Your First SAP Audit", desc: "Checklists and common pitfalls to avoid during a security audit." },
-                { title: "The Future of SAP IAM: Cloud vs On-Premise", desc: "Comparing classic GRC with the new SAP Identity Access Governance." }
+                { title: "Introduction to SAP GRC Access Control", desc: "Understand how GRC automates compliance and SoD checks.", tag: "Beginner" },
+                { title: "Top 10 Security Transactions Every Admin Should Know", desc: "A curated list of essential T-Codes like PFCG, SU01, and SM20.", tag: "Beginner" },
+                { title: "Understanding SAP NetWeaver Security Gateway", desc: "How SAP handles external connections and API security.", tag: "Intermediate" },
+                { title: "Best Practices for SAP Fiori Role Design", desc: "A guide to modern authorization concepts for the web interface.", tag: "Intermediate" },
+                { title: "How to Prepare for Your First SAP Audit", desc: "Checklists and common pitfalls to avoid during a security audit.", tag: "Advanced" },
+                { title: "The Future of SAP IAM: Cloud vs On-Premise", desc: "Comparing classic GRC with the new SAP Identity Access Governance.", tag: "Advanced" }
               ].map((res, i) => (
-                <Card key={i} className="rounded-none border-none bg-white hover:bg-muted/50 transition-colors cursor-pointer group shadow-sm">
-                  <CardHeader className="p-4">
-                    <CardTitle className="text-base font-headline font-bold group-hover:text-primary transition-colors">{res.title}</CardTitle>
-                    <CardDescription className="text-xs line-clamp-2">{res.desc}</CardDescription>
+                <Card key={i} className="rounded-none border-none bg-white hover:bg-muted/50 transition-colors cursor-pointer group shadow-sm flex flex-col h-full">
+                  <CardHeader className="p-5 pb-2">
+                    <Badge 
+                      variant="outline" 
+                      className={`w-fit mb-3 rounded-none text-[10px] font-bold uppercase tracking-widest ${
+                        res.tag === 'Beginner' ? 'border-green-500 text-green-600' : 
+                        res.tag === 'Intermediate' ? 'border-sap-blue text-sap-blue' : 
+                        'border-primary text-primary'
+                      }`}
+                    >
+                      {res.tag}
+                    </Badge>
+                    <CardTitle className="text-lg font-headline font-bold group-hover:text-primary transition-colors leading-tight">{res.title}</CardTitle>
                   </CardHeader>
+                  <CardContent className="p-5 pt-0 flex-grow">
+                    <p className="text-sm text-muted-foreground line-clamp-3">{res.desc}</p>
+                  </CardContent>
+                  <CardFooter className="p-5 pt-0">
+                    <span className="text-xs font-bold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                      Read Article <ArrowRight className="w-3 h-3" />
+                    </span>
+                  </CardFooter>
                 </Card>
               ))}
             </div>
