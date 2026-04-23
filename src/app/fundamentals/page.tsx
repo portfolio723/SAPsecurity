@@ -99,9 +99,11 @@ export default function FundamentalsPage() {
             </div>
             <span className="text-xs font-black whitespace-nowrap">20% COMPLETE</span>
           </div>
-          <Button size="sm" onClick={() => scrollToSection('step-1-content')} className="rounded-none">
-            Resume <ArrowRight className="ml-1 h-3 w-3" />
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button size="sm" onClick={() => scrollToSection('step-1-content')} className="rounded-none">
+              Resume <ArrowRight className="ml-1 h-3 w-3" />
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -116,10 +118,14 @@ export default function FundamentalsPage() {
               Your structured journey from novice to SAP Security expert. One stop, zero clutter.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" onClick={() => scrollToSection('path-selector')} className="bg-primary hover:bg-primary/90 rounded-none px-10 py-8 text-lg font-bold uppercase tracking-wider">
+              <Button size="lg" onClick={() => scrollToSection('path-selector')} className="bg-primary hover:bg-primary/90 rounded-none px-10 py-8 text-lg font-bold uppercase tracking-wider text-white">
                 Start Learning Now
               </Button>
-              <Button variant="outline" size="lg" onClick={() => scrollToSection('roadmap')} className="rounded-none px-10 py-8 border-white text-white hover:bg-white hover:text-sap-blue text-lg">
+              <Button 
+                size="lg" 
+                onClick={() => scrollToSection('roadmap')} 
+                className="rounded-none px-10 py-8 bg-white text-sap-blue border-2 border-white hover:bg-transparent hover:text-white transition-all text-lg font-bold uppercase tracking-wider"
+              >
                 View Roadmap
               </Button>
             </div>
@@ -229,7 +235,7 @@ export default function FundamentalsPage() {
                   </div>
                 </CardContent>
                 <CardFooter className="pt-6">
-                  <Button className="w-full bg-primary hover:bg-primary/90 rounded-none group py-8 text-lg font-black uppercase tracking-tight shadow-md">
+                  <Button className="w-full bg-primary hover:bg-primary/90 rounded-none group py-8 text-lg font-black uppercase tracking-tight shadow-md text-white">
                     Start Now <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </CardFooter>
@@ -307,7 +313,7 @@ export default function FundamentalsPage() {
                   </ul>
                 </CardContent>
                 <CardFooter className="pt-8">
-                  <Button className="w-full rounded-none font-black py-8 text-lg group bg-primary">
+                  <Button className="w-full rounded-none font-black py-8 text-lg group bg-primary text-white">
                     Start Lesson <ArrowRight className="ml-2 w-6 h-6 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </CardFooter>
@@ -334,7 +340,7 @@ export default function FundamentalsPage() {
                   </ul>
                 </CardContent>
                 <CardFooter className="pt-8">
-                  <Button className="w-full rounded-none font-black py-8 text-lg group bg-sap-blue hover:bg-sap-blue/90">
+                  <Button className="w-full rounded-none font-black py-8 text-lg group bg-sap-blue hover:bg-sap-blue/90 text-white">
                     Dive In <ArrowRight className="ml-2 w-6 h-6 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </CardFooter>
@@ -360,7 +366,7 @@ export default function FundamentalsPage() {
                   </p>
                 </CardContent>
                 <CardFooter className="pt-8">
-                  <Button className="w-full rounded-none font-black py-8 text-lg group bg-foreground hover:bg-foreground/90">
+                  <Button className="w-full rounded-none font-black py-8 text-lg group bg-foreground hover:bg-foreground/90 text-white">
                     Take Quiz <ArrowRight className="ml-2 w-6 h-6 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </CardFooter>
@@ -411,7 +417,7 @@ export default function FundamentalsPage() {
                     <CardTitle className="text-xl font-headline font-black leading-tight">{concept.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-base text-muted-foreground leading-relaxed">
+                    <p className="text-base text-muted-foreground leading-relaxed font-medium">
                       {concept.desc}
                     </p>
                   </CardContent>
@@ -433,7 +439,7 @@ export default function FundamentalsPage() {
                   Theory is only half the battle. To be hired, you must build, break, and audit in a live environment. We guide you through three critical real-world milestones.
                 </p>
                 <div className="pt-6">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-none px-12 py-10 text-xl font-black uppercase tracking-widest shadow-[0_10px_40px_rgba(242,81,64,0.4)]">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-none px-12 py-10 text-xl font-black uppercase tracking-widest shadow-[0_10px_40px_rgba(242,81,64,0.4)] text-white">
                     Access Lab Guide
                   </Button>
                 </div>
