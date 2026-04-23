@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
+import { Progress } from '@/components/ui/progress';
 import { 
   ArrowRight, 
   BookOpen, 
@@ -23,7 +24,8 @@ import {
   Youtube,
   Twitter,
   Mail,
-  Zap
+  Zap,
+  ChevronRight
 } from 'lucide-react';
 import { Logo } from '@/components/icons';
 
@@ -50,23 +52,34 @@ export default function FundamentalsPage() {
         {/* Learning Roadmap */}
         <section id="roadmap" className="w-full py-16 md:py-24 bg-muted/30">
           <div className="container px-4 md:px-6">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="text-3xl font-headline font-bold mb-4">Your Learning Roadmap</h2>
-              <p className="text-muted-foreground max-w-[600px] mx-auto">
-                Follow this step-by-step path to build your SAP Security knowledge from the ground up.
+              <p className="text-muted-foreground max-w-[600px] mx-auto mb-8">
+                Follow this guided sequence to build your knowledge. Complete each phase to unlock the next level of expertise.
               </p>
+              
+              {/* Progress Indicator */}
+              <div className="max-w-md mx-auto mb-16 space-y-2">
+                <div className="flex justify-between text-sm font-medium">
+                  <span>Your Progress</span>
+                  <span>Step 1 of 5 (20%)</span>
+                </div>
+                <Progress value={20} className="h-2" />
+              </div>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6 relative items-stretch">
-              {/* Step 1 - HIGHLIGHTED */}
+              {/* Step 1 - ACTIVE/UNLOCKED */}
               <Card className="rounded-none border-2 border-primary shadow-[0_0_25px_rgba(242,81,64,0.3)] scale-105 z-10 relative bg-white flex flex-col">
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <Badge className="bg-primary text-white border-none px-4 py-1 rounded-none uppercase text-[10px] font-bold tracking-widest shadow-lg">
-                    Recommended Start
+                    CURRENT STEP
                   </Badge>
                 </div>
                 <CardHeader className="pb-2 pt-8">
-                  <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold mb-4 text-xl shadow-md">1</div>
+                  <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold mb-4 text-xl shadow-md">
+                    <CheckCircle2 className="w-6 h-6 mr-1" /> 1
+                  </div>
                   <CardTitle className="text-xl font-headline font-bold">SAP Basics</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm font-medium flex-grow">
@@ -79,48 +92,80 @@ export default function FundamentalsPage() {
                 </CardFooter>
               </Card>
 
-              {/* Step 2 */}
-              <Card className="rounded-none border-t-4 border-t-green-500 shadow-md flex flex-col">
+              {/* Step 2 - LOCKED */}
+              <Card className="rounded-none border-dashed border-2 opacity-60 bg-muted/50 flex flex-col grayscale pointer-events-none relative group">
+                <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+                  <div className="bg-white/90 p-2 rounded-full shadow-sm">
+                    <Lock className="w-6 h-6 text-muted-foreground" />
+                  </div>
+                </div>
                 <CardHeader className="pb-2">
-                  <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold mb-4">2</div>
+                  <div className="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4">2</div>
                   <CardTitle className="text-lg font-headline">Cybersecurity 101</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm text-muted-foreground flex-grow">
                   Learn fundamental security concepts that underpin SAP system protection.
                 </CardContent>
+                <CardFooter className="pt-4 opacity-50">
+                  <Button variant="outline" className="w-full rounded-none" disabled>Locked</Button>
+                </CardFooter>
               </Card>
 
-              {/* Step 3 */}
-              <Card className="rounded-none border-t-4 border-t-blue-400 shadow-md flex flex-col">
+              {/* Step 3 - LOCKED */}
+              <Card className="rounded-none border-dashed border-2 opacity-60 bg-muted/50 flex flex-col grayscale pointer-events-none relative group">
+                <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+                  <div className="bg-white/90 p-2 rounded-full shadow-sm">
+                    <Lock className="w-6 h-6 text-muted-foreground" />
+                  </div>
+                </div>
                 <CardHeader className="pb-2">
-                  <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-4">3</div>
+                  <div className="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4">3</div>
                   <CardTitle className="text-lg font-headline">Core SAP Security</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm text-muted-foreground flex-grow">
                   Dive into PFCG roles, authorizations, user administration, and profiles.
                 </CardContent>
+                <CardFooter className="pt-4 opacity-50">
+                  <Button variant="outline" className="w-full rounded-none" disabled>Locked</Button>
+                </CardFooter>
               </Card>
 
-              {/* Step 4 */}
-              <Card className="rounded-none border-t-4 border-t-purple-500 shadow-md flex flex-col">
+              {/* Step 4 - LOCKED */}
+              <Card className="rounded-none border-dashed border-2 opacity-60 bg-muted/50 flex flex-col grayscale pointer-events-none relative group">
+                <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+                  <div className="bg-white/90 p-2 rounded-full shadow-sm">
+                    <Lock className="w-6 h-6 text-muted-foreground" />
+                  </div>
+                </div>
                 <CardHeader className="pb-2">
-                  <div className="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold mb-4">4</div>
+                  <div className="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4">4</div>
                   <CardTitle className="text-lg font-headline">Hands-On Labs</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm text-muted-foreground flex-grow">
                   Practice role configuration and audits in a safe sandbox environment.
                 </CardContent>
+                <CardFooter className="pt-4 opacity-50">
+                  <Button variant="outline" className="w-full rounded-none" disabled>Locked</Button>
+                </CardFooter>
               </Card>
 
-              {/* Step 5 */}
-              <Card className="rounded-none border-t-4 border-t-yellow-500 shadow-md flex flex-col">
+              {/* Step 5 - LOCKED */}
+              <Card className="rounded-none border-dashed border-2 opacity-60 bg-muted/50 flex flex-col grayscale pointer-events-none relative group">
+                <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+                  <div className="bg-white/90 p-2 rounded-full shadow-sm">
+                    <Lock className="w-6 h-6 text-muted-foreground" />
+                  </div>
+                </div>
                 <CardHeader className="pb-2">
-                  <div className="w-10 h-10 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center font-bold mb-4">5</div>
+                  <div className="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center font-bold mb-4">5</div>
                   <CardTitle className="text-lg font-headline">Certifications</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm text-muted-foreground flex-grow">
                   Validate your skills with official SAP Security and GRC exams.
                 </CardContent>
+                <CardFooter className="pt-4 opacity-50">
+                  <Button variant="outline" className="w-full rounded-none" disabled>Locked</Button>
+                </CardFooter>
               </Card>
             </div>
           </div>
