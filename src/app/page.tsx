@@ -87,7 +87,7 @@ export default function Home() {
               {/* Left Column */}
               <div className="col-span-12 lg:col-span-3 space-y-8">
                 
-                <Card className="shadow-lg rounded-none">
+                <Card className="shadow-lg">
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
@@ -123,7 +123,7 @@ export default function Home() {
 
                 <AdsensePlaceholder height={280} />
 
-                <Card className="shadow-lg rounded-none">
+                <Card className="shadow-lg">
                   <CardHeader>
                     <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
                       <Hash /> Recent Topics
@@ -147,7 +147,7 @@ export default function Home() {
                   </CardFooter>
                 </Card>
                 
-                <Card className="shadow-lg rounded-none">
+                <Card className="shadow-lg">
                   <CardHeader>
                     <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
                       <TrendingUp /> Trending Topics
@@ -164,7 +164,7 @@ export default function Home() {
 
               {/* Center Column */}
               <div className="col-span-12 lg:col-span-6 space-y-8">
-                <Card className="border bg-card shadow-lg overflow-hidden relative text-white rounded-none">
+                <Card className="border bg-card shadow-lg overflow-hidden relative text-white">
                   <Image src="/banner.jpg" alt="Featured Insight" width={1200} height={350} className="w-full object-cover h-[350px]"/>
                   <div className="absolute inset-0 bg-sap-blue/70 bg-gradient-to-t from-sap-blue/90 to-transparent"/>
                   <CardContent className="absolute bottom-0 p-6 space-y-3">
@@ -183,7 +183,7 @@ export default function Home() {
                 <div className="space-y-6">
                   <h3 className="font-semibold tracking-tight font-headline text-lg text-left mb-6">Recent Activity</h3>
                   {communityActivity.map(item => (
-                    <Card key={item.id} className="shadow-lg flex rounded-none">
+                    <Card key={item.id} className="shadow-lg flex">
                        <div className="w-1/4">
                           <Image src={`https://picsum.photos/seed/${item.id}/200/200`} alt={item.title} width={200} height={200} className="object-cover h-full w-full"/>
                        </div>
@@ -217,7 +217,7 @@ export default function Home() {
               {/* Right Column */}
               <div className="col-span-12 lg:col-span-3 space-y-8">
                  
-                 <Card className="shadow-lg rounded-none">
+                 <Card className="shadow-lg">
                     <CardHeader>
                       <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
                         <Megaphone/> Announcements
@@ -240,7 +240,7 @@ export default function Home() {
                     </CardFooter>
                  </Card>
                  <AdsensePlaceholder height={280} />
-                 <Card className="shadow-lg rounded-none">
+                 <Card className="shadow-lg">
                     <CardHeader>
                        <h3 className="font-semibold tracking-tight flex items-center gap-2 font-headline text-lg">
                          <Users /> Community Groups
@@ -271,7 +271,7 @@ export default function Home() {
                     </CardFooter>
                  </Card>
                  
-                <Card className="shadow-lg rounded-none">
+                <Card className="shadow-lg">
                   <CardHeader className="items-center text-center">
                     <div className="p-3 bg-muted rounded-full w-fit">
                       <Mail className="h-6 w-6 text-foreground" />
@@ -283,7 +283,7 @@ export default function Home() {
                     <Input
                       type="email"
                       placeholder="Enter Your Email"
-                      className="rounded-none pl-4 pr-12 text-center"
+                      className="pl-4 pr-12 text-center"
                     />
                     <Button
                       type="submit"

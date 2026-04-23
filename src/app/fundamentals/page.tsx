@@ -100,7 +100,7 @@ export default function FundamentalsPage() {
             <span className="text-xs font-black whitespace-nowrap">20% COMPLETE</span>
           </div>
           <div className="flex items-center gap-2">
-            <Button size="sm" onClick={() => scrollToSection('step-1-content')} className="rounded-none">
+            <Button size="sm" onClick={() => scrollToSection('step-1-content')}>
               Resume <ArrowRight className="ml-1 h-3 w-3" />
             </Button>
           </div>
@@ -118,13 +118,13 @@ export default function FundamentalsPage() {
               Your structured journey from novice to SAP Security expert. One stop, zero clutter.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" onClick={() => scrollToSection('path-selector')} className="bg-primary hover:bg-primary/90 rounded-none px-10 py-8 text-lg font-bold uppercase tracking-wider text-white">
+              <Button size="lg" onClick={() => scrollToSection('path-selector')} className="bg-primary hover:bg-primary/90 px-10 py-8 text-lg font-bold uppercase tracking-wider text-white">
                 Start Learning Now
               </Button>
               <Button 
                 size="lg" 
                 onClick={() => scrollToSection('roadmap')} 
-                className="rounded-none px-10 py-8 bg-white text-sap-blue border-2 border-white hover:bg-transparent hover:text-white transition-all text-lg font-bold uppercase tracking-wider"
+                className="px-10 py-8 bg-white text-sap-blue border-2 border-white hover:bg-transparent hover:text-white transition-all text-lg font-bold uppercase tracking-wider"
               >
                 View Roadmap
               </Button>
@@ -150,7 +150,7 @@ export default function FundamentalsPage() {
                   <button 
                     key={pKey}
                     onClick={() => setPersona(pKey)}
-                    className={`p-8 border-2 text-left transition-all hover:-translate-y-2 hover:shadow-2xl flex flex-col items-center text-center gap-6 ${active ? 'border-primary bg-primary/5 shadow-xl' : 'border-muted hover:border-primary/50'}`}
+                    className={`p-8 border-2 text-left transition-all hover:-translate-y-2 hover:shadow-2xl flex flex-col items-center text-center gap-6 rounded-lg ${active ? 'border-primary bg-primary/5 shadow-xl' : 'border-muted hover:border-primary/50'}`}
                   >
                     <div className={`p-5 rounded-full transition-colors ${active ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'}`}>
                       <Icon className="w-10 h-10" />
@@ -164,10 +164,10 @@ export default function FundamentalsPage() {
               })}
             </div>
 
-            <div className="mt-16 p-10 bg-muted/30 border-l-8 border-primary max-w-5xl mx-auto animate-fade-in shadow-sm">
+            <div className="mt-16 p-10 bg-muted/30 border-l-8 border-primary max-w-5xl mx-auto animate-fade-in shadow-sm rounded-r-lg">
               <div className="flex gap-6 items-start">
                 <div className="mt-1">
-                  <Badge variant="outline" className="rounded-none border-primary text-primary uppercase font-black text-xs px-3 py-1">Recommended Path</Badge>
+                  <Badge variant="outline" className="border-primary text-primary uppercase font-black text-xs px-3 py-1">Recommended Path</Badge>
                 </div>
                 <div>
                   <h4 className="text-2xl font-bold mb-3">Welcome, {personaContent[persona].title}</h4>
@@ -187,7 +187,7 @@ export default function FundamentalsPage() {
               <h2 className="text-4xl font-headline font-bold mb-6">Your Step-by-Step Roadmap</h2>
               
               {/* Progress System Card */}
-              <div className="max-w-2xl mx-auto mb-20 bg-white p-8 border shadow-xl relative transition-transform hover:scale-[1.02]">
+              <div className="max-w-2xl mx-auto mb-20 bg-white p-8 border shadow-xl relative transition-transform hover:scale-[1.02] rounded-lg">
                 <div className="absolute top-0 right-0 p-4 opacity-10">
                    <Trophy className="w-32 h-32" />
                 </div>
@@ -199,7 +199,7 @@ export default function FundamentalsPage() {
                   </div>
                   <span className="text-primary font-mono text-sm">20% COMPLETE</span>
                 </div>
-                <Progress value={20} className="h-4 rounded-none bg-muted mb-6" />
+                <Progress value={20} className="h-4 bg-muted mb-6" />
                 <div className="flex justify-between items-center relative z-10">
                    <p className="text-sm text-muted-foreground font-semibold">
                      You are here: <span className="text-primary font-bold">Step 1</span>
@@ -214,11 +214,11 @@ export default function FundamentalsPage() {
             <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-stretch">
               {/* Step 1 - DOMINANT START */}
               <Card 
-                className="rounded-none border-4 border-primary shadow-[0_0_40px_rgba(242,81,64,0.25)] scale-110 z-20 relative bg-white flex flex-col transition-all hover:-translate-y-4 cursor-pointer"
+                className="border-4 border-primary shadow-[0_0_40px_rgba(242,81,64,0.25)] scale-110 z-20 relative bg-white flex flex-col transition-all hover:-translate-y-4 cursor-pointer"
                 onClick={() => scrollToSection('step-1-content')}
               >
                 <div className="absolute -top-5 left-1/2 -translate-x-1/2">
-                  <Badge className="bg-primary text-white border-none px-6 py-2 rounded-none uppercase text-xs font-black tracking-widest shadow-xl">
+                  <Badge className="bg-primary text-white border-none px-6 py-2 uppercase text-xs font-black tracking-widest shadow-xl">
                     CURRENT STEP
                   </Badge>
                 </div>
@@ -235,7 +235,7 @@ export default function FundamentalsPage() {
                   </div>
                 </CardContent>
                 <CardFooter className="pt-6">
-                  <Button className="w-full bg-primary hover:bg-primary/90 rounded-none group py-8 text-lg font-black uppercase tracking-tight shadow-md text-white">
+                  <Button className="w-full bg-primary hover:bg-primary/90 group py-8 text-lg font-black uppercase tracking-tight shadow-md text-white">
                     Start Now <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </CardFooter>
@@ -248,7 +248,7 @@ export default function FundamentalsPage() {
                 { n: 4, title: "Hands-On Labs", desc: "Practice role configuration and audits in a sandbox.", id: 'step-4' },
                 { n: 5, title: "Certifications", desc: "Validate your skills with official SAP Security exams.", id: 'step-5' }
               ].map((step) => (
-                <Card key={step.n} className="rounded-none border-dashed border-2 opacity-60 bg-white/50 flex flex-col grayscale pointer-events-none relative group transition-opacity">
+                <Card key={step.n} className="border-dashed border-2 opacity-60 bg-white/50 flex flex-col grayscale pointer-events-none relative group transition-opacity">
                   <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
                     <div className="bg-white/90 p-4 rounded-full shadow-md border">
                       <Lock className="w-8 h-8 text-muted-foreground/50" />
@@ -262,7 +262,7 @@ export default function FundamentalsPage() {
                     {step.desc}
                   </CardContent>
                   <CardFooter className="pt-6 opacity-30">
-                    <Button variant="outline" className="w-full rounded-none" disabled>Locked</Button>
+                    <Button variant="outline" className="w-full" disabled>Locked</Button>
                   </CardFooter>
                 </Card>
               ))}
@@ -275,14 +275,14 @@ export default function FundamentalsPage() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 border-b pb-8">
               <div className="space-y-4">
-                <Badge variant="outline" className="rounded-none border-primary text-primary font-black uppercase tracking-[0.2em] text-xs px-4 py-1">
+                <Badge variant="outline" className="border-primary text-primary font-black uppercase tracking-[0.2em] text-xs px-4 py-1">
                   Phase 1: Foundations
                 </Badge>
                 <h2 className="text-4xl md:text-5xl font-headline font-black flex items-center gap-4">
                   <BookOpen className="text-primary w-12 h-12" /> Step 1 Content
                 </h2>
               </div>
-              <div className="flex items-center gap-4 bg-muted/50 p-4 border rounded-none">
+              <div className="flex items-center gap-4 bg-muted/50 p-4 border rounded-lg">
                 <CheckCircle2 className="text-green-500 w-8 h-8" />
                 <div>
                   <p className="text-xs font-black uppercase tracking-widest text-muted-foreground">The Learning Loop</p>
@@ -293,10 +293,10 @@ export default function FundamentalsPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {/* Course 1 - LEARN */}
-              <Card className="rounded-none hover:shadow-2xl transition-all border-t-8 border-t-primary flex flex-col group shadow-lg bg-white hover:-translate-y-2">
+              <Card className="hover:shadow-2xl transition-all border-t-8 border-t-primary flex flex-col group shadow-lg bg-white hover:-translate-y-2">
                 <CardHeader className="pb-4">
                   <div className="flex justify-between items-start mb-4">
-                    <Badge className="bg-primary text-white rounded-none uppercase text-[10px] font-black px-3 py-1 flex items-center gap-1">
+                    <Badge className="bg-primary text-white uppercase text-[10px] font-black px-3 py-1 flex items-center gap-1">
                       <Lightbulb className="w-3 h-3" /> LEARN
                     </Badge>
                     <span className="flex items-center text-xs font-black text-muted-foreground uppercase tracking-widest">
@@ -313,17 +313,17 @@ export default function FundamentalsPage() {
                   </ul>
                 </CardContent>
                 <CardFooter className="pt-8">
-                  <Button className="w-full rounded-none font-black py-8 text-lg group bg-primary text-white">
+                  <Button className="w-full font-black py-8 text-lg group bg-primary text-white">
                     Start Lesson <ArrowRight className="ml-2 w-6 h-6 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </CardFooter>
               </Card>
 
               {/* Course 2 - UNDERSTAND */}
-              <Card className="rounded-none hover:shadow-2xl transition-all border-t-8 border-t-sap-blue flex flex-col group shadow-lg bg-white hover:-translate-y-2">
+              <Card className="hover:shadow-2xl transition-all border-t-8 border-t-sap-blue flex flex-col group shadow-lg bg-white hover:-translate-y-2">
                 <CardHeader className="pb-4">
                   <div className="flex justify-between items-start mb-4">
-                    <Badge className="bg-sap-blue text-white rounded-none uppercase text-[10px] font-black px-3 py-1 flex items-center gap-1">
+                    <Badge className="bg-sap-blue text-white uppercase text-[10px] font-black px-3 py-1 flex items-center gap-1">
                       <FlaskConical className="w-3 h-3" /> UNDERSTAND
                     </Badge>
                     <span className="flex items-center text-xs font-black text-muted-foreground uppercase tracking-widest">
@@ -340,17 +340,17 @@ export default function FundamentalsPage() {
                   </ul>
                 </CardContent>
                 <CardFooter className="pt-8">
-                  <Button className="w-full rounded-none font-black py-8 text-lg group bg-sap-blue hover:bg-sap-blue/90 text-white">
+                  <Button className="w-full font-black py-8 text-lg group bg-sap-blue hover:bg-sap-blue/90 text-white">
                     Dive In <ArrowRight className="ml-2 w-6 h-6 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </CardFooter>
               </Card>
 
               {/* Assessment - TEST */}
-              <Card className="rounded-none hover:shadow-2xl transition-all border-t-8 border-t-foreground flex flex-col group shadow-lg bg-white hover:-translate-y-2">
+              <Card className="hover:shadow-2xl transition-all border-t-8 border-t-foreground flex flex-col group shadow-lg bg-white hover:-translate-y-2">
                 <CardHeader className="pb-4">
                   <div className="flex justify-between items-start mb-4">
-                    <Badge className="bg-foreground text-background rounded-none uppercase text-[10px] font-black px-3 py-1 flex items-center gap-1">
+                    <Badge className="bg-foreground text-background uppercase text-[10px] font-black px-3 py-1 flex items-center gap-1">
                       <ClipboardCheck className="w-3 h-3" /> TEST
                     </Badge>
                     <span className="flex items-center text-xs font-black text-muted-foreground uppercase tracking-widest">
@@ -366,7 +366,7 @@ export default function FundamentalsPage() {
                   </p>
                 </CardContent>
                 <CardFooter className="pt-8">
-                  <Button className="w-full rounded-none font-black py-8 text-lg group bg-foreground hover:bg-foreground/90 text-white">
+                  <Button className="w-full font-black py-8 text-lg group bg-foreground hover:bg-foreground/90 text-white">
                     Take Quiz <ArrowRight className="ml-2 w-6 h-6 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </CardFooter>
@@ -411,7 +411,7 @@ export default function FundamentalsPage() {
                   color: "border-t-primary"
                 }
               ].map((concept, idx) => (
-                <Card key={idx} className={`rounded-none border-t-8 ${concept.color} hover:shadow-2xl transition-all p-4 hover:-translate-y-2`}>
+                <Card key={idx} className={`border-t-8 ${concept.color} hover:shadow-2xl transition-all p-4 hover:-translate-y-2`}>
                   <CardHeader>
                     <div className="mb-6">{concept.icon}</div>
                     <CardTitle className="text-xl font-headline font-black leading-tight">{concept.title}</CardTitle>
@@ -433,13 +433,13 @@ export default function FundamentalsPage() {
           <div className="container px-4 md:px-6 relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-16">
               <div className="lg:w-1/2 space-y-10">
-                <Badge className="bg-primary text-white rounded-none px-6 py-2 uppercase text-xs font-black tracking-widest mb-2 shadow-xl">THE DIFFERENTIATOR</Badge>
+                <Badge className="bg-primary text-white px-6 py-2 uppercase text-xs font-black tracking-widest mb-2 shadow-xl">THE DIFFERENTIATOR</Badge>
                 <h2 className="text-5xl md:text-7xl font-headline font-black tracking-tight">Practice Like a Real SAP Consultant</h2>
                 <p className="text-xl text-white/70 leading-relaxed font-medium">
                   Theory is only half the battle. To be hired, you must build, break, and audit in a live environment. We guide you through three critical real-world milestones.
                 </p>
                 <div className="pt-6">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-none px-12 py-10 text-xl font-black uppercase tracking-widest shadow-[0_10px_40px_rgba(242,81,64,0.4)] text-white">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 px-12 py-10 text-xl font-black uppercase tracking-widest shadow-[0_10px_40px_rgba(242,81,64,0.4)] text-white">
                     Access Lab Guide
                   </Button>
                 </div>
@@ -465,7 +465,7 @@ export default function FundamentalsPage() {
                     icon: <Settings className="w-8 h-8" />
                   }
                 ].map((item, idx) => (
-                  <div key={idx} className="bg-white/5 border border-white/20 p-8 flex gap-8 hover:bg-white/10 transition-all group backdrop-blur-sm hover:-translate-x-2">
+                  <div key={idx} className="bg-white/5 border border-white/20 p-8 flex gap-8 hover:bg-white/10 transition-all group backdrop-blur-sm hover:-translate-x-2 rounded-lg">
                     <div className="text-primary font-mono text-5xl font-black opacity-30 group-hover:opacity-100 transition-opacity">
                       {item.step}
                     </div>
@@ -493,10 +493,10 @@ export default function FundamentalsPage() {
                 <p className="text-muted-foreground text-xl">Validate your expertise with industry-recognized credentials.</p>
               </div>
               <div className="flex flex-col items-end gap-4">
-                <Badge variant="outline" className="rounded-none border-primary text-primary flex items-center gap-2 py-2 px-6 font-bold uppercase text-xs">
+                <Badge variant="outline" className="border-primary text-primary flex items-center gap-2 py-2 px-6 font-bold uppercase text-xs">
                   <Info className="w-4 h-4" /> Recommended after Step 4
                 </Badge>
-                <Button variant="outline" className="rounded-none border-sap-blue text-sap-blue hover:bg-sap-blue hover:text-white px-8 font-black">View Official Exam Schedule</Button>
+                <Button variant="outline" className="border-sap-blue text-sap-blue hover:bg-sap-blue hover:text-white px-8 font-black">View Official Exam Schedule</Button>
               </div>
             </div>
             
@@ -506,8 +506,8 @@ export default function FundamentalsPage() {
                 { title: "Specialist Level", level: "Specialist", border: "border-l-sap-blue", desc: "SAP Certified Technology Associate - Authorization and Auditing. Focus on role management." },
                 { title: "Professional Level", level: "Advanced", border: "border-l-foreground", desc: "SAP Certified Technology Professional - System Security Architect. For enterprise-wide security." }
               ].map((cert, idx) => (
-                <div key={idx} className={`p-10 border-l-8 ${cert.border} bg-muted/30 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all`}>
-                  <Badge variant="secondary" className="mb-6 rounded-none font-black px-3 py-1 uppercase text-[10px]">{cert.level}</Badge>
+                <div key={idx} className={`p-10 border-l-8 ${cert.border} bg-muted/30 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all rounded-r-lg`}>
+                  <Badge variant="secondary" className="mb-6 font-black px-3 py-1 uppercase text-[10px]">{cert.level}</Badge>
                   <h3 className="text-2xl font-black mb-4">{cert.title}</h3>
                   <p className="text-base text-muted-foreground mb-8 leading-relaxed font-medium">{cert.desc}</p>
                   <Link href="#" className="text-primary font-black text-sm inline-flex items-center hover:underline uppercase tracking-widest">Exam Details <ArrowRight className="ml-2 w-4 h-4" /></Link>
@@ -533,11 +533,11 @@ export default function FundamentalsPage() {
                 { title: "How to Prepare for Your First SAP Audit", desc: "Checklists and common pitfalls to avoid during a security audit.", tag: "Advanced" },
                 { title: "The Future of SAP IAM: Cloud vs On-Premise", desc: "Comparing classic GRC with the new SAP Identity Access Governance.", tag: "Advanced" }
               ].map((res, i) => (
-                <Card key={i} className="rounded-none border-none bg-white hover:bg-muted/50 transition-all cursor-pointer group shadow-lg flex flex-col h-full hover:-translate-y-2">
+                <Card key={i} className="border-none bg-white hover:bg-muted/50 transition-all cursor-pointer group shadow-lg flex flex-col h-full hover:-translate-y-2">
                   <CardHeader className="p-8 pb-4">
                     <Badge 
                       variant="outline" 
-                      className={`w-fit mb-6 rounded-none text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 ${
+                      className={`w-fit mb-6 text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 ${
                         res.tag === 'Beginner' ? 'border-green-500 text-green-600' : 
                         res.tag === 'Intermediate' ? 'border-sap-blue text-sap-blue' : 
                         'border-primary text-primary'
@@ -571,11 +571,11 @@ export default function FundamentalsPage() {
                   New learners benefit from guidance and Q&A. Don't learn in isolation; join thousands of experts sharing insights daily.
                 </p>
               </div>
-              <div className="w-full md:w-2/5 bg-gray-800 p-12 rounded-none border border-gray-700 shadow-2xl relative transition-transform hover:scale-[1.02]">
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary flex items-center justify-center font-black text-2xl">?</div>
+              <div className="w-full md:w-2/5 bg-gray-800 p-12 border border-gray-700 shadow-2xl relative transition-transform hover:scale-[1.02] rounded-lg">
+                <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary flex items-center justify-center font-black text-2xl rounded-sm">?</div>
                 <h3 className="text-2xl font-black mb-6">Have a Question?</h3>
                 <p className="text-lg text-gray-400 mb-10 font-medium">Our experts are here to help you navigate your first steps in SAP Security.</p>
-                <Button className="w-full bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 rounded-none py-10 text-lg font-black uppercase tracking-widest transition-all duration-300">
+                <Button className="w-full bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 py-10 text-lg font-black uppercase tracking-widest transition-all duration-300">
                   Ask an Expert
                 </Button>
               </div>
