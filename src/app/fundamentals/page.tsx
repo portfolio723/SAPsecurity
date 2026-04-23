@@ -78,7 +78,7 @@ export default function FundamentalsPage() {
                 </div>
                 <CardHeader className="pb-2 pt-8">
                   <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold mb-4 text-xl shadow-md">
-                    <CheckCircle2 className="w-6 h-6 mr-1" /> 1
+                    1
                   </div>
                   <CardTitle className="text-xl font-headline font-bold">SAP Basics</CardTitle>
                 </CardHeader>
