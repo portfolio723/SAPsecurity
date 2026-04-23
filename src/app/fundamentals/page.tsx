@@ -3,7 +3,6 @@ import { Header } from '@/components/layout/header';
 import { NewsletterSignup } from '@/components/newsletter-signup';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { 
@@ -29,7 +28,10 @@ import {
   Target,
   Trophy,
   Clock,
-  CheckCircle
+  CheckCircle,
+  Cpu,
+  UserPlus,
+  Settings
 } from 'lucide-react';
 import { Logo } from '@/components/icons';
 
@@ -308,84 +310,150 @@ export default function FundamentalsPage() {
           </div>
         </section>
 
-        {/* Core Concepts */}
+        {/* Visual Core Concepts Cards */}
         <section className="w-full py-16 md:py-24 bg-muted/20">
           <div className="container px-4 md:px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              <div>
-                <h2 className="text-3xl font-headline font-bold mb-6">Dive Into Core Concepts</h2>
-                <p className="text-muted-foreground mb-8">
-                  Understand the essential mechanisms that keep SAP systems secure. Master these foundations before moving to advanced GRC topics.
-                </p>
-                <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="item-1">
-                    <AccordionTrigger className="font-headline text-lg">Role-Based Access Control (RBAC)</AccordionTrigger>
-                    <AccordionContent>
-                      The standard way to manage permissions in SAP. Users are assigned roles, which contain authorization objects that define what they can see and do.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-2">
-                    <AccordionTrigger className="font-headline text-lg">Segregation of Duties (SoD)</AccordionTrigger>
-                    <AccordionContent>
-                      A key internal control designed to prevent error and fraud by ensuring that at least two individuals are responsible for the separate parts of any task.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-3">
-                    <AccordionTrigger className="font-headline text-lg">Profiles vs Roles</AccordionTrigger>
-                    <AccordionContent>
-                      Understanding the technical relationship between PFCG roles and the generated profiles that reside in the database and are checked at runtime.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-4">
-                    <AccordionTrigger className="font-headline text-lg">System Auditing (SM19/SM20)</AccordionTrigger>
-                    <AccordionContent>
-                      Setting up security audit logs to track critical activities like login failures, transaction execution, and role changes.
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </div>
-              <div className="space-y-6">
-                <Card className="rounded-none border-l-4 border-l-primary p-6 shadow-sm">
-                  <h3 className="text-xl font-headline font-bold mb-4 flex items-center gap-2">
-                    <Laptop className="text-primary" /> Hands-On Practice
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Theory is not enough. To truly learn, you need a sandbox environment to practice role creation and user administration.
-                  </p>
-                  <ul className="space-y-3 mb-6 text-sm">
-                    <li className="flex items-center gap-2 font-medium"><CheckCircle size={16} className="text-primary" /> Use SAP Developer Edition</li>
-                    <li className="flex items-center gap-2 font-medium"><CheckCircle size={16} className="text-primary" /> Set up an SAP Trial Cloud instance</li>
-                    <li className="flex items-center gap-2 font-medium"><CheckCircle size={16} className="text-primary" /> Practice user creation in transaction SU01</li>
-                  </ul>
-                  <Button className="w-full bg-sap-blue rounded-none py-6 font-bold uppercase tracking-wider text-xs">Access Demo Environment</Button>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-headline font-bold mb-4">Core SAP Security Concepts</h2>
+              <p className="text-muted-foreground max-w-[600px] mx-auto">
+                Master these fundamental pillars before moving to advanced GRC and cloud security topics.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  title: "Role-Based Access Control (RBAC)",
+                  desc: "The standard way to manage permissions. Users are assigned roles containing authorization objects.",
+                  icon: <ShieldCheck className="w-8 h-8 text-primary" />,
+                  color: "border-t-primary"
+                },
+                {
+                  title: "Segregation of Duties (SoD)",
+                  desc: "Internal controls preventing fraud by splitting critical tasks between multiple users.",
+                  icon: <Users className="w-8 h-8 text-sap-blue" />,
+                  color: "border-t-sap-blue"
+                },
+                {
+                  title: "Profiles vs Roles",
+                  desc: "Technical relationship between PFCG roles and the runtime profiles checked by the system.",
+                  icon: <FileCheck className="w-8 h-8 text-foreground" />,
+                  color: "border-t-foreground"
+                },
+                {
+                  title: "System Auditing (SM19/SM20)",
+                  desc: "Setting up security audit logs to track logins, transaction executions, and critical events.",
+                  icon: <Search className="w-8 h-8 text-primary" />,
+                  color: "border-t-primary"
+                }
+              ].map((concept, idx) => (
+                <Card key={idx} className={`rounded-none border-t-4 ${concept.color} hover:shadow-lg transition-shadow`}>
+                  <CardHeader>
+                    <div className="mb-4">{concept.icon}</div>
+                    <CardTitle className="text-lg font-headline font-bold">{concept.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {concept.desc}
+                    </p>
+                  </CardContent>
                 </Card>
-                <Card className="rounded-none border-l-4 border-l-blue-600 p-6 shadow-sm">
-                  <h3 className="text-xl font-headline font-bold mb-4 flex items-center gap-2">
-                    <Award className="text-blue-600" /> Certification Paths
-                  </h3>
-                  <div className="space-y-4 text-sm">
-                    <div className="border-b pb-2">
-                      <p className="font-bold">Associate Level</p>
-                      <p className="text-muted-foreground text-xs font-medium">SAP Certified Technology Associate - System Security Architect</p>
-                    </div>
-                    <div className="border-b pb-2">
-                      <p className="font-bold">Specialist Level</p>
-                      <p className="text-muted-foreground text-xs font-medium">SAP Certified Technology Associate - Authorization and Auditing</p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Practice Like a Consultant - Full Width Section */}
+        <section className="w-full py-16 md:py-24 bg-foreground text-white">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col lg:flex-row items-center gap-12">
+              <div className="lg:w-1/2 space-y-6">
+                <Badge className="bg-primary text-white rounded-none px-4 py-1 uppercase text-xs font-bold tracking-widest mb-2">Hands-On Mastery</Badge>
+                <h2 className="text-4xl md:text-5xl font-headline font-bold">Practice Like a Real SAP Consultant</h2>
+                <p className="text-lg text-white/70 leading-relaxed">
+                  Theory is not enough. To truly learn SAP security, you must build, break, and audit in a live environment. Follow these professional steps to gain practical experience.
+                </p>
+                <div className="pt-4">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-none px-10 py-7 text-lg font-bold uppercase tracking-wider">
+                    Access Demo Sandbox
+                  </Button>
+                </div>
+              </div>
+              <div className="lg:w-1/2 grid grid-cols-1 gap-4">
+                {[
+                  {
+                    step: "01",
+                    title: "Environment Setup",
+                    desc: "Access the SAP Developer Edition or setup a Trial Cloud instance to have your own personal lab.",
+                    icon: <Cpu className="w-6 h-6" />
+                  },
+                  {
+                    step: "02",
+                    title: "User Administration (SU01)",
+                    desc: "Learn to create users, manage passwords, and understand user types (Dialog, System, Service).",
+                    icon: <UserPlus className="w-6 h-6" />
+                  },
+                  {
+                    step: "03",
+                    title: "Role Maintenance (PFCG)",
+                    desc: "Build professional role models, manage authorization objects, and generate runtime profiles.",
+                    icon: <Settings className="w-6 h-6" />
+                  }
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-white/5 border border-white/10 p-6 flex gap-6 hover:bg-white/10 transition-colors group">
+                    <div className="text-primary font-mono text-3xl font-bold opacity-50 group-hover:opacity-100 transition-opacity">
+                      {item.step}
                     </div>
                     <div>
-                      <p className="font-bold">Professional Level</p>
-                      <p className="text-muted-foreground text-xs font-medium">SAP Certified Technology Professional - System Security Architect</p>
+                      <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
+                        {item.icon} {item.title}
+                      </h3>
+                      <p className="text-sm text-white/60">
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
-                  <Button variant="outline" className="w-full mt-6 rounded-none py-6 font-bold uppercase tracking-wider text-xs border-blue-600 text-blue-600 hover:bg-blue-50">View All Certifications</Button>
-                </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Certification Paths */}
+        <section className="w-full py-16 md:py-24">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col md:flex-row items-end justify-between mb-10 gap-4">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-headline font-bold">Certification Paths</h2>
+                <p className="text-muted-foreground">Validate your expertise with industry-recognized SAP credentials.</p>
+              </div>
+              <Button variant="outline" className="rounded-none border-sap-blue text-sap-blue hover:bg-sap-blue hover:text-white">View All Exams</Button>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="p-8 border-l-4 border-l-primary bg-muted/30">
+                <Badge variant="secondary" className="mb-4 rounded-none">Entry Level</Badge>
+                <h3 className="text-xl font-bold mb-2">Associate Level</h3>
+                <p className="text-sm text-muted-foreground mb-6">SAP Certified Technology Associate - System Security Architect. The essential first step for all security pros.</p>
+                <Link href="#" className="text-primary font-bold text-sm inline-flex items-center hover:underline">Exam Details <ArrowRight className="ml-1 w-4 h-4" /></Link>
+              </div>
+              <div className="p-8 border-l-4 border-l-sap-blue bg-muted/30">
+                <Badge variant="secondary" className="mb-4 rounded-none">Specialist</Badge>
+                <h3 className="text-xl font-bold mb-2">Specialist Level</h3>
+                <p className="text-sm text-muted-foreground mb-6">SAP Certified Technology Associate - Authorization and Auditing. Focus on role management and compliance.</p>
+                <Link href="#" className="text-sap-blue font-bold text-sm inline-flex items-center hover:underline">Exam Details <ArrowRight className="ml-1 w-4 h-4" /></Link>
+              </div>
+              <div className="p-8 border-l-4 border-l-foreground bg-muted/30">
+                <Badge variant="secondary" className="mb-4 rounded-none">Advanced</Badge>
+                <h3 className="text-xl font-bold mb-2">Professional Level</h3>
+                <p className="text-sm text-muted-foreground mb-6">SAP Certified Technology Professional - System Security Architect. For those managing enterprise-wide security.</p>
+                <Link href="#" className="text-foreground font-bold text-sm inline-flex items-center hover:underline">Exam Details <ArrowRight className="ml-1 w-4 h-4" /></Link>
               </div>
             </div>
           </div>
         </section>
 
         {/* Recommended Resources */}
-        <section className="w-full py-16 md:py-24">
+        <section className="w-full py-16 md:py-24 bg-muted/20">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-headline font-bold mb-8 text-center">Recommended Reading</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -397,7 +465,7 @@ export default function FundamentalsPage() {
                 { title: "How to Prepare for Your First SAP Audit", desc: "Checklists and common pitfalls to avoid during a security audit." },
                 { title: "The Future of SAP IAM: Cloud vs On-Premise", desc: "Comparing classic GRC with the new SAP Identity Access Governance." }
               ].map((res, i) => (
-                <Card key={i} className="rounded-none border-none bg-muted/30 hover:bg-muted/50 transition-colors cursor-pointer group">
+                <Card key={i} className="rounded-none border-none bg-white hover:bg-muted/50 transition-colors cursor-pointer group shadow-sm">
                   <CardHeader className="p-4">
                     <CardTitle className="text-base font-headline font-bold group-hover:text-primary transition-colors">{res.title}</CardTitle>
                     <CardDescription className="text-xs line-clamp-2">{res.desc}</CardDescription>
