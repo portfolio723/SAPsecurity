@@ -150,7 +150,7 @@ export default function FundamentalsPage() {
                   <button 
                     key={pKey}
                     onClick={() => setPersona(pKey)}
-                    className={`p-8 border-2 text-left transition-all hover:-translate-y-2 hover:shadow-2xl flex flex-col items-center text-center gap-6 rounded-lg ${active ? 'border-primary bg-primary/5 shadow-xl' : 'border-muted hover:border-primary/50'}`}
+                    className={`p-8 border-2 text-left transition-all flex flex-col items-center text-center gap-6 ${active ? 'border-primary bg-primary/5 shadow-xl' : 'border-muted hover:border-primary/50'}`}
                   >
                     <div className={`p-5 rounded-full transition-colors ${active ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'}`}>
                       <Icon className="w-10 h-10" />
@@ -164,7 +164,7 @@ export default function FundamentalsPage() {
               })}
             </div>
 
-            <div className="mt-16 p-10 bg-muted/30 border-l-8 border-primary max-w-5xl mx-auto animate-fade-in shadow-sm rounded-r-lg">
+            <div className="mt-16 p-10 bg-muted/30 border-l-8 border-primary max-w-5xl mx-auto animate-fade-in shadow-sm">
               <div className="flex gap-6 items-start">
                 <div className="mt-1">
                   <Badge variant="outline" className="border-primary text-primary uppercase font-black text-xs px-3 py-1">Recommended Path</Badge>
@@ -187,7 +187,7 @@ export default function FundamentalsPage() {
               <h2 className="text-4xl font-headline font-bold mb-6">Your Step-by-Step Roadmap</h2>
               
               {/* Progress System Card */}
-              <div className="max-w-2xl mx-auto mb-20 bg-white p-8 border shadow-xl relative transition-transform hover:scale-[1.02] rounded-lg">
+              <div className="max-w-2xl mx-auto mb-20 bg-white p-8 border shadow-xl relative transition-transform hover:scale-[1.02]">
                 <div className="absolute top-0 right-0 p-4 opacity-10">
                    <Trophy className="w-32 h-32" />
                 </div>
@@ -282,7 +282,7 @@ export default function FundamentalsPage() {
                   <BookOpen className="text-primary w-12 h-12" /> Step 1 Content
                 </h2>
               </div>
-              <div className="flex items-center gap-4 bg-muted/50 p-4 border rounded-lg">
+              <div className="flex items-center gap-4 bg-muted/50 p-4 border">
                 <CheckCircle2 className="text-green-500 w-8 h-8" />
                 <div>
                   <p className="text-xs font-black uppercase tracking-widest text-muted-foreground">The Learning Loop</p>
@@ -465,7 +465,7 @@ export default function FundamentalsPage() {
                     icon: <Settings className="w-8 h-8" />
                   }
                 ].map((item, idx) => (
-                  <div key={idx} className="bg-white/5 border border-white/20 p-8 flex gap-8 hover:bg-white/10 transition-all group backdrop-blur-sm hover:-translate-x-2 rounded-lg">
+                  <div key={idx} className="bg-white/5 border border-white/20 p-8 flex gap-8 hover:bg-white/10 transition-all group backdrop-blur-sm hover:-translate-x-2">
                     <div className="text-primary font-mono text-5xl font-black opacity-30 group-hover:opacity-100 transition-opacity">
                       {item.step}
                     </div>
@@ -506,7 +506,7 @@ export default function FundamentalsPage() {
                 { title: "Specialist Level", level: "Specialist", border: "border-l-sap-blue", desc: "SAP Certified Technology Associate - Authorization and Auditing. Focus on role management." },
                 { title: "Professional Level", level: "Advanced", border: "border-l-foreground", desc: "SAP Certified Technology Professional - System Security Architect. For enterprise-wide security." }
               ].map((cert, idx) => (
-                <div key={idx} className={`p-10 border-l-8 ${cert.border} bg-muted/30 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all rounded-r-lg`}>
+                <div key={idx} className={`p-10 border-l-8 ${cert.border} bg-muted/30 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all`}>
                   <Badge variant="secondary" className="mb-6 font-black px-3 py-1 uppercase text-[10px]">{cert.level}</Badge>
                   <h3 className="text-2xl font-black mb-4">{cert.title}</h3>
                   <p className="text-base text-muted-foreground mb-8 leading-relaxed font-medium">{cert.desc}</p>
@@ -571,8 +571,8 @@ export default function FundamentalsPage() {
                   New learners benefit from guidance and Q&A. Don't learn in isolation; join thousands of experts sharing insights daily.
                 </p>
               </div>
-              <div className="w-full md:w-2/5 bg-gray-800 p-12 border border-gray-700 shadow-2xl relative transition-transform hover:scale-[1.02] rounded-lg">
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary flex items-center justify-center font-black text-2xl rounded-sm">?</div>
+              <div className="w-full md:w-2/5 bg-gray-800 p-12 border border-gray-700 shadow-2xl relative transition-transform hover:scale-[1.02]">
+                <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary flex items-center justify-center font-black text-2xl">?</div>
                 <h3 className="text-2xl font-black mb-6">Have a Question?</h3>
                 <p className="text-lg text-gray-400 mb-10 font-medium">Our experts are here to help you navigate your first steps in SAP Security.</p>
                 <Button className="w-full bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 py-10 text-lg font-black uppercase tracking-widest transition-all duration-300">
