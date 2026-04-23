@@ -3,9 +3,10 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
 import { NewsletterSignup } from '@/components/newsletter-signup';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { 
@@ -16,7 +17,6 @@ import {
   FileCheck, 
   Lock,
   Search,
-  Mail,
   Target,
   Trophy,
   Clock,
@@ -32,7 +32,6 @@ import {
   FlaskConical,
   ClipboardCheck
 } from 'lucide-react';
-import { Logo } from '@/components/icons';
 
 type Persona = 'beginner' | 'basis' | 'cyber';
 
@@ -580,64 +579,7 @@ export default function FundamentalsPage() {
 
         <NewsletterSignup />
       </main>
-
-      <footer className="w-full shrink-0 border-t bg-gray-900 py-12 text-gray-400 md:py-20">
-        <div className="container grid grid-cols-2 gap-12 px-4 md:grid-cols-5 md:px-6">
-          <div className="col-span-2 space-y-6 md:col-span-1">
-            <Link href="/" className="flex items-center space-x-2">
-              <Logo width={220} height={220} />
-            </Link>
-            <p className="text-base font-medium">
-              The definitive resource for SAP Security excellence.
-            </p>
-          </div>
-          <div>
-            <h4 className="mb-6 font-black text-white uppercase tracking-widest text-xs">Solutions</h4>
-            <ul className="space-y-3 text-sm font-medium">
-              <li><Link href="#" className="hover:text-white transition-colors">Threat Detection</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Access Governance</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Code Security</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Compliance</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-6 font-black text-white uppercase tracking-widest text-xs">Platform</h4>
-             <ul className="space-y-3 text-sm font-medium">
-              <li><Link href="/fundamentals" className="hover:text-white transition-colors">Fundamentals</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Integrations</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Customers</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Pricing</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-6 font-black text-white uppercase tracking-widest text-xs">Resources</h4>
-             <ul className="space-y-3 text-sm font-medium">
-              <li><Link href="#" className="hover:text-white transition-colors">Blog</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Webinars</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Whitepapers</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Support</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-6 font-black text-white uppercase tracking-widest text-xs">Company</h4>
-             <ul className="space-y-3 text-sm font-medium">
-              <li><Link href="#" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Careers</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Contact Us</Link></li>
-            </ul>
-          </div>
-        </div>
-        <div className="container mt-16 flex flex-col items-center justify-between gap-6 border-t border-gray-700 pt-10 px-4 md:flex-row md:px-6">
-            <p className="text-xs font-medium uppercase tracking-widest">
-            © 2026 SAP Security Expert. All rights reserved.
-            </p>
-            <nav className="flex gap-6 text-xs font-black uppercase tracking-widest">
-                <Link href="#" className="hover:underline">Privacy</Link>
-                <Link href="#" className="hover:underline">Terms</Link>
-                <Link href="#" className="hover:underline">Cookies</Link>
-            </nav>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

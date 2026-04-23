@@ -1,7 +1,7 @@
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
 import { ArticleCard } from '@/components/article-card';
 import { NewsletterSignup } from '@/components/newsletter-signup';
 import { articles, expertise, testimonials } from '@/lib/data';
@@ -17,7 +17,6 @@ import {
 } from '@/components/ui/card';
 import {
   ArrowRight,
-  Play,
   Lock,
   Shield,
   Users,
@@ -28,30 +27,16 @@ import {
   CheckCircle,
   Award,
   Target,
-  Twitter,
-  Linkedin,
-  Youtube,
   Mail,
-  MessageCircle,
-  Pencil,
-  BrainCircuit,
-  Eye,
-  MessageSquare,
-  ThumbsUp,
-  HelpCircle,
-  Book,
-  Hand,
-  Tag,
   Search,
   PlusCircle,
   Users2,
   Clock,
   MessageCircle as MessageCircleIcon,
-  Bookmark,
   Hash,
   Megaphone,
-  Info,
   TrendingUp,
+  ThumbsUp,
 } from 'lucide-react';
 import {
   Select,
@@ -62,11 +47,8 @@ import {
 } from "@/components/ui/select"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
-import { CommunityActivityCard } from '@/components/community-activity-card';
-import { TopContributorItem } from '@/components/top-contributor-item';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Input } from '@/components/ui/input';
-import { Logo } from '@/components/icons';
 import { AdsensePlaceholder } from '@/components/adsense-placeholder';
 
 
@@ -477,71 +459,7 @@ export default function Home() {
 
         <NewsletterSignup />
       </main>
-
-      <footer className="w-full shrink-0 border-t bg-gray-900 py-8 text-gray-400 md:py-12">
-        <div className="container grid grid-cols-2 gap-8 px-4 md:grid-cols-5 md:px-6">
-          <div className="col-span-2 space-y-4 md:col-span-1">
-            <Link href="/" className="flex items-center space-x-2">
-              <Logo />
-            </Link>
-            <p>
-              The definitive resource for SAP Security excellence.
-            </p>
-            <div className="flex space-x-2">
-              <Link href="#" className="p-2 rounded-md hover:bg-gray-700"><Twitter className="h-5 w-5" /></Link>
-              <Link href="#" className="p-2 rounded-md hover:bg-gray-700"><Linkedin className="h-5 w-5" /></Link>
-              <Link href="#" className="p-2 rounded-md hover:bg-gray-700"><Youtube className="h-5 w-5" /></Link>
-              <Link href="#" className="p-2 rounded-md hover:bg-gray-700"><Mail className="h-5 w-5" /></Link>
-            </div>
-          </div>
-          <div>
-            <h4 className="mb-4 font-semibold text-white">Solutions</h4>
-            <ul className="space-y-2">
-              <li><Link href="#" className="hover:text-white">Threat Detection</Link></li>
-              <li><Link href="#" className="hover:text-white">Access Governance</Link></li>
-              <li><Link href="#" className="hover:text-white">Code Security</Link></li>
-              <li><Link href="#" className="hover:text-white">Compliance</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-4 font-semibold text-white">Platform</h4>
-             <ul className="space-y-2">
-              <li><Link href="#" className="hover:text-white">Platform Overview</Link></li>
-              <li><Link href="#" className="hover:text-white">Integrations</Link></li>
-              <li><Link href="#" className="hover:text-white">Customers</Link></li>
-              <li><Link href="#" className="hover:text-white">Pricing</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-4 font-semibold text-white">Resources</h4>
-             <ul className="space-y-2">
-              <li><Link href="#" className="hover:text-white">Blog</Link></li>
-              <li><Link href="#" className="hover:text-white">Webinars</Link></li>
-              <li><Link href="#" className="hover:text-white">Whitepapers</Link></li>
-              <li><Link href="#" className="hover:text-white">Support</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-4 font-semibold text-white">Company</h4>
-             <ul className="space-y-2">
-              <li><Link href="#" className="hover:text-white">About Us</Link></li>
-              <li><Link href="#" className="hover:text-white">Careers</Link></li>
-              <li><Link href="#" className="hover:text-white">Contact Us</Link></li>
-            </ul>
-          </div>
-        </div>
-        <div className="container mt-8 flex flex-col items-center justify-between gap-4 border-t border-gray-700 pt-6 px-4 md:flex-row md:px-6">
-            <p className="text-xs">
-            © 2026 SAP Security Expert. All rights reserved.
-            </p>
-            <p className="text-xs">Developed by @Web Anatomy</p>
-            <nav className="flex gap-4 text-xs sm:gap-6">
-                <Link href="#" className="hover:underline">Privacy Policy</Link>
-                <Link href="#" className="hover:underline">Terms of Service</Link>
-                <Link href="#" className="hover:underline">Cookie Policy</Link>
-            </nav>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
