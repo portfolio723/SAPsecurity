@@ -211,30 +211,30 @@ export default function FundamentalsPage() {
               </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-stretch pt-8">
               {/* Step 1 - DOMINANT START */}
               <Card 
                 className="border-4 border-primary shadow-[0_0_40px_rgba(242,81,64,0.25)] scale-110 z-20 relative bg-white flex flex-col transition-all hover:-translate-y-4 cursor-pointer"
                 onClick={() => scrollToSection('step-1-content')}
               >
-                <div className="absolute -top-5 left-1/2 -translate-x-1/2">
-                  <Badge className="bg-primary text-white border-none px-6 py-2 uppercase text-xs font-black tracking-widest shadow-xl">
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-full flex justify-center">
+                  <Badge className="bg-primary text-white border-none px-6 py-2.5 uppercase text-xs font-black tracking-widest shadow-2xl">
                     CURRENT STEP
                   </Badge>
                 </div>
-                <CardHeader className="pb-4 pt-10 text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center font-black mb-6 text-2xl shadow-lg mx-auto">
+                <CardHeader className="pb-4 pt-12 text-center">
+                  <div className="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center font-black mb-6 text-3xl shadow-lg mx-auto ring-8 ring-primary/10">
                     1
                   </div>
                   <CardTitle className="text-2xl font-headline font-bold">SAP Basics</CardTitle>
                 </CardHeader>
                 <CardContent className="text-base font-medium flex-grow text-center px-6 leading-relaxed">
                   Understand navigation, system architecture and core business modules.
-                  <div className="mt-6 p-3 bg-muted/50 border-l-2 border-primary text-xs text-muted-foreground text-left italic">
-                    <Clock className="w-3 h-3 inline mr-1" /> Est: 4 Hours
+                  <div className="mt-8 p-4 bg-muted/50 border-l-4 border-primary text-xs text-muted-foreground text-left italic">
+                    <Clock className="w-3.5 h-3.5 inline mr-1.5" /> Est: 4 Hours
                   </div>
                 </CardContent>
-                <CardFooter className="pt-6">
+                <CardFooter className="pt-8 pb-8">
                   <Button className="w-full bg-primary hover:bg-primary/90 group py-8 text-lg font-black uppercase tracking-tight shadow-md text-white">
                     Start Now <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
                   </Button>
