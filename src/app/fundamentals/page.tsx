@@ -122,25 +122,25 @@ export default function FundamentalsPage() {
 
       <main className="flex-1">
         {/* 2. DYNAMIC HERO */}
-        <section id="hero" className="w-full bg-sap-blue py-24 md:py-36 text-white relative overflow-hidden">
+        <section id="hero" className="w-full bg-sap-blue py-20 md:py-32 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 translate-x-1/4 pointer-events-none" />
           <div className="container px-4 md:px-6 text-center relative z-10">
             <Badge className="mb-6 bg-primary/20 text-white border-primary/30 px-4 py-1 uppercase tracking-widest text-xs font-bold">Expert-Led Roadmap</Badge>
-            <h1 className="text-5xl md:text-8xl font-headline font-black mb-8 tracking-tighter leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-headline font-bold mb-6 tracking-tighter leading-tight">
               From Zero to <span className="text-primary">SAP Expert</span>
             </h1>
-            <p className="max-w-[800px] mx-auto text-xl md:text-2xl text-white/70 mb-12 font-medium leading-relaxed">
+            <p className="mx-auto mt-2 max-w-[800px] text-white/70 md:text-xl leading-relaxed mb-10">
               Tired of scattered tutorials? We built the single, outcome-driven path to your career in SAP Security.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Button size="lg" onClick={() => scrollToSection('path-selector')} className="bg-primary hover:bg-primary/90 px-12 py-8 text-xl font-black uppercase tracking-widest text-white shadow-[0_10px_50px_rgba(242,81,64,0.4)] transition-all hover:scale-105">
-                Get Started <ChevronDown className="ml-2 h-6 w-6" />
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button size="lg" onClick={() => scrollToSection('path-selector')} className="bg-primary hover:bg-primary/90 px-8 py-6 text-lg font-black uppercase tracking-widest text-white transition-all hover:scale-105">
+                Get Started <ChevronDown className="ml-2 h-5 w-5" />
               </Button>
               <Button 
                 variant="outline"
                 size="lg" 
                 onClick={() => scrollToSection('roadmap')} 
-                className="px-12 py-8 border-2 border-white bg-white text-sap-blue hover:bg-transparent hover:text-white text-xl font-black uppercase tracking-widest transition-all"
+                className="px-8 py-6 border-2 border-white bg-white text-sap-blue hover:bg-transparent hover:text-white text-lg font-black uppercase tracking-widest transition-all"
               >
                 View Roadmap
               </Button>
@@ -148,15 +148,15 @@ export default function FundamentalsPage() {
           </div>
         </section>
 
-        {/* 3. PERSONA SELECTOR (SMART) */}
-        <section id="path-selector" className="w-full py-24 bg-white border-b scroll-mt-20">
+        {/* 3. PERSONA SELECTOR */}
+        <section id="path-selector" className="w-full py-16 md:py-24 bg-white border-b scroll-mt-20">
           <div className="container px-4 md:px-6">
-            <div className="text-center mb-16 max-w-2xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-headline font-black mb-6">Choose Your Persona</h2>
-              <p className="text-muted-foreground text-lg font-medium leading-relaxed">We customize your starting point based on your current background. Select the option that best describes you.</p>
+            <div className="text-center mb-12 max-w-2xl mx-auto">
+              <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">Choose Your Persona</h2>
+              <p className="mx-auto mt-2 max-w-[700px] text-muted-foreground md:text-lg">We customize your starting point based on your current background. Select the option that best describes you.</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {(['beginner', 'basis', 'cyber'] as Persona[]).map((pKey) => {
                 const active = persona === pKey;
                 const Icon = pKey === 'beginner' ? UserCircle : pKey === 'basis' ? HardHat : ShieldAlert;
@@ -169,35 +169,35 @@ export default function FundamentalsPage() {
                       setProgress(pKey === 'beginner' ? 0 : pKey === 'cyber' ? 25 : 50);
                     }}
                     className={cn(
-                      "p-10 border-2 text-left transition-all flex flex-col items-center text-center gap-8 group rounded-none",
-                      active ? "border-primary bg-primary/5 shadow-2xl scale-105" : "border-muted hover:border-primary/50 bg-white"
+                      "p-8 border-2 text-left transition-all flex flex-col items-center text-center gap-6 group",
+                      active ? "border-primary bg-primary/5 shadow-xl scale-105" : "border-muted hover:border-primary/50 bg-white"
                     )}
                   >
                     <div className={cn(
-                      "p-6 rounded-full transition-all duration-500",
-                      active ? "bg-primary text-white scale-110 rotate-6" : "bg-muted text-muted-foreground group-hover:bg-primary/10"
+                      "p-5 rounded-full transition-all duration-500",
+                      active ? "bg-primary text-white scale-110" : "bg-muted text-muted-foreground group-hover:bg-primary/10"
                     )}>
-                      <Icon className="w-12 h-12" />
+                      <Icon className="w-10 h-10" />
                     </div>
                     <div>
-                      <h3 className="font-black text-2xl mb-2 uppercase tracking-tight">{personaContent[pKey].title}</h3>
-                      <p className="text-sm text-muted-foreground font-bold leading-tight">Click to select this profile</p>
+                      <h3 className="font-bold text-xl mb-1 uppercase tracking-tight">{personaContent[pKey].title}</h3>
+                      <p className="text-xs text-muted-foreground font-bold">Click to select this profile</p>
                     </div>
                   </button>
                 );
               })}
             </div>
 
-            <div className="mt-20 p-12 bg-sap-blue text-white max-w-5xl mx-auto flex flex-col md:flex-row gap-10 items-center animate-fade-in shadow-2xl relative overflow-hidden">
+            <div className="mt-16 p-10 bg-sap-blue text-white max-w-5xl mx-auto flex flex-col md:flex-row gap-8 items-center animate-fade-in shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 left-0 w-2 h-full bg-primary" />
-              <div className="flex-1 space-y-4">
-                <Badge className="bg-primary text-white font-black uppercase px-4 py-1">Custom Strategy Unlocked</Badge>
-                <h4 className="text-3xl font-black">Welcome, {personaContent[persona].title}</h4>
-                <p className="text-white/70 text-lg leading-relaxed font-medium">
-                  {personaContent[persona].desc} <span className="text-white font-bold underline decoration-primary underline-offset-8">{personaContent[persona].strategy}</span>
+              <div className="flex-1 space-y-3">
+                <Badge className="bg-primary text-white font-black uppercase px-3 py-0.5">Custom Strategy Unlocked</Badge>
+                <h4 className="text-2xl font-bold">Welcome, {personaContent[persona].title}</h4>
+                <p className="text-white/70 text-lg leading-relaxed">
+                  {personaContent[persona].desc} <span className="text-white font-bold underline decoration-primary underline-offset-4">{personaContent[persona].strategy}</span>
                 </p>
               </div>
-              <Button size="lg" onClick={() => scrollToSection('roadmap')} className="bg-white text-sap-blue hover:bg-primary hover:text-white font-black px-10 py-8 text-lg uppercase transition-all shadow-xl">
+              <Button size="lg" onClick={() => scrollToSection('roadmap')} className="bg-white text-sap-blue hover:bg-primary hover:text-white font-black px-8 py-6 text-base uppercase transition-all">
                 Continue to Roadmap <ArrowRight className="ml-2" />
               </Button>
             </div>
@@ -205,50 +205,47 @@ export default function FundamentalsPage() {
         </section>
 
         {/* 4. DOMINANT ROADMAP */}
-        <section id="roadmap" className="w-full py-28 md:py-40 bg-[#F1F5F9] relative scroll-mt-20">
+        <section id="roadmap" className="w-full py-16 md:py-24 bg-[#F1F5F9] relative scroll-mt-20">
           <div className="container px-4 md:px-6">
-            <div className="text-center mb-24">
-              <h2 className="text-5xl font-headline font-black mb-8">The Professional Path</h2>
-              <p className="text-muted-foreground text-xl max-w-2xl mx-auto font-medium">Follow this sequence to transform from an outsider to a certified SAP Security Architect.</p>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">The Professional Path</h2>
+              <p className="mx-auto mt-2 max-w-[700px] text-muted-foreground md:text-xl">Follow this sequence to transform from an outsider to a certified SAP Security Architect.</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-10 relative">
-              {/* STEP 1: THE DOMINANT START */}
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
               <div className="md:col-span-1 relative">
                 <Card 
                   className={cn(
-                    "border-t-8 border-t-primary shadow-2xl z-20 relative bg-white flex flex-col transition-all hover:-translate-y-4 cursor-pointer group h-full",
-                    personaContent[persona].startStep === 1 ? "scale-110 border-4 border-primary" : "opacity-70 grayscale"
+                    "border-t-8 border-t-primary shadow-2xl z-20 relative bg-white flex flex-col transition-all hover:-translate-y-2 cursor-pointer group h-full",
+                    personaContent[persona].startStep === 1 ? "scale-105 border-4 border-primary" : "opacity-70 grayscale"
                   )}
                   onClick={() => scrollToSection('step-1-content')}
                 >
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-primary text-white px-4 py-1.5 font-black uppercase text-[10px] tracking-widest shadow-xl ring-4 ring-white">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <Badge className="bg-primary text-white px-3 py-1 font-black uppercase text-[9px] tracking-widest shadow-xl ring-2 ring-white">
                       {personaContent[persona].startStep === 1 ? "YOU ARE HERE" : "STEP 1"}
                     </Badge>
                   </div>
-                  <CardHeader className="pt-12 pb-6 text-center">
-                    <div className="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center font-black mb-6 text-4xl shadow-lg mx-auto transition-transform group-hover:scale-110">1</div>
-                    <CardTitle className="text-2xl font-black uppercase tracking-tighter">SAP Basics</CardTitle>
+                  <CardHeader className="pt-10 pb-4 text-center">
+                    <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center font-black mb-4 text-2xl shadow-lg mx-auto transition-transform group-hover:scale-105">1</div>
+                    <CardTitle className="text-xl font-bold uppercase tracking-tighter">SAP Basics</CardTitle>
                   </CardHeader>
-                  <CardContent className="text-center space-y-6 pb-10">
-                    <p className="text-muted-foreground font-bold leading-tight">Master navigation, S/4HANA UI, and system core.</p>
-                    <div className="flex items-center justify-center gap-4 text-[10px] font-black uppercase text-muted-foreground bg-muted/50 py-3">
-                      <Clock className="w-3.5 h-3.5 text-primary" /> 4h 30m
-                      <Target className="w-3.5 h-3.5 text-primary" /> Outcome: Navigation
+                  <CardContent className="text-center space-y-4 pb-8">
+                    <p className="text-muted-foreground text-sm font-bold">Master navigation, S/4HANA UI, and system core.</p>
+                    <div className="flex items-center justify-center gap-3 text-[10px] font-black uppercase text-muted-foreground bg-muted/50 py-2">
+                      <Clock className="w-3 h-3 text-primary" /> 4.5h
+                      <Target className="w-3 h-3 text-primary" /> Outcome: Navigation
                     </div>
                   </CardContent>
                   <CardFooter className="mt-auto p-0">
-                    <Button className="w-full rounded-none py-8 bg-primary hover:bg-primary/90 font-black text-white uppercase tracking-widest">
-                      Start Lesson <ArrowRight className="ml-2 w-5 h-5" />
+                    <Button className="w-full rounded-none py-6 bg-primary hover:bg-primary/90 font-black text-white uppercase tracking-widest text-xs">
+                      Start Lesson <ArrowRight className="ml-1 w-4 h-4" />
                     </Button>
                   </CardFooter>
                 </Card>
-                {/* Visual Connector */}
-                <div className="hidden md:block absolute top-1/2 -right-10 w-10 h-1 bg-muted-foreground/20 z-0" />
+                <div className="hidden md:block absolute top-1/2 -right-8 w-8 h-0.5 bg-muted-foreground/20 z-0" />
               </div>
 
-              {/* OTHER STEPS */}
               {[
                 { n: 2, title: "Cybersecurity 101", desc: "Security architecture and network concepts.", outcome: "Foundation", time: "6h" },
                 { n: 3, title: "Core Security", desc: "PFCG, Auth Objects, and User Admin.", outcome: "Security Admin", time: "12h" },
@@ -261,148 +258,144 @@ export default function FundamentalsPage() {
                 return (
                   <div key={step.n} className="relative">
                     <Card className={cn(
-                      "h-full flex flex-col bg-white transition-all border-t-8 rounded-none group relative",
+                      "h-full flex flex-col bg-white transition-all border-t-8 group relative",
                       isCurrent ? "scale-105 border-t-primary shadow-xl border-4 border-primary" : "border-t-muted opacity-60",
                       isLocked ? "grayscale" : ""
                     )}>
                       {isLocked && (
-                         <div className="absolute inset-0 flex items-center justify-center z-30 bg-white/40 backdrop-blur-[2px]">
-                            <div className="bg-white p-4 rounded-full shadow-2xl border border-muted ring-8 ring-muted/10">
-                              <Lock className="w-6 h-6 text-muted-foreground/50" />
+                         <div className="absolute inset-0 flex items-center justify-center z-30 bg-white/40 backdrop-blur-[1px]">
+                            <div className="bg-white p-3 rounded-full shadow-lg border border-muted ring-4 ring-muted/10">
+                              <Lock className="w-5 h-5 text-muted-foreground/50" />
                             </div>
                          </div>
                       )}
-                      <div className="absolute -top-6 left-1/2 -translate-x-1/2">
-                        <Badge className={cn("px-4 py-1 font-black", isCurrent ? "bg-primary text-white" : "bg-muted text-muted-foreground")}>
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                        <Badge className={cn("px-3 py-0.5 font-black text-[9px]", isCurrent ? "bg-primary text-white" : "bg-muted text-muted-foreground")}>
                           {isCurrent ? "YOU ARE HERE" : `STEP ${step.n}`}
                         </Badge>
                       </div>
-                      <CardHeader className="pt-12 text-center">
-                        <div className={cn("w-14 h-14 rounded-full flex items-center justify-center font-black mb-4 mx-auto", isCurrent ? "bg-primary text-white" : "bg-muted text-muted-foreground")}>{step.n}</div>
-                        <CardTitle className="text-xl font-black uppercase tracking-tighter">{step.title}</CardTitle>
+                      <CardHeader className="pt-10 text-center">
+                        <div className={cn("w-12 h-12 rounded-full flex items-center justify-center font-black mb-3 mx-auto text-lg", isCurrent ? "bg-primary text-white" : "bg-muted text-muted-foreground")}>{step.n}</div>
+                        <CardTitle className="text-lg font-bold uppercase tracking-tighter">{step.title}</CardTitle>
                       </CardHeader>
-                      <CardContent className="text-center text-sm font-medium text-muted-foreground pb-10">
+                      <CardContent className="text-center text-xs font-medium text-muted-foreground pb-8">
                         {step.desc}
                       </CardContent>
                       <CardFooter className="mt-auto p-0">
-                         <Button variant={isCurrent ? "default" : "outline"} className={cn("w-full rounded-none py-6 font-black uppercase text-xs", isCurrent ? "bg-primary text-white border-none" : "")}>
+                         <Button variant={isCurrent ? "default" : "outline"} className={cn("w-full rounded-none py-5 font-black uppercase text-[10px]", isCurrent ? "bg-primary text-white border-none" : "")}>
                            {isLocked ? "Locked" : "Continue"}
                          </Button>
                       </CardFooter>
                     </Card>
-                    {idx < 3 && <div className="hidden md:block absolute top-1/2 -right-10 w-10 h-1 bg-muted-foreground/20 z-0" />}
+                    {idx < 3 && <div className="hidden md:block absolute top-1/2 -right-8 w-8 h-0.5 bg-muted-foreground/20 z-0" />}
                   </div>
                 );
               })}
             </div>
             
-            {/* TRANSITION CUE */}
-            <div className="mt-24 text-center">
+            <div className="mt-16 text-center">
                <div className="inline-flex flex-col items-center animate-bounce">
-                  <span className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-2">Dive into Step 1</span>
-                  <ChevronDown className="w-10 h-10 text-primary" />
+                  <span className="text-xs font-black text-primary uppercase tracking-widest mb-1">Dive into Step 1</span>
+                  <ChevronDown className="w-8 h-8 text-primary" />
                </div>
             </div>
           </div>
         </section>
 
-        {/* 5. THE LEARNING LOOP (CONTENT) */}
-        <section id="step-1-content" className="w-full py-28 md:py-40 bg-white scroll-mt-24">
+        {/* 5. THE LEARNING LOOP */}
+        <section id="step-1-content" className="w-full py-16 md:py-24 bg-white scroll-mt-24">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col md:flex-row items-center gap-12 mb-20">
-              <div className="md:w-1/2 space-y-6">
-                <Badge className="bg-primary/10 text-primary border-none px-4 py-1 font-black">PHASE 1: THE LOOP</Badge>
-                <h2 className="text-4xl md:text-6xl font-headline font-black">Master the Core</h2>
-                <p className="text-xl text-muted-foreground font-medium leading-relaxed">
+            <div className="flex flex-col md:flex-row items-center gap-10 mb-16">
+              <div className="md:w-1/2 space-y-4 text-left">
+                <Badge className="bg-primary/10 text-primary border-none px-3 py-0.5 font-black">PHASE 1: THE LOOP</Badge>
+                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">Master the Core</h2>
+                <p className="mx-auto mt-2 text-muted-foreground md:text-xl">
                   Our unique <span className="text-foreground font-black">Learning Loop</span> ensures you don't just watch videos—you understand concepts and validate your knowledge.
                 </p>
               </div>
-              <div className="md:w-1/2 grid grid-cols-2 gap-4">
+              <div className="md:w-1/2 grid grid-cols-2 gap-3">
                  {[
                    { icon: <Lightbulb />, label: "LEARN", color: "text-yellow-500 bg-yellow-50" },
                    { icon: <FlaskConical />, label: "UNDERSTAND", color: "text-blue-500 bg-blue-50" },
                    { icon: <Monitor />, label: "PRACTICE", color: "text-primary bg-primary/5" },
                    { icon: <ClipboardCheck />, label: "TEST", color: "text-green-500 bg-green-50" }
                  ].map((loop, idx) => (
-                   <div key={idx} className={cn("p-6 flex flex-col items-center gap-3 border shadow-sm", loop.color)}>
-                      <div className="w-10 h-10">{loop.icon}</div>
-                      <span className="text-xs font-black tracking-widest">{loop.label}</span>
+                   <div key={idx} className={cn("p-5 flex flex-col items-center gap-2 border shadow-sm", loop.color)}>
+                      <div className="w-8 h-8">{loop.icon}</div>
+                      <span className="text-[10px] font-black tracking-widest">{loop.label}</span>
                    </div>
                  ))}
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              {/* Course Card 1 */}
-              <Card className="border-t-8 border-t-primary shadow-lg hover:shadow-2xl transition-all group flex flex-col h-full rounded-none">
-                <CardHeader className="pb-4">
-                  <div className="flex justify-between items-start mb-6">
-                    <Badge className="bg-primary text-white font-black uppercase text-[10px] px-3">LEARN</Badge>
-                    <span className="text-xs font-black text-muted-foreground">⏱ 4h 30m</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card className="border-t-8 border-t-primary shadow-lg hover:shadow-xl transition-all group flex flex-col h-full">
+                <CardHeader className="pb-3">
+                  <div className="flex justify-between items-start mb-4">
+                    <Badge className="bg-primary text-white font-black uppercase text-[9px] px-2">LEARN</Badge>
+                    <span className="text-[10px] font-black text-muted-foreground">⏱ 4.5h</span>
                   </div>
-                  <CardTitle className="text-2xl font-black group-hover:text-primary transition-colors">SAP Overview (SAPTEC)</CardTitle>
+                  <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors">SAP Overview (SAPTEC)</CardTitle>
                 </CardHeader>
-                <CardContent className="flex-grow space-y-6">
-                  <p className="text-muted-foreground font-bold text-lg leading-tight">Master S/4HANA navigation, business processes, and core architecture.</p>
-                  <div className="space-y-3 pt-4 border-t border-muted/50">
-                     <p className="text-[10px] font-black text-muted-foreground uppercase tracking-widest">Key Outcome</p>
-                     <ul className="text-sm font-bold space-y-2">
-                        <li className="flex items-center gap-2 text-primary"><CheckCircle2 className="w-4 h-4" /> Full Navigation Mastery</li>
-                        <li className="flex items-center gap-2 text-primary"><CheckCircle2 className="w-4 h-4" /> System Landscape Discovery</li>
+                <CardContent className="flex-grow space-y-4">
+                  <p className="text-muted-foreground text-sm leading-tight">Master S/4HANA navigation, business processes, and core architecture.</p>
+                  <div className="space-y-2 pt-3 border-t border-muted/50">
+                     <p className="text-[9px] font-black text-muted-foreground uppercase tracking-widest">Key Outcome</p>
+                     <ul className="text-xs font-bold space-y-1">
+                        <li className="flex items-center gap-1.5 text-primary"><CheckCircle2 className="w-3.5 h-3.5" /> Full Navigation Mastery</li>
+                        <li className="flex items-center gap-1.5 text-primary"><CheckCircle2 className="w-3.5 h-3.5" /> System Landscape Discovery</li>
                      </ul>
                   </div>
                 </CardContent>
-                <CardFooter className="pt-8">
-                  <Button className="w-full py-8 font-black text-lg bg-primary hover:bg-primary/90 text-white group rounded-none">
+                <CardFooter className="pt-6">
+                  <Button className="w-full py-5 font-black text-base bg-primary hover:bg-primary/90 text-white group">
                     Start Learning <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </CardFooter>
               </Card>
 
-              {/* Course Card 2 */}
-              <Card className="border-t-8 border-t-sap-blue shadow-lg hover:shadow-2xl transition-all group flex flex-col h-full rounded-none">
-                <CardHeader className="pb-4">
-                  <div className="flex justify-between items-start mb-6">
-                    <Badge className="bg-sap-blue text-white font-black uppercase text-[10px] px-3">UNDERSTAND</Badge>
-                    <span className="text-xs font-black text-muted-foreground">⏱ 8h 00m</span>
+              <Card className="border-t-8 border-t-sap-blue shadow-lg hover:shadow-xl transition-all group flex flex-col h-full">
+                <CardHeader className="pb-3">
+                  <div className="flex justify-between items-start mb-4">
+                    <Badge className="bg-sap-blue text-white font-black uppercase text-[9px] px-2">UNDERSTAND</Badge>
+                    <span className="text-[10px] font-black text-muted-foreground">⏱ 8h</span>
                   </div>
-                  <CardTitle className="text-2xl font-black group-hover:text-sap-blue transition-colors">Security & Auth</CardTitle>
+                  <CardTitle className="text-xl font-bold group-hover:text-sap-blue transition-colors">Security & Auth</CardTitle>
                 </CardHeader>
-                <CardContent className="flex-grow space-y-6">
-                  <p className="text-muted-foreground font-bold text-lg leading-tight">Deep dive into the Profile Generator (PFCG) and the Authorization concept.</p>
-                  <div className="space-y-3 pt-4 border-t border-muted/50">
-                     <p className="text-[10px] font-black text-muted-foreground uppercase tracking-widest">Key Outcome</p>
-                     <ul className="text-sm font-bold space-y-2">
-                        <li className="flex items-center gap-2 text-sap-blue"><CheckCircle2 className="w-4 h-4" /> Build Advanced Roles</li>
-                        <li className="flex items-center gap-2 text-sap-blue"><CheckCircle2 className="w-4 h-4" /> Manage Auth Objects</li>
+                <CardContent className="flex-grow space-y-4">
+                  <p className="text-muted-foreground text-sm leading-tight">Deep dive into the Profile Generator (PFCG) and the Authorization concept.</p>
+                  <div className="space-y-2 pt-3 border-t border-muted/50">
+                     <p className="text-[9px] font-black text-muted-foreground uppercase tracking-widest">Key Outcome</p>
+                     <ul className="text-xs font-bold space-y-1">
+                        <li className="flex items-center gap-1.5 text-sap-blue"><CheckCircle2 className="w-3.5 h-3.5" /> Build Advanced Roles</li>
+                        <li className="flex items-center gap-1.5 text-sap-blue"><CheckCircle2 className="w-3.5 h-3.5" /> Manage Auth Objects</li>
                      </ul>
                   </div>
                 </CardContent>
-                <CardFooter className="pt-8">
-                  <Button className="w-full py-8 font-black text-lg bg-sap-blue hover:bg-sap-blue/90 text-white group rounded-none">
+                <CardFooter className="pt-6">
+                  <Button className="w-full py-5 font-black text-base bg-sap-blue hover:bg-sap-blue/90 text-white group">
                     Start Dive <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </CardFooter>
               </Card>
 
-              {/* Course Card 3 */}
-              <Card className="border-t-8 border-t-foreground shadow-lg hover:shadow-2xl transition-all group flex flex-col h-full rounded-none">
-                <CardHeader className="pb-4">
-                  <div className="flex justify-between items-start mb-6">
-                    <Badge className="bg-foreground text-background font-black uppercase text-[10px] px-3">TEST</Badge>
-                    <span className="text-xs font-black text-muted-foreground">⏱ 15m Quiz</span>
+              <Card className="border-t-8 border-t-foreground shadow-lg hover:shadow-xl transition-all group flex flex-col h-full">
+                <CardHeader className="pb-3">
+                  <div className="flex justify-between items-start mb-4">
+                    <Badge className="bg-foreground text-background font-black uppercase text-[9px] px-2">TEST</Badge>
+                    <span className="text-[10px] font-black text-muted-foreground">⏱ 15m Quiz</span>
                   </div>
-                  <CardTitle className="text-2xl font-black">Step 1 Assessment</CardTitle>
+                  <CardTitle className="text-xl font-bold">Step 1 Assessment</CardTitle>
                 </CardHeader>
-                <CardContent className="flex-grow space-y-6">
-                  <p className="text-muted-foreground font-bold text-lg leading-tight">Validate your foundational knowledge before moving to Step 2.</p>
-                  <div className="bg-muted/30 p-6 flex items-center gap-4 border">
-                     <Trophy className="w-10 h-10 text-primary" />
-                     <p className="text-xs font-bold text-muted-foreground leading-snug">Passing unlocks the <span className="text-foreground">Official Preview</span> for Cybersecurity 101.</p>
+                <CardContent className="flex-grow space-y-4">
+                  <p className="text-muted-foreground text-sm leading-tight">Validate your foundational knowledge before moving to Step 2.</p>
+                  <div className="bg-muted/30 p-4 flex items-center gap-3 border">
+                     <Trophy className="w-8 h-8 text-primary" />
+                     <p className="text-[11px] font-bold text-muted-foreground leading-snug">Passing unlocks the <span className="text-foreground">Official Preview</span> for Cybersecurity 101.</p>
                   </div>
                 </CardContent>
-                <CardFooter className="pt-8">
-                  <Button className="w-full py-8 font-black text-lg bg-foreground hover:bg-foreground/90 text-white group rounded-none">
+                <CardFooter className="pt-6">
+                  <Button className="w-full py-5 font-black text-base bg-foreground hover:bg-foreground/90 text-white group">
                     Start Quiz <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </CardFooter>
@@ -411,41 +404,41 @@ export default function FundamentalsPage() {
           </div>
         </section>
 
-        {/* 6. EMOTIONAL PRACTICE SECTION */}
-        <section id="practice" className="w-full py-28 md:py-48 bg-foreground text-white relative overflow-hidden scroll-mt-20">
+        {/* 6. PRACTICE SECTION */}
+        <section id="practice" className="w-full py-20 md:py-32 bg-foreground text-white relative overflow-hidden scroll-mt-20">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/10 -skew-x-12 translate-x-1/2 pointer-events-none" />
           <div className="container px-4 md:px-6 relative z-10">
-            <div className="flex flex-col lg:flex-row items-center gap-20">
-              <div className="lg:w-1/2 space-y-10">
-                <Badge className="bg-primary text-white px-6 py-2 uppercase text-xs font-black tracking-widest shadow-2xl ring-4 ring-primary/20">FROM THEORY TO REAL WORK</Badge>
-                <h2 className="text-5xl md:text-8xl font-headline font-black tracking-tight leading-none">Practice Like a <span className="text-primary italic">Consultant.</span></h2>
-                <p className="text-xl text-white/60 font-medium leading-relaxed max-w-xl">
+            <div className="flex flex-col lg:flex-row items-center gap-16">
+              <div className="lg:w-1/2 space-y-8 text-left">
+                <Badge className="bg-primary text-white px-5 py-1 uppercase text-[10px] font-black tracking-widest shadow-xl ring-2 ring-primary/20">FROM THEORY TO REAL WORK</Badge>
+                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl leading-none">Practice Like a <span className="text-primary italic">Consultant.</span></h2>
+                <p className="mx-auto mt-2 text-white/60 md:text-xl/relaxed max-w-xl">
                   Learning isn't enough. In the real world, you build roles, troubleshoot access, and audit users. We provide the sandbox and the scenarios.
                 </p>
-                <div className="flex gap-4 items-center">
-                   <div className="p-4 bg-white/5 border border-white/10 rounded-lg flex items-center gap-3">
-                      <Monitor className="text-primary" />
-                      <span className="text-xs font-black uppercase tracking-widest">Sandbox Access Included</span>
+                <div className="flex gap-3 items-center">
+                   <div className="p-3 bg-white/5 border border-white/10 rounded-lg flex items-center gap-3">
+                      <Monitor className="text-primary w-5 h-5" />
+                      <span className="text-[10px] font-black uppercase tracking-widest">Sandbox Access Included</span>
                    </div>
                 </div>
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-12 py-10 text-2xl font-black uppercase tracking-widest shadow-[0_15px_60px_rgba(242,81,64,0.5)] transition-all hover:scale-105 rounded-none">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-10 py-7 text-xl font-black uppercase tracking-widest transition-all hover:scale-105">
                   Enter The Lab
                 </Button>
               </div>
-              <div className="lg:w-1/2 w-full space-y-6">
+              <div className="lg:w-1/2 w-full space-y-4">
                 {[
-                  { n: "01", title: "Create Your First User (SU01)", desc: "Learn user types, password management, and system access logic.", icon: <UserPlus /> },
-                  { n: "02", title: "Build Your First Role (PFCG)", desc: "Maintain menu objects, manage authorizations, and generate profiles.", icon: <Settings /> },
-                  { n: "03", title: "The Security Audit (SM20)", desc: "Track system access, login failures, and critical transaction execution.", icon: <Database /> }
+                  { n: "01", title: "Create Your First User (SU01)", desc: "Learn user types and system access logic.", icon: <UserPlus /> },
+                  { n: "02", title: "Build Your First Role (PFCG)", desc: "Maintain menu objects and generate profiles.", icon: <Settings /> },
+                  { n: "03", title: "The Security Audit (SM20)", desc: "Track system access and login failures.", icon: <Database /> }
                 ].map((lab, i) => (
-                  <div key={i} className="bg-white/5 border border-white/10 p-10 flex gap-8 hover:bg-white/10 transition-all group backdrop-blur-sm cursor-pointer hover:-translate-x-2">
-                    <div className="text-primary font-black text-6xl opacity-30 group-hover:opacity-100 transition-opacity leading-none">{lab.n}</div>
-                    <div className="space-y-3">
-                       <h3 className="text-2xl font-black flex items-center gap-4 group-hover:text-primary transition-colors uppercase tracking-tight">
-                         <div className="w-8 h-8 text-white group-hover:text-primary transition-colors">{lab.icon}</div>
+                  <div key={i} className="bg-white/5 border border-white/10 p-8 flex gap-6 hover:bg-white/10 transition-all group backdrop-blur-sm cursor-pointer hover:-translate-x-1">
+                    <div className="text-primary font-black text-4xl opacity-30 group-hover:opacity-100 transition-opacity leading-none">{lab.n}</div>
+                    <div className="space-y-1">
+                       <h3 className="text-xl font-bold flex items-center gap-3 group-hover:text-primary transition-colors uppercase tracking-tight">
+                         <div className="w-6 h-6 text-white group-hover:text-primary transition-colors">{lab.icon}</div>
                          {lab.title}
                        </h3>
-                       <p className="text-white/50 text-lg font-medium leading-tight">{lab.desc}</p>
+                       <p className="text-white/50 text-sm font-medium leading-tight">{lab.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -454,29 +447,29 @@ export default function FundamentalsPage() {
           </div>
         </section>
 
-        {/* 7. VISUAL CONCEPTS Discovery */}
-        <section className="w-full py-28 md:py-40 bg-white scroll-mt-20">
+        {/* 7. VISUAL CONCEPTS */}
+        <section className="w-full py-16 md:py-24 bg-white scroll-mt-20">
           <div className="container px-4 md:px-6">
-             <div className="text-center mb-24 max-w-3xl mx-auto">
-                <Badge className="bg-muted text-muted-foreground px-4 py-1 font-black mb-6">KNOWLEDGE PILLARS</Badge>
-                <h2 className="text-4xl md:text-5xl font-headline font-black mb-6">Core SAP Security Concepts</h2>
-                <p className="text-xl text-muted-foreground font-medium">Master these four fundamental pillars. They represent 80% of daily security operations.</p>
+             <div className="text-center mb-16 max-w-3xl mx-auto">
+                <Badge className="bg-muted text-muted-foreground px-3 py-0.5 font-black mb-4">KNOWLEDGE PILLARS</Badge>
+                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">Core SAP Security Concepts</h2>
+                <p className="mx-auto mt-2 max-w-[700px] text-muted-foreground md:text-xl">Master these four fundamental pillars. They represent 80% of daily security operations.</p>
              </div>
-             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
-                  { title: "RBAC Model", desc: "The standard way to manage permissions via roles.", icon: <ShieldCheck className="text-primary" />, example: "Purchasing Manager Role" },
+                  { title: "RBAC Model", desc: "Standard way to manage permissions via roles.", icon: <ShieldCheck className="text-primary" />, example: "Purchasing Manager Role" },
                   { title: "SoD Controls", desc: "Preventing fraud by splitting critical tasks.", icon: <Users className="text-sap-blue" />, example: "P2P Process Separation" },
                   { title: "Profiles/Roles", desc: "The technical runtime connection for auth.", icon: <FileCheck className="text-foreground" />, example: "Runtime Profile Generation" },
                   { title: "Audit Logs", desc: "Tracking system events for compliance.", icon: <Search className="text-primary" />, example: "Critical T-Code Monitoring" }
                 ].map((concept, idx) => (
-                  <Card key={idx} className="border shadow-lg hover:shadow-2xl transition-all p-8 flex flex-col group rounded-none">
-                     <div className="mb-8 w-16 h-16 bg-muted/30 flex items-center justify-center group-hover:scale-110 transition-transform">{concept.icon}</div>
-                     <CardTitle className="text-2xl font-black mb-4 uppercase tracking-tighter">{concept.title}</CardTitle>
+                  <Card key={idx} className="border shadow-lg hover:shadow-xl transition-all p-6 flex flex-col group">
+                     <div className="mb-6 w-12 h-12 bg-muted/30 flex items-center justify-center group-hover:scale-105 transition-transform">{concept.icon}</div>
+                     <CardTitle className="text-xl font-bold mb-3 uppercase tracking-tighter">{concept.title}</CardTitle>
                      <CardContent className="p-0 flex-grow">
-                        <p className="text-muted-foreground font-bold mb-8 leading-snug">{concept.desc}</p>
-                        <div className="bg-muted/50 p-4 border-l-4 border-primary">
-                           <p className="text-[10px] font-black text-muted-foreground uppercase tracking-widest mb-1">Real Example</p>
-                           <p className="text-sm font-black text-foreground">{concept.example}</p>
+                        <p className="text-muted-foreground text-sm font-bold mb-6 leading-snug">{concept.desc}</p>
+                        <div className="bg-muted/50 p-3 border-l-4 border-primary">
+                           <p className="text-[9px] font-black text-muted-foreground uppercase tracking-widest mb-1">Real Example</p>
+                           <p className="text-xs font-black text-foreground">{concept.example}</p>
                         </div>
                      </CardContent>
                   </Card>
@@ -485,88 +478,86 @@ export default function FundamentalsPage() {
           </div>
         </section>
 
-        {/* 8. CERTIFICATIONS WITH CONTEXT */}
-        <section id="certifications" className="w-full py-28 md:py-40 bg-[#F8FAFC] scroll-mt-20">
+        {/* 8. CERTIFICATIONS */}
+        <section id="certifications" className="w-full py-16 md:py-24 bg-[#F8FAFC] scroll-mt-20">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-10 border-b-4 border-sap-blue pb-10">
-              <div className="space-y-4">
-                <Badge className="bg-sap-blue text-white px-4 py-1 font-black">THE END GOAL</Badge>
-                <h2 className="text-4xl md:text-6xl font-headline font-black">Certification Paths</h2>
-                <p className="text-xl text-muted-foreground font-medium max-w-xl">Validate your expertise with recognized credentials. Recommended <span className="text-primary font-black">after Step 4</span> of our roadmap.</p>
+            <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8 border-b-4 border-sap-blue pb-8">
+              <div className="space-y-3 text-left">
+                <Badge className="bg-sap-blue text-white px-3 py-0.5 font-black">THE END GOAL</Badge>
+                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">Certification Paths</h2>
+                <p className="mx-auto mt-2 text-muted-foreground md:text-xl max-w-xl">Validate your expertise with recognized credentials. Recommended <span className="text-primary font-black">after Step 4</span> of our roadmap.</p>
               </div>
-              <Button size="lg" variant="outline" className="border-2 border-sap-blue text-sap-blue font-black hover:bg-sap-blue hover:text-white px-10 py-8 rounded-none">View Official Exams</Button>
+              <Button size="lg" variant="outline" className="border-2 border-sap-blue text-sap-blue font-black hover:bg-sap-blue hover:text-white px-8 py-6">View Official Exams</Button>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 { title: "Associate Level", level: "Entry", border: "border-l-primary", desc: "Essential first step for System Security Architects." },
                 { title: "Specialist Level", level: "Specialist", border: "border-l-sap-blue", desc: "Focus on Authorization and Audit management." },
                 { title: "Professional Level", level: "Advanced", border: "border-l-foreground", desc: "For lead enterprise-wide security positions." }
               ].map((cert, idx) => (
-                <div key={idx} className={cn("p-12 border-l-8 bg-white shadow-xl transition-all hover:-translate-y-4 hover:shadow-2xl flex flex-col group", cert.border)}>
-                  <Badge className="mb-8 bg-muted text-muted-foreground font-black uppercase text-[10px] w-fit">LEVEL: {cert.level}</Badge>
-                  <h3 className="text-3xl font-black mb-6 leading-tight group-hover:text-primary transition-colors uppercase tracking-tighter">{cert.title}</h3>
-                  <p className="text-muted-foreground font-bold mb-10 leading-relaxed text-lg">{cert.desc}</p>
-                  <Link href="#" className="mt-auto text-primary font-black text-sm inline-flex items-center group-hover:translate-x-2 transition-transform uppercase tracking-widest">View Details <ArrowRight className="ml-2 w-5 h-5" /></Link>
+                <div key={idx} className={cn("p-10 border-l-8 bg-white shadow-lg transition-all hover:-translate-y-2 hover:shadow-xl flex flex-col group", cert.border)}>
+                  <Badge className="mb-6 bg-muted text-muted-foreground font-black uppercase text-[9px] w-fit">LEVEL: {cert.level}</Badge>
+                  <h3 className="text-2xl font-bold mb-4 leading-tight group-hover:text-primary transition-colors uppercase tracking-tighter">{cert.title}</h3>
+                  <p className="text-muted-foreground font-bold mb-8 leading-relaxed text-base">{cert.desc}</p>
+                  <Link href="#" className="mt-auto text-primary font-black text-xs inline-flex items-center group-hover:translate-x-1 transition-transform uppercase tracking-widest">View Details <ArrowRight className="ml-1.5 w-4 h-4" /></Link>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* 9. RESOURCES BY LEARNER STEP */}
-        <section id="resources" className="w-full py-28 md:py-40 bg-white scroll-mt-20">
+        {/* 9. RESOURCES */}
+        <section id="resources" className="w-full py-16 md:py-24 bg-white scroll-mt-20">
           <div className="container px-4 md:px-6">
-            <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-5xl font-headline font-black mb-6">Learning Extensions</h2>
-              <p className="text-xl text-muted-foreground font-medium max-w-2xl mx-auto">Curated insights specifically mapped to your current proficiency level.</p>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">Learning Extensions</h2>
+              <p className="mx-auto mt-2 max-w-[700px] text-muted-foreground md:text-xl">Curated insights specifically mapped to your current proficiency level.</p>
             </div>
             
-            <div className="space-y-24">
-              {/* Beginner Resources */}
-              <div className="space-y-10">
-                 <div className="flex items-center gap-4">
-                    <div className="h-1 w-12 bg-primary" />
-                    <h3 className="text-2xl font-black uppercase tracking-widest">For Step 1 Learners</h3>
+            <div className="space-y-16">
+              <div className="space-y-8">
+                 <div className="flex items-center gap-3">
+                    <div className="h-0.5 w-10 bg-primary" />
+                    <h3 className="text-xl font-bold uppercase tracking-widest text-left">For Step 1 Learners</h3>
                  </div>
-                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {[
-                      { title: "Intro to SAP Landscape", desc: "Understand DEV, QAS, and PRD system hierarchy.", tag: "Beginner" },
-                      { title: "Top 10 Security T-Codes", desc: "Essential transactions for every beginner to learn.", tag: "Beginner" },
-                      { title: "SAP GRC Access Control", desc: "Why businesses need automation for security.", tag: "Beginner" }
+                      { title: "Intro to SAP Landscape", desc: "Understand DEV, QAS, and PRD hierarchy.", tag: "Beginner" },
+                      { title: "Top 10 Security T-Codes", desc: "Essential transactions for every beginner.", tag: "Beginner" },
+                      { title: "SAP GRC Access Control", desc: "Why businesses need automation.", tag: "Beginner" }
                     ].map((res, i) => (
-                      <Card key={i} className="border shadow-lg hover:shadow-2xl transition-all group cursor-pointer h-full rounded-none">
-                         <CardHeader>
-                            <Badge className="bg-green-500 text-white font-black mb-4 w-fit">BEGINNER</Badge>
-                            <CardTitle className="text-2xl font-black group-hover:text-primary transition-colors">{res.title}</CardTitle>
+                      <Card key={i} className="border shadow-md hover:shadow-lg transition-all group cursor-pointer h-full">
+                         <CardHeader className="pb-2">
+                            <Badge className="bg-green-500 text-white font-black mb-3 w-fit text-[9px]">BEGINNER</Badge>
+                            <CardTitle className="text-lg font-bold group-hover:text-primary transition-colors">{res.title}</CardTitle>
                          </CardHeader>
                          <CardContent>
-                            <p className="text-muted-foreground font-bold leading-tight">{res.desc}</p>
+                            <p className="text-muted-foreground text-sm font-bold leading-tight">{res.desc}</p>
                          </CardContent>
                       </Card>
                     ))}
                  </div>
               </div>
 
-              {/* Advanced Resources */}
-              <div className="space-y-10">
-                 <div className="flex items-center gap-4">
-                    <div className="h-1 w-12 bg-sap-blue" />
-                    <h3 className="text-2xl font-black uppercase tracking-widest">For Step 3+ Learners</h3>
+              <div className="space-y-8">
+                 <div className="flex items-center gap-3">
+                    <div className="h-0.5 w-10 bg-sap-blue" />
+                    <h3 className="text-xl font-bold uppercase tracking-widest text-left">For Step 3+ Learners</h3>
                  </div>
-                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {[
-                      { title: "Advanced Role Design", desc: "Managing Derived and Composite roles efficiently.", tag: "Intermediate" },
+                      { title: "Advanced Role Design", desc: "Managing Derived and Composite roles.", tag: "Intermediate" },
                       { title: "SAP BTP Security Checklist", desc: "Hardening your cloud technology platform.", tag: "Advanced" },
                       { title: "First Audit Checklist", desc: "How to prepare for your first security audit.", tag: "Advanced" }
                     ].map((res, i) => (
-                      <Card key={i} className="border shadow-lg hover:shadow-2xl transition-all group cursor-pointer h-full rounded-none">
-                         <CardHeader>
-                            <Badge className={cn("text-white font-black mb-4 w-fit", res.tag === 'Intermediate' ? 'bg-sap-blue' : 'bg-primary')}>{res.tag.toUpperCase()}</Badge>
-                            <CardTitle className="text-2xl font-black group-hover:text-primary transition-colors">{res.title}</CardTitle>
+                      <Card key={i} className="border shadow-md hover:shadow-lg transition-all group cursor-pointer h-full">
+                         <CardHeader className="pb-2">
+                            <Badge className={cn("text-white font-black mb-3 w-fit text-[9px]", res.tag === 'Intermediate' ? 'bg-sap-blue' : 'bg-primary')}>{res.tag.toUpperCase()}</Badge>
+                            <CardTitle className="text-lg font-bold group-hover:text-primary transition-colors">{res.title}</CardTitle>
                          </CardHeader>
                          <CardContent>
-                            <p className="text-muted-foreground font-bold leading-tight">{res.desc}</p>
+                            <p className="text-muted-foreground text-sm font-bold leading-tight">{res.desc}</p>
                          </CardContent>
                       </Card>
                     ))}
@@ -576,13 +567,13 @@ export default function FundamentalsPage() {
           </div>
         </section>
 
-        {/* 10. COMMUNITY TRANSITION */}
-        <section className="w-full py-32 md:py-48 bg-sap-blue text-white overflow-hidden relative">
+        {/* 10. COMMUNITY */}
+        <section className="w-full py-24 md:py-36 bg-sap-blue text-white overflow-hidden relative">
            <div className="absolute top-0 left-0 w-full h-1 bg-primary" />
            <div className="container px-4 md:px-6 relative z-10 text-center">
-              <h2 className="text-5xl md:text-8xl font-headline font-black mb-10 tracking-tighter">Don't Learn in Isolation.</h2>
-              <p className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto mb-16 font-medium">Join 5,000+ SAP Security professionals sharing insights and solving problems daily.</p>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-16 py-10 text-2xl font-black uppercase tracking-widest shadow-2xl transition-all hover:scale-110 rounded-none">
+              <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-7xl mb-8 tracking-tighter">Don't Learn in Isolation.</h2>
+              <p className="mx-auto mt-2 text-white/70 md:text-xl lg:text-2xl max-w-3xl mb-12">Join 5,000+ SAP Security professionals sharing insights and solving problems daily.</p>
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-12 py-8 text-xl font-black uppercase tracking-widest transition-all hover:scale-105">
                 Join The Hub
               </Button>
            </div>
