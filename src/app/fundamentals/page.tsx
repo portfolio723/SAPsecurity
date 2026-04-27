@@ -230,29 +230,30 @@ export default function FundamentalsPage() {
                   )}
                   onClick={() => scrollToSection('step-1-content')}
                 >
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-primary text-white px-3 py-1 font-black uppercase text-[9px] tracking-widest shadow-xl ring-2 ring-white">
+                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-30">
+                    <Badge className="bg-primary text-white px-4 py-1.5 font-black uppercase text-[10px] tracking-widest shadow-xl ring-2 ring-white">
                       {personaContent[persona].startStep === 1 ? "YOU ARE HERE" : "STEP 1"}
                     </Badge>
                   </div>
-                  <CardHeader className="pt-10 pb-4 text-center">
-                    <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center font-black mb-4 text-2xl shadow-lg mx-auto transition-transform group-hover:scale-105">1</div>
+                  <CardHeader className="pt-12 pb-4 text-center">
+                    <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center font-black mb-6 text-2xl shadow-lg mx-auto transition-transform group-hover:scale-105">1</div>
                     <CardTitle className="text-xl font-bold uppercase tracking-tighter">SAP Basics</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center space-y-4 pb-8">
-                    <p className="text-muted-foreground text-sm font-bold">Master navigation, S/4HANA UI, and system core.</p>
-                    <div className="bg-muted/50 p-4 rounded-lg space-y-3">
-                       <div className="flex items-center justify-center gap-2 text-[10px] font-black uppercase text-primary">
-                         <Clock className="w-3.5 h-3.5" /> ⏱ 2.5h Total
+                    <p className="text-muted-foreground text-sm font-bold leading-snug">Master navigation, S/4HANA UI, and system core.</p>
+                    <div className="bg-muted/50 p-4 rounded-lg space-y-2">
+                       <div className="flex items-center justify-center gap-1.5 text-[10px] font-black uppercase text-primary">
+                         <Clock className="w-3.5 h-3.5" />
+                         <span>2.5h Total</span>
                        </div>
-                       <div className="flex items-center justify-center gap-2 text-[10px] font-black uppercase text-primary">
-                         <Target className="w-3.5 h-3.5" /> 🎯 Outcome: SAP Navigator
+                       <div className="text-[10px] font-black uppercase text-primary text-center">
+                         Outcome: SAP Navigator
                        </div>
                     </div>
                   </CardContent>
                   <CardFooter className="mt-auto p-0">
                     <Button className="w-full rounded-t-none rounded-b-lg py-7 bg-primary hover:bg-primary/90 font-black text-white uppercase tracking-widest text-xs">
-                      Start Lesson <ArrowRight className="ml-1 w-4 h-4" />
+                      Start Step 1 <ArrowRight className="ml-1 w-4 h-4" />
                     </Button>
                   </CardFooter>
                 </Card>
@@ -282,21 +283,32 @@ export default function FundamentalsPage() {
                             </div>
                          </div>
                       )}
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                        <Badge className={cn("px-3 py-0.5 font-black text-[9px]", isCurrent ? "bg-primary text-white" : "bg-muted text-muted-foreground")}>
+                      <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-30">
+                        <Badge className={cn("px-4 py-1.5 font-black text-[10px] uppercase tracking-widest", isCurrent ? "bg-primary text-white shadow-xl ring-2 ring-white" : "bg-muted text-muted-foreground")}>
                           {isCurrent ? "YOU ARE HERE" : `STEP ${step.n}`}
                         </Badge>
                       </div>
-                      <CardHeader className="pt-10 text-center">
-                        <div className={cn("w-12 h-12 rounded-full flex items-center justify-center font-black mb-3 mx-auto text-lg", isCurrent ? "bg-primary text-white" : "bg-muted text-muted-foreground")}>{step.n}</div>
+                      <CardHeader className="pt-12 text-center">
+                        <div className={cn("w-12 h-12 rounded-full flex items-center justify-center font-black mb-4 mx-auto text-lg shadow-md", isCurrent ? "bg-primary text-white" : "bg-muted text-muted-foreground")}>{step.n}</div>
                         <CardTitle className="text-lg font-bold uppercase tracking-tighter">{step.title}</CardTitle>
                       </CardHeader>
-                      <CardContent className="text-center text-xs font-medium text-muted-foreground pb-8">
-                        {step.desc}
+                      <CardContent className="text-center pb-8 space-y-4">
+                        <p className="text-xs font-medium text-muted-foreground leading-snug">{step.desc}</p>
+                        {isCurrent && (
+                          <div className="bg-muted/50 p-3 rounded-lg space-y-1.5">
+                            <div className="flex items-center justify-center gap-1.5 text-[9px] font-black uppercase text-primary">
+                              <Clock className="w-3 h-3" />
+                              <span>{step.time} Total</span>
+                            </div>
+                            <div className="text-[9px] font-black uppercase text-primary text-center">
+                              Outcome: {step.outcome}
+                            </div>
+                          </div>
+                        )}
                       </CardContent>
                       <CardFooter className="mt-auto p-0">
-                         <Button variant={isCurrent ? "default" : "outline"} className={cn("w-full rounded-t-none rounded-b-lg py-5 font-black uppercase text-[10px]", isCurrent ? "bg-primary text-white border-none" : "")}>
-                           {isLocked ? "Locked" : "Continue"}
+                         <Button variant={isCurrent ? "default" : "outline"} className={cn("w-full rounded-t-none rounded-b-lg py-5 font-black uppercase text-[10px] tracking-widest", isCurrent ? "bg-primary text-white border-none" : "")}>
+                           {isLocked ? "Locked" : `Start Step ${step.n}`}
                          </Button>
                       </CardFooter>
                     </Card>
