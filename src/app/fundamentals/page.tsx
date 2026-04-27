@@ -198,7 +198,7 @@ export default function FundamentalsPage() {
                   {personaContent[persona].desc} <span className="text-white font-bold underline decoration-primary underline-offset-4">{personaContent[persona].strategy}</span>
                 </p>
               </div>
-              <Button size="lg" onClick={() => scrollToSection('roadmap')} className="bg-white text-sap-blue hover:bg-primary hover:text-white font-black px-8 py-6 text-base uppercase transition-all rounded-lg">
+              <Button size="lg" onClick={() => scrollToSection('roadmap')} className="bg-white text-sap-blue hover:bg-primary hover:text-white font-black px-8 py-6 text-base uppercase transition-all">
                 View My Roadmap <ArrowRight className="ml-2" />
               </Button>
             </div>
@@ -348,7 +348,7 @@ export default function FundamentalsPage() {
                   </ul>
                 </CardContent>
                 <CardFooter className="pt-6">
-                  <Button className="w-full py-6 font-black text-base bg-primary hover:bg-primary/90 text-white rounded-lg group">
+                  <Button className="w-full py-6 font-black text-base bg-primary hover:bg-primary/90 text-white group">
                     Start Learning <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </CardFooter>
@@ -370,7 +370,7 @@ export default function FundamentalsPage() {
                   </ul>
                 </CardContent>
                 <CardFooter className="pt-6">
-                  <Button className="w-full py-6 font-black text-base bg-sap-blue hover:bg-sap-blue/90 text-white rounded-lg group">
+                  <Button className="w-full py-6 font-black text-base bg-sap-blue hover:bg-sap-blue/90 text-white group">
                     Explore Navigation <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </CardFooter>
@@ -392,7 +392,7 @@ export default function FundamentalsPage() {
                   </div>
                 </CardContent>
                 <CardFooter className="pt-6">
-                  <Button className="w-full py-6 font-black text-base bg-foreground hover:bg-foreground/90 text-white rounded-lg group">
+                  <Button className="w-full py-6 font-black text-base bg-foreground hover:bg-foreground/90 text-white group">
                     Take Quiz <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </CardFooter>
@@ -418,7 +418,7 @@ export default function FundamentalsPage() {
                       <span className="text-[10px] font-black uppercase tracking-widest">Sandbox Access Included</span>
                    </div>
                 </div>
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-10 py-7 text-xl font-black uppercase tracking-widest transition-all hover:scale-105 rounded-lg">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-10 py-7 text-xl font-black uppercase tracking-widest transition-all hover:scale-105">
                   Enter The Lab
                 </Button>
               </div>
@@ -484,7 +484,7 @@ export default function FundamentalsPage() {
                 <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">Certification Path</h2>
                 <p className="mx-auto mt-2 text-muted-foreground md:text-xl max-w-xl">Validate your expertise with recognized credentials. Recommended <span className="text-primary font-black underline decoration-primary underline-offset-4">after completing Step 4</span>.</p>
               </div>
-              <Button size="lg" variant="outline" className="border-2 border-sap-blue text-sap-blue font-black hover:bg-sap-blue hover:text-white px-8 py-6 rounded-lg">View Exam Details</Button>
+              <Button size="lg" variant="outline" className="border-2 border-sap-blue text-sap-blue font-black hover:bg-sap-blue hover:text-white px-8 py-6">View Exam Details</Button>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
