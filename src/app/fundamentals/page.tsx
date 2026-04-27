@@ -102,7 +102,7 @@ export default function FundamentalsPage() {
       )}>
         <div className="container px-4 md:px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-4">
-             <Badge className="bg-primary px-3 py-1 font-black rounded-[4px]">STEP {personaContent[persona].startStep}</Badge>
+             <Badge className="bg-primary px-3 py-1 font-black rounded-full">STEP {personaContent[persona].startStep}</Badge>
              <div className="hidden sm:block">
                 <p className="text-xs font-black text-muted-foreground uppercase tracking-widest">Current Action</p>
                 <p className="text-sm font-bold truncate">Mastering SAP Navigation</p>
@@ -125,7 +125,7 @@ export default function FundamentalsPage() {
         <section id="hero" className="w-full bg-sap-blue py-20 md:py-32 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 translate-x-1/4 pointer-events-none" />
           <div className="container px-4 md:px-6 text-center relative z-10">
-            <Badge className="mb-6 bg-primary/20 text-white border-primary/30 px-4 py-1 uppercase tracking-widest text-xs font-bold rounded-[4px]">Expert-Led Roadmap</Badge>
+            <Badge className="mb-6 bg-primary/20 text-white border-primary/30 px-4 py-1 uppercase tracking-widest text-xs font-bold rounded-full">Expert-Led Roadmap</Badge>
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-headline font-bold mb-6 tracking-tighter leading-tight">
               From Zero to <span className="text-primary">SAP Expert</span>
             </h1>
@@ -152,7 +152,7 @@ export default function FundamentalsPage() {
         <section id="path-selector" className="w-full py-16 md:py-24 bg-white border-b scroll-mt-20">
           <div className="container px-4 md:px-6 text-center">
             <div className="mb-12 max-w-2xl mx-auto">
-              <Badge className="mb-4 bg-muted text-muted-foreground font-black px-3 py-1 rounded-[4px]">ONBOARDING</Badge>
+              <Badge className="mb-4 bg-muted text-muted-foreground font-black px-3 py-1 rounded-full">ONBOARDING</Badge>
               <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">Choose Your Starting Point</h2>
               <p className="mx-auto mt-2 max-w-[700px] text-muted-foreground md:text-xl font-body">Select the profile that best describes your background to unlock a custom learning strategy.</p>
             </div>
@@ -192,7 +192,7 @@ export default function FundamentalsPage() {
             <div className="mt-16 p-10 bg-sap-blue text-white max-w-5xl mx-auto flex flex-col md:flex-row gap-8 items-center animate-fade-in shadow-2xl relative overflow-hidden rounded-none">
               <div className="absolute top-0 left-0 w-2 h-full bg-primary" />
               <div className="flex-1 text-left space-y-3">
-                <Badge className="bg-primary text-white font-black uppercase px-3 py-0.5 rounded-[4px]">Strategy Unlocked</Badge>
+                <Badge className="bg-primary text-white font-black uppercase px-3 py-0.5 rounded-full">Strategy Unlocked</Badge>
                 <h4 className="text-2xl font-bold font-headline uppercase tracking-tighter">Welcome, {personaContent[persona].title}</h4>
                 <p className="text-white/70 text-lg leading-relaxed font-body">
                   {personaContent[persona].desc} <span className="text-white font-bold underline decoration-primary underline-offset-4">{personaContent[persona].strategy}</span>
@@ -231,7 +231,7 @@ export default function FundamentalsPage() {
                   onClick={() => scrollToSection('step-1-content')}
                 >
                   <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-30">
-                    <Badge className="bg-primary text-white px-4 py-1.5 font-black uppercase text-[10px] tracking-widest shadow-xl ring-2 ring-white rounded-[4px]">
+                    <Badge className="bg-primary text-white px-4 py-1.5 font-black uppercase text-[10px] tracking-widest shadow-xl ring-2 ring-white rounded-full whitespace-nowrap">
                       {personaContent[persona].startStep === 1 ? "YOU ARE HERE" : "STEP 1"}
                     </Badge>
                   </div>
@@ -284,7 +284,7 @@ export default function FundamentalsPage() {
                          </div>
                       )}
                       <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-30">
-                        <Badge className={cn("px-4 py-1.5 font-black text-[10px] uppercase tracking-widest rounded-[4px]", isCurrent ? "bg-primary text-white shadow-xl ring-2 ring-white" : "bg-muted text-muted-foreground")}>
+                        <Badge className={cn("px-4 py-1.5 font-black text-[10px] uppercase tracking-widest rounded-full whitespace-nowrap", isCurrent ? "bg-primary text-white shadow-xl ring-2 ring-white" : "bg-muted text-muted-foreground")}>
                           {isCurrent ? "YOU ARE HERE" : `STEP ${step.n}`}
                         </Badge>
                       </div>
@@ -324,7 +324,7 @@ export default function FundamentalsPage() {
         <section id="step-1-content" className="w-full py-16 md:py-24 bg-white scroll-mt-24">
           <div className="container px-4 md:px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <Badge className="bg-primary/10 text-primary border-none px-3 py-1 font-black mb-4 uppercase rounded-[4px]">Phase 1: Foundations</Badge>
+              <Badge className="bg-primary/10 text-primary border-none px-3 py-1 font-black mb-4 uppercase rounded-full">Phase 1: Foundations</Badge>
               <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">Master the Core</h2>
               <p className="mx-auto mt-4 text-muted-foreground md:text-xl font-body">
                 We've broken down Step 1 into three high-impact modules. Complete these to build your foundational SAP knowledge.
@@ -335,7 +335,7 @@ export default function FundamentalsPage() {
               <Card className="border shadow-lg hover:shadow-xl transition-all group flex flex-col h-full rounded-none">
                 <CardHeader className="pb-3">
                   <div className="flex justify-between items-start mb-4">
-                    <Badge className="bg-primary text-white font-black uppercase text-[9px] px-2 rounded-[4px]">LEARN</Badge>
+                    <Badge className="bg-primary text-white font-black uppercase text-[9px] px-2 rounded-full">LEARN</Badge>
                     <span className="text-[10px] font-black text-muted-foreground">⏱ 45m</span>
                   </div>
                   <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors font-headline uppercase tracking-tight">SAP Architecture (SAPTEC)</CardTitle>
@@ -357,7 +357,7 @@ export default function FundamentalsPage() {
               <Card className="border shadow-lg hover:shadow-xl transition-all group flex flex-col h-full rounded-none">
                 <CardHeader className="pb-3">
                   <div className="flex justify-between items-start mb-4">
-                    <Badge className="bg-sap-blue text-white font-black uppercase text-[9px] px-2 rounded-[4px]">UNDERSTAND</Badge>
+                    <Badge className="bg-sap-blue text-white font-black uppercase text-[9px] px-2 rounded-full">UNDERSTAND</Badge>
                     <span className="text-[10px] font-black text-muted-foreground">⏱ 1h 15m</span>
                   </div>
                   <CardTitle className="text-xl font-bold group-hover:text-sap-blue transition-colors font-headline uppercase tracking-tight">S/4HANA Navigation</CardTitle>
@@ -379,7 +379,7 @@ export default function FundamentalsPage() {
               <Card className="border shadow-lg hover:shadow-xl transition-all group flex flex-col h-full rounded-none">
                 <CardHeader className="pb-3">
                   <div className="flex justify-between items-start mb-4">
-                    <Badge className="bg-foreground text-background font-black uppercase text-[9px] px-2 rounded-[4px]">TEST</Badge>
+                    <Badge className="bg-foreground text-background font-black uppercase text-[9px] px-2 rounded-full">TEST</Badge>
                     <span className="text-[10px] font-black text-muted-foreground">⏱ 15m Quiz</span>
                   </div>
                   <CardTitle className="text-xl font-bold font-headline uppercase tracking-tight">Foundations Quiz</CardTitle>
@@ -407,7 +407,7 @@ export default function FundamentalsPage() {
           <div className="container px-4 md:px-6 relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-16">
               <div className="lg:w-1/2 space-y-8 text-left">
-                <Badge className="bg-primary text-white px-5 py-1 uppercase text-[10px] font-black tracking-widest shadow-xl ring-2 ring-primary/20 rounded-[4px]">TRANSFORMATION</Badge>
+                <Badge className="bg-primary text-white px-5 py-1 uppercase text-[10px] font-black tracking-widest shadow-xl ring-2 ring-primary/20 rounded-full">TRANSFORMATION</Badge>
                 <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl leading-none uppercase">From Theory to Real Work.</h2>
                 <p className="mx-auto mt-2 text-white/60 md:text-xl/relaxed max-w-xl font-body">
                   In the real world, you build roles, troubleshoot access, and audit users. We provide the sandbox and the scenarios.
@@ -448,7 +448,7 @@ export default function FundamentalsPage() {
         <section className="w-full py-16 md:py-24 bg-white scroll-mt-20 border-b">
           <div className="container px-4 md:px-6">
              <div className="text-center mb-16 max-w-3xl mx-auto">
-                <Badge className="bg-muted text-muted-foreground px-3 py-1 font-black mb-4 rounded-[4px]">KNOWLEDGE PILLARS</Badge>
+                <Badge className="bg-muted text-muted-foreground px-3 py-1 font-black mb-4 rounded-full">KNOWLEDGE PILLARS</Badge>
                 <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">Expert Concepts</h2>
                 <p className="mx-auto mt-2 max-w-[700px] text-muted-foreground md:text-xl font-body">Master these four fundamental pillars. They represent 80% of daily security operations.</p>
              </div>
@@ -480,7 +480,7 @@ export default function FundamentalsPage() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8 border-b-4 border-sap-blue pb-8">
               <div className="space-y-3 text-left">
-                <Badge className="bg-sap-blue text-white px-3 py-1 font-black rounded-[4px]">THE END GOAL</Badge>
+                <Badge className="bg-sap-blue text-white px-3 py-1 font-black rounded-full">THE END GOAL</Badge>
                 <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">Certification Path</h2>
                 <p className="mx-auto mt-2 text-muted-foreground md:text-xl max-w-xl font-body">Validate your expertise with recognized credentials. Recommended <span className="text-primary font-black underline decoration-primary underline-offset-4">after completing Step 4</span>.</p>
               </div>
@@ -494,7 +494,7 @@ export default function FundamentalsPage() {
                 { title: "Professional Level", level: "Advanced", border: "border-l-foreground", desc: "For lead enterprise-wide security positions." }
               ].map((cert, idx) => (
                 <div key={idx} className={cn("p-10 border-l-8 bg-white shadow-lg transition-all hover:-translate-y-2 hover:shadow-xl flex flex-col group rounded-none", cert.border)}>
-                  <Badge className="mb-6 bg-muted text-muted-foreground font-black uppercase text-[9px] w-fit rounded-[4px]">LEVEL: {cert.level}</Badge>
+                  <Badge className="mb-6 bg-muted text-muted-foreground font-black uppercase text-[9px] w-fit rounded-full">LEVEL: {cert.level}</Badge>
                   <h3 className="text-2xl font-bold mb-4 leading-tight group-hover:text-primary transition-colors uppercase tracking-tighter font-headline">{cert.title}</h3>
                   <p className="text-muted-foreground font-bold mb-8 leading-relaxed text-base font-body">{cert.desc}</p>
                   <Link href="#" className="mt-auto text-primary font-black text-xs inline-flex items-center group-hover:translate-x-1 transition-transform uppercase tracking-widest">View Details <ArrowRight className="ml-1.5 w-4 h-4" /></Link>
@@ -526,7 +526,7 @@ export default function FundamentalsPage() {
                     ].map((res, i) => (
                       <Card key={i} className="border shadow-md hover:shadow-lg transition-all group cursor-pointer h-full rounded-none">
                          <CardHeader className="pb-2">
-                            <Badge className="bg-green-500 text-white font-black mb-3 w-fit text-[9px] rounded-[4px]">BEGINNER</Badge>
+                            <Badge className="bg-green-500 text-white font-black mb-3 w-fit text-[9px] rounded-full">BEGINNER</Badge>
                             <CardTitle className="text-lg font-bold group-hover:text-primary transition-colors font-headline uppercase tracking-tighter">{res.title}</CardTitle>
                          </CardHeader>
                          <CardContent>
@@ -550,7 +550,7 @@ export default function FundamentalsPage() {
                     ].map((res, i) => (
                       <Card key={i} className="border shadow-md hover:shadow-lg transition-all group cursor-pointer h-full rounded-none">
                          <CardHeader className="pb-2">
-                            <Badge className={cn("text-white font-black mb-3 w-fit text-[9px] rounded-[4px]", res.tag === 'Intermediate' ? 'bg-sap-blue' : 'bg-primary')}>{res.tag.toUpperCase()}</Badge>
+                            <Badge className={cn("text-white font-black mb-3 w-fit text-[9px] rounded-full", res.tag === 'Intermediate' ? 'bg-sap-blue' : 'bg-primary')}>{res.tag.toUpperCase()}</Badge>
                             <CardTitle className="text-lg font-bold group-hover:text-primary transition-colors font-headline uppercase tracking-tighter">{res.title}</CardTitle>
                          </CardHeader>
                          <CardContent>
