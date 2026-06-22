@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { ArticleCard } from '@/components/article-card';
 import { NewsletterSignup } from '@/components/newsletter-signup';
+import { FeaturedCarousel } from '@/components/featured-carousel';
 import { articles, expertise, testimonials } from '@/lib/data';
 import { communityActivity, topContributors, announcements, communityGroups, trendingTopics } from '@/lib/community-data';
 import { Button } from '@/components/ui/button';
@@ -149,85 +150,8 @@ export default function Home() {
               {/* Column 2 (Main Content) - 540px */}
               <div className="col-span-12 lg:col-span-6 space-y-8">
                 
-                {/* Premium Editorial Featured Insights */}
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto">
-                  
-                  {/* Hero Insight Card (65%) */}
-                  <div className="md:col-span-8 group relative overflow-hidden rounded-[16px] shadow-2xl h-[420px]">
-                    <Link href="#" className="block h-full">
-                      {/* Treatment Layer 1: Background Image */}
-                      <Image 
-                        src="https://sapsecurityexpert.com/uploads/blogs/blog_22180632c7ed0cea.png" 
-                        alt="Featured Insight" 
-                        fill 
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                      {/* Treatment Layer 2: Corporate Blue Tint (65%) */}
-                      <div className="absolute inset-0 bg-[#3B5998]/65 z-10" />
-                      
-                      {/* Treatment Layer 3: Readability Gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B193C]/95 via-[#0B193C]/40 to-transparent z-20" />
-
-                      {/* Content Overlay */}
-                      <div className="absolute inset-0 z-30 p-8 flex flex-col justify-between">
-                        <Badge className="w-fit bg-primary text-white font-black text-[10px] uppercase tracking-widest px-3 py-1 rounded-full shadow-lg border-none">
-                          FEATURED INSIGHT
-                        </Badge>
-
-                        <div className="space-y-6">
-                           <div className="backdrop-blur-[4px] bg-white/5 border border-white/10 p-6 rounded-xl">
-                             <h2 className="text-2xl md:text-3xl font-bold text-white leading-[1.1] tracking-tight mb-4 font-headline line-clamp-3">
-                               How SAP SSCUI Lists Resolve Authorization Errors Faster
-                             </h2>
-                             <p className="text-white/80 text-base line-clamp-2 font-medium font-body leading-relaxed">
-                               Understand the technical architecture of SSCUI and how to leverage standard lists to streamline cloud migrations.
-                             </p>
-                           </div>
-
-                           <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-6 text-[10px] font-bold text-white/70 tracking-widest uppercase">
-                                <span className="flex items-center gap-1.5"><Clock size={12} className="text-primary" /> 8 MIN READ</span>
-                                <span className="flex items-center gap-1.5"><Shield size={12} className="text-primary" /> SAP GRC</span>
-                              </div>
-                              <span className="text-white font-black text-xs inline-flex items-center gap-1 group-hover:text-primary transition-colors">
-                                READ INSIGHT <ArrowRight className="h-4 w-4" />
-                              </span>
-                           </div>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-
-                  {/* Secondary Stacking Column (35%) */}
-                  <div className="md:col-span-4 flex flex-col gap-6">
-                    {/* Secondary Card 1 */}
-                    <div className="flex-1 relative overflow-hidden rounded-[16px] shadow-lg group h-[198px]">
-                      <Link href="#" className="block h-full">
-                        <Image src="/2.jpg" alt="Secondary Insight" fill className="object-cover transition-transform group-hover:scale-105" />
-                        <div className="absolute inset-0 bg-[#3B5998]/65 z-10" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0B193C]/95 via-[#0B193C]/40 to-transparent z-20" />
-                        <div className="absolute inset-0 z-30 p-4 flex flex-col justify-end">
-                           <Badge className="absolute top-4 left-4 bg-primary/20 text-white text-[8px] font-black border-none px-2 rounded-full">CORE SECURITY</Badge>
-                           <h3 className="text-white font-bold text-sm leading-tight line-clamp-2 mb-2">Protecting SAP Systems from Ransomware: Best Practices</h3>
-                           <span className="text-primary font-black text-[10px] inline-flex items-center gap-1">READ <ArrowRight className="h-3 w-3" /></span>
-                        </div>
-                      </Link>
-                    </div>
-                    {/* Secondary Card 2 */}
-                    <div className="flex-1 relative overflow-hidden rounded-[16px] shadow-lg group h-[198px]">
-                      <Link href="#" className="block h-full">
-                        <Image src="/3.jpg" alt="Secondary Insight" fill className="object-cover transition-transform group-hover:scale-105" />
-                        <div className="absolute inset-0 bg-[#3B5998]/65 z-10" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0B193C]/95 via-[#0B193C]/40 to-transparent z-20" />
-                        <div className="absolute inset-0 z-30 p-4 flex flex-col justify-end">
-                           <Badge className="absolute top-4 left-4 bg-primary/20 text-white text-[8px] font-black border-none px-2 rounded-full">IAM & IAG</Badge>
-                           <h3 className="text-white font-bold text-sm leading-tight line-clamp-2 mb-2">Role Mining Strategies for Large Scale Environments</h3>
-                           <span className="text-primary font-black text-[10px] inline-flex items-center gap-1">READ <ArrowRight className="h-3 w-3" /></span>
-                        </div>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+                {/* Premium Editorial Featured Insights Carousel */}
+                <FeaturedCarousel />
 
                 {/* Recent Activity Feed */}
                 <Card className="rounded-[16px] border-[#E8ECF2] shadow-sm bg-white overflow-hidden">
