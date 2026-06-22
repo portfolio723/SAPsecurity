@@ -295,17 +295,36 @@ export default function Home() {
                 </Card>
 
                 {/* Newsletter Card */}
-                <Card className="rounded-[16px] border-[#E8ECF2] bg-[#0F172A] text-white shadow-2xl overflow-hidden relative">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-16 -mt-16 blur-3xl" />
-                  <CardHeader className="p-6 pb-2">
-                    <h3 className="text-[20px] font-bold font-headline leading-tight">Stay Ahead of SAP Security</h3>
-                    <p className="text-xs text-white/60 leading-relaxed mt-2 font-medium">Weekly research, implementation guides, and expert insights.</p>
-                  </CardHeader>
-                  <CardContent className="space-y-4 p-6 pt-4">
-                    <Input placeholder="Email Address" className="bg-white/10 border-white/20 h-[48px] text-white placeholder:text-white/40 focus:ring-primary rounded-lg" />
-                    <Button className="w-full bg-primary hover:bg-primary/90 text-white font-black h-[48px] rounded-lg shadow-lg">Subscribe Now</Button>
-                    <p className="text-[10px] text-white/30 text-center font-bold uppercase tracking-widest">Join 2,400+ SAP Professionals</p>
-                  </CardContent>
+                <Card className="rounded-[16px] border-[#E8ECF2] bg-white shadow-sm overflow-hidden flex flex-col items-center text-center p-8">
+                  <div className="w-16 h-16 rounded-full bg-[#3B5998] flex items-center justify-center text-white mb-6 shadow-sm">
+                    <Mail className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-[20px] font-bold text-[#0F172A] leading-tight mb-2 font-headline">Subscribe for Expert Insights</h3>
+                  <p className="text-[13px] text-[#64748B] font-medium mb-8 font-body">Check Latest Updates</p>
+                  
+                  <form className="flex w-full rounded-lg overflow-hidden border border-[#F25140] bg-[#F8FAFC] mb-6 shadow-sm group focus-within:ring-2 focus-within:ring-[#F25140]/10">
+                    <input 
+                      placeholder="Type your email..." 
+                      className="flex-1 bg-transparent px-4 py-3 text-sm outline-none placeholder:text-slate-400 min-w-0" 
+                      required
+                    />
+                    <Button type="submit" className="bg-[#F25140] hover:bg-[#D94436] text-white font-bold h-12 rounded-none px-6 border-none text-xs">Subscribe</Button>
+                  </form>
+                  
+                  <div className="space-y-4">
+                    <p className="text-[11px] text-[#64748B] leading-relaxed font-medium">
+                      By subscribing you agree to <Link href="#" className="underline hover:text-[#F25140]">Substack's Terms of Use</Link>, <Link href="#" className="underline hover:text-[#F25140]">our Privacy Policy</Link> and our <Link href="#" className="underline hover:text-[#F25140]">Information collection notice</Link>
+                    </p>
+                    
+                    <div className="flex justify-center items-center gap-1 opacity-20 grayscale select-none">
+                       <div className="flex flex-col gap-[1px]">
+                         <div className="w-3 h-[2px] bg-black rounded-[0.5px]" />
+                         <div className="w-3 h-[1.5px] bg-black rounded-[0.5px]" />
+                         <div className="w-3 h-[1px] bg-black rounded-[0.5px]" />
+                       </div>
+                       <span className="text-[12px] font-black uppercase tracking-tighter">substack</span>
+                    </div>
+                  </div>
                 </Card>
 
               </div>
