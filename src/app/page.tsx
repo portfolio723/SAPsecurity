@@ -151,16 +151,10 @@ export default function Home() {
                 
                 {/* Featured Insight Hero Card */}
                 <Card className="border-none rounded-[16px] overflow-hidden shadow-2xl relative h-[420px] flex flex-col justify-end group">
-                  {/* Background Image & Gradient */}
+                  {/* Background Gradient & Pattern (Image Removed as requested) */}
                   <div className="absolute inset-0 z-0">
-                    <Image 
-                      src="https://sapsecurityexpert.com/uploads/blogs/blog_22180632c7ed0cea.png" 
-                      alt="Featured Research" 
-                      fill 
-                      className="object-cover transition-transform duration-700 group-hover:scale-105" 
-                    />
                     {/* PRD Gradient: #3B5998 to #284B86 */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#284B86] via-[#3B5998]/80 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#284B86] via-[#3B5998]/80 to-[#3B5998]" />
                     
                     {/* Subtle Wave Pattern */}
                     <div className="absolute inset-0 opacity-[0.06] pointer-events-none mix-blend-overlay" 
@@ -203,9 +197,9 @@ export default function Home() {
                           "p-6 flex flex-col md:flex-row gap-6 hover:bg-[#F8FAFC] transition-colors group cursor-pointer",
                           idx !== communityActivity.length - 1 && "border-b border-slate-100"
                         )}>
-                          <div className="relative w-full md:w-[130px] h-[85px] shrink-0 rounded-[4px] overflow-hidden border border-slate-100 shadow-sm">
+                          <div className="relative w-full md:w-[130px] h-[85px] shrink-0 rounded-[4px] overflow-hidden border border-slate-100 shadow-sm bg-slate-50">
                             <Image 
-                              src={`https://picsum.photos/seed/${item.id + 100}/260/170`} 
+                              src={item.imageUrl || `https://picsum.photos/seed/${item.id + 100}/260/170`} 
                               alt={item.title} 
                               fill 
                               className="object-cover transition-transform group-hover:scale-105"

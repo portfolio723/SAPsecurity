@@ -10,6 +10,7 @@ export type CommunityActivity = {
     replies: number;
     likes: number;
     isExclusive?: boolean;
+    imageUrl?: string;
 };
 
 export const communityActivity: CommunityActivity[] = [
@@ -24,7 +25,8 @@ export const communityActivity: CommunityActivity[] = [
         views: 452,
         replies: 18,
         likes: 45,
-        isExclusive: false
+        isExclusive: false,
+        imageUrl: "https://sapsecurityexpert.com/uploads/blogs/blog_d78098b375db9c5c.png"
     },
     {
         id: 2,
@@ -37,7 +39,8 @@ export const communityActivity: CommunityActivity[] = [
         views: 312,
         replies: 9,
         likes: 24,
-        isExclusive: true
+        isExclusive: true,
+        imageUrl: "https://sapsecurityexpert.com/uploads/blogs/blog_75219c78415f1a0f.png"
     },
     {
         id: 3,
@@ -50,7 +53,8 @@ export const communityActivity: CommunityActivity[] = [
         views: 289,
         replies: 14,
         likes: 31,
-        isExclusive: true
+        isExclusive: true,
+        imageUrl: "https://sapsecurityexpert.com/uploads/blogs/blog_b086664cf417d4d4.png"
     },
 ];
 
