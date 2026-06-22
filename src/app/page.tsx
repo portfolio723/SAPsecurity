@@ -102,23 +102,17 @@ export default function Home() {
                 </Card>
 
                 {/* Sponsored Ad */}
-                <div className="relative rounded-[16px] overflow-hidden border border-slate-200 shadow-md group">
-                  <Badge className="absolute top-3 left-3 z-10 bg-black/60 text-white text-[9px] uppercase tracking-widest border-none backdrop-blur-md">Sponsored</Badge>
-                  <Link href="#">
-                    <div className="relative h-[220px] w-full">
-                      <Image 
-                        src="https://picsum.photos/seed/ad1/300/400" 
-                        alt="Sponsored Guide" 
-                        fill 
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <p className="text-white font-bold text-sm leading-tight">Mastering SAP BTP Security: The 2026 Implementation Guide</p>
-                        <p className="text-white/60 text-[10px] mt-1 font-bold uppercase tracking-widest">Download Now →</p>
-                      </div>
+                <div className="relative rounded-[16px] overflow-hidden bg-white aspect-square shadow-sm border border-slate-200 p-4">
+                  <div className="w-full h-full border-[3px] border-dashed border-black flex flex-col items-center justify-center text-center px-2">
+                    <div className="space-y-0.5 mb-6">
+                      <p className="text-[28px] font-black leading-none tracking-tighter text-black">PLACE</p>
+                      <p className="text-[28px] font-black leading-none tracking-tighter text-black">YOUR</p>
+                      <p className="text-[28px] font-black leading-none tracking-tighter text-black">AD</p>
+                      <p className="text-[28px] font-black leading-none tracking-tighter text-black">HERE</p>
                     </div>
-                  </Link>
+                    <p className="text-[9px] font-medium text-black">Mail to hello@sapsecurityexpert.com</p>
+                  </div>
+                  <Badge className="absolute top-2 left-2 z-10 bg-slate-100 text-slate-500 text-[8px] uppercase tracking-widest border-none">Sponsored</Badge>
                 </div>
 
                 {/* Top Contributors */}
@@ -270,23 +264,17 @@ export default function Home() {
                 </Card>
 
                 {/* Sponsored Ad 2 */}
-                <div className="relative rounded-[16px] overflow-hidden border border-slate-200 shadow-md group">
-                  <Badge className="absolute top-3 left-3 z-10 bg-black/60 text-white text-[9px] uppercase tracking-widest border-none backdrop-blur-md">Sponsored</Badge>
-                  <Link href="#">
-                    <div className="relative h-[220px] w-full">
-                      <Image 
-                        src="https://picsum.photos/seed/ad2/300/400" 
-                        alt="Sponsored Tool" 
-                        fill 
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <p className="text-white font-bold text-sm leading-tight">Advanced SoD Review Dashboard (Demo)</p>
-                        <p className="text-white/60 text-[10px] mt-1 font-bold uppercase tracking-widest">Try Free Tool →</p>
-                      </div>
+                <div className="relative rounded-[16px] overflow-hidden bg-white aspect-square shadow-sm border border-slate-200 p-4">
+                  <div className="w-full h-full border-[3px] border-dashed border-black flex flex-col items-center justify-center text-center px-2">
+                    <div className="space-y-0.5 mb-6">
+                      <p className="text-[28px] font-black leading-none tracking-tighter text-black">PLACE</p>
+                      <p className="text-[28px] font-black leading-none tracking-tighter text-black">YOUR</p>
+                      <p className="text-[28px] font-black leading-none tracking-tighter text-black">AD</p>
+                      <p className="text-[28px] font-black leading-none tracking-tighter text-black">HERE</p>
                     </div>
-                  </Link>
+                    <p className="text-[9px] font-medium text-black">Mail to hello@sapsecurityexpert.com</p>
+                  </div>
+                  <Badge className="absolute top-2 left-2 z-10 bg-slate-100 text-slate-500 text-[8px] uppercase tracking-widest border-none">Sponsored</Badge>
                 </div>
 
                 {/* Community Stats */}
