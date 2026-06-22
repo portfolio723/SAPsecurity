@@ -20,7 +20,7 @@ const items = [
     description: "Understand the technical architecture of SSCUI and how to leverage standard lists to streamline cloud migrations.",
     category: "SAP GRC",
     readTime: "8 MIN READ",
-    image: "https://sapsecurityexpert.com/uploads/blogs/blog_22180632c7ed0cea.png"
+    image: "https://sapsecurityexpert.com/uploads/blogs/blog_5034e16009fc8233.png"
   },
   {
     title: "Protecting SAP Systems from Ransomware: Best Practices",
