@@ -354,8 +354,8 @@ export default function Home() {
                 <TabsTrigger value="cloud" className="rounded-full px-6">BTP & Cloud</TabsTrigger>
               </TabsList>
               <TabsContent value="all">
-                <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-6 sm:grid-cols-2 md:py-8 lg:max-w-none lg:grid-cols-4 lg:gap-8">
-                  {articles.slice(0, 4).map(article => (
+                <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-6 sm:grid-cols-2 md:py-8 lg:max-w-none lg:grid-cols-3 lg:gap-8">
+                  {articles.slice(0, 3).map(article => (
                     <ArticleCard key={article.id} article={article} />
                   ))}
                 </div>
