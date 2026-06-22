@@ -52,6 +52,7 @@ import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Input } from '@/components/ui/input';
 import { AdsensePlaceholder } from '@/components/adsense-placeholder';
+import { cn } from '@/lib/utils';
 
 export default function Home() {
   return (
@@ -59,35 +60,35 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         
-        {/* SAP Security Intelligence Center */}
-        <section id="intelligence-center" className="w-full bg-[#F8FAFC] py-8 md:py-12 border-b">
+        {/* Intelligence Center */}
+        <section id="intelligence-center" className="w-full bg-[#F8FAFC] py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 md:px-8 max-w-[1280px]">
             
             <div className="grid grid-cols-12 gap-6 items-start">
               
               {/* Column 1 (Left Rail) - 280px */}
-              <div className="col-span-12 lg:col-span-3 space-y-6">
+              <div className="col-span-12 lg:col-span-3 space-y-8">
                 
                 {/* Recent Topics */}
-                <Card className="rounded-[16px] border-slate-200 shadow-sm overflow-hidden bg-white">
-                  <CardHeader className="pb-3 border-b border-slate-50">
-                    <h3 className="text-[14px] font-semibold text-slate-900 uppercase tracking-wider flex items-center gap-2">
-                      <Hash className="h-4 w-4 text-primary" /> Recent Topics
+                <Card className="rounded-[16px] border-[#E8ECF2] shadow-sm overflow-hidden bg-white">
+                  <CardHeader className="p-6 pb-3 border-b border-slate-50">
+                    <h3 className="text-[14px] font-bold text-[#0F172A] uppercase tracking-wider flex items-center gap-2">
+                      Recent Topics
                     </h3>
                   </CardHeader>
                   <CardContent className="p-0">
                     <div className="flex flex-col">
-                      {communityActivity.slice(0, 4).map((item) => (
-                        <Link key={item.id} href="#" className="p-4 hover:bg-[#F8FAFC] transition-colors border-b border-slate-50 last:border-0 group">
-                          <div className="flex gap-3">
+                      {communityActivity.slice(0, 3).map((item) => (
+                        <Link key={item.id} href="#" className="p-6 hover:bg-[#F8FAFC] transition-colors border-b border-slate-50 last:border-0 group">
+                          <div className="flex gap-4">
                             <Avatar className="h-10 w-10 border border-slate-100 shrink-0">
                               <AvatarFallback className="bg-slate-50 text-slate-500 font-bold text-xs">{item.author.charAt(0)}</AvatarFallback>
                             </Avatar>
                             <div className="space-y-1">
-                              <p className="font-semibold text-[15px] leading-snug text-slate-900 group-hover:text-primary transition-colors line-clamp-2">
+                              <p className="font-semibold text-[15px] leading-snug text-[#0F172A] group-hover:text-primary transition-colors line-clamp-2">
                                 {item.title}
                               </p>
-                              <p className="text-[13px] text-slate-500 font-medium">By {item.author}</p>
+                              <p className="text-[13px] text-[#64748B] font-medium">By {item.author}</p>
                             </div>
                           </div>
                         </Link>
@@ -95,47 +96,49 @@ export default function Home() {
                     </div>
                   </CardContent>
                   <CardFooter className="p-4 bg-slate-50/50 justify-center">
-                    <Button variant="link" className="text-slate-600 hover:text-primary font-bold text-xs p-0 h-auto">
+                    <Button variant="link" className="text-[#64748B] hover:text-primary font-bold text-xs p-0 h-auto">
                       View All Topics <ArrowRight className="ml-1 h-3 w-3" />
                     </Button>
                   </CardFooter>
                 </Card>
 
-                {/* Sponsored Ad */}
-                <div className="relative rounded-[16px] overflow-hidden bg-white aspect-square shadow-sm border border-slate-200 p-4">
-                  <div className="w-full h-full border-[3px] border-dashed border-black flex flex-col items-center justify-center text-center px-2">
-                    <div className="space-y-0.5 mb-6">
-                      <p className="text-[28px] font-black leading-none tracking-tighter text-black">PLACE</p>
-                      <p className="text-[28px] font-black leading-none tracking-tighter text-black">YOUR</p>
-                      <p className="text-[28px] font-black leading-none tracking-tighter text-black">AD</p>
-                      <p className="text-[28px] font-black leading-none tracking-tighter text-black">HERE</p>
+                {/* Sponsored Ad 1 */}
+                <Card className="rounded-[16px] border-[#E8ECF2] shadow-[0_10px_30px_rgba(0,0,0,0.08)] overflow-hidden bg-white aspect-square relative group">
+                   <Badge className="absolute top-4 left-4 z-10 bg-slate-100 text-slate-500 text-[8px] uppercase tracking-widest border-none font-bold rounded-[4px]">Sponsored</Badge>
+                   <CardContent className="h-full p-4 flex items-center justify-center">
+                    <div className="w-full h-full border-[3px] border-dashed border-black flex flex-col items-center justify-center text-center px-4 bg-white">
+                      <div className="space-y-0.5 mb-6">
+                        <p className="text-[28px] font-black leading-none tracking-tighter text-black">PLACE</p>
+                        <p className="text-[28px] font-black leading-none tracking-tighter text-black">YOUR</p>
+                        <p className="text-[28px] font-black leading-none tracking-tighter text-black">AD</p>
+                        <p className="text-[28px] font-black leading-none tracking-tighter text-black">HERE</p>
+                      </div>
+                      <p className="text-[9px] font-bold text-black uppercase tracking-tight">Mail to hello@sapsecurityexpert.com</p>
                     </div>
-                    <p className="text-[9px] font-medium text-black">Mail to hello@sapsecurityexpert.com</p>
-                  </div>
-                  <Badge className="absolute top-2 left-2 z-10 bg-slate-100 text-slate-500 text-[8px] uppercase tracking-widest border-none">Sponsored</Badge>
-                </div>
+                  </CardContent>
+                </Card>
 
                 {/* Top Contributors */}
-                <Card className="rounded-[16px] border-slate-200 shadow-sm bg-white">
-                  <CardHeader className="pb-3 border-b border-slate-50">
-                    <h3 className="text-[14px] font-semibold text-slate-900 uppercase tracking-wider">Top Contributors</h3>
+                <Card className="rounded-[16px] border-[#E8ECF2] shadow-sm bg-white overflow-hidden">
+                  <CardHeader className="p-6 pb-3 border-b border-slate-50">
+                    <h3 className="text-[14px] font-bold text-[#0F172A] uppercase tracking-wider">Top Contributors</h3>
                   </CardHeader>
-                  <CardContent className="p-4 space-y-4">
-                    {topContributors.slice(0, 5).map(contributor => (
-                      <div key={contributor.name} className="flex items-center gap-3">
-                        <Avatar className="h-9 w-9 border border-slate-100">
+                  <CardContent className="p-6 space-y-6">
+                    {topContributors.slice(0, 3).map(contributor => (
+                      <div key={contributor.name} className="flex items-center gap-4">
+                        <Avatar className="h-10 w-10 border border-slate-100">
                           <AvatarImage src={contributor.avatarUrl} />
                           <AvatarFallback className="bg-slate-100 text-slate-600 font-bold text-xs">{contributor.name.charAt(0)}</AvatarFallback>
                         </Avatar>
-                        <div>
-                          <p className="font-bold text-[14px] text-slate-900 leading-none">{contributor.name}</p>
-                          <p className="text-[12px] text-slate-500 mt-1">{contributor.role}</p>
+                        <div className="space-y-0.5">
+                          <p className="font-bold text-[14px] text-[#0F172A] leading-none">{contributor.name}</p>
+                          <p className="text-[12px] text-[#64748B] font-medium">{contributor.role}</p>
                         </div>
                       </div>
                     ))}
                   </CardContent>
                   <CardFooter className="p-4 pt-0 justify-center">
-                    <Button variant="link" className="text-slate-600 hover:text-primary font-bold text-xs p-0 h-auto">
+                    <Button variant="link" className="text-[#64748B] hover:text-primary font-bold text-xs p-0 h-auto">
                       View All <ArrowRight className="ml-1 h-3 w-3" />
                     </Button>
                   </CardFooter>
@@ -151,7 +154,7 @@ export default function Home() {
                   {/* Background Image & Gradient */}
                   <div className="absolute inset-0 z-0">
                     <Image 
-                      src="https://picsum.photos/seed/hero/1200/800" 
+                      src="https://sapsecurityexpert.com/uploads/blogs/blog_22180632c7ed0cea.png" 
                       alt="Featured Research" 
                       fill 
                       className="object-cover transition-transform duration-700 group-hover:scale-105" 
@@ -159,7 +162,7 @@ export default function Home() {
                     {/* PRD Gradient: #3B5998 to #284B86 */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#284B86] via-[#3B5998]/80 to-transparent" />
                     
-                    {/* Subtle Wave Pattern (Using CSS Pattern) */}
+                    {/* Subtle Wave Pattern */}
                     <div className="absolute inset-0 opacity-[0.06] pointer-events-none mix-blend-overlay" 
                          style={{ backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`, backgroundSize: '24px 24px' }} />
                   </div>
@@ -171,7 +174,7 @@ export default function Home() {
                       <h2 className="text-3xl md:text-[40px] font-bold text-white leading-[1.1] tracking-tight font-headline">
                         How SAP SSCUI Lists Resolve Authorization Errors Faster
                       </h2>
-                      <p className="text-white/80 text-[18px] leading-[1.7] line-clamp-2 max-w-2xl font-medium">
+                      <p className="text-white/80 text-[18px] leading-[1.7] line-clamp-2 max-w-2xl font-medium font-body">
                         Understand the technical architecture of SSCUI and how to leverage standard lists to streamline your S/4HANA cloud migration security.
                       </p>
                     </div>
@@ -181,151 +184,172 @@ export default function Home() {
                          <span className="flex items-center gap-1.5"><Clock size={14} className="text-primary" /> 8 MIN READ</span>
                          <span className="flex items-center gap-1.5"><Shield size={14} className="text-primary" /> SAP GRC</span>
                        </div>
-                       <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black px-8 h-[52px] shadow-xl group/btn">
+                       <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black px-8 h-[52px] shadow-xl group/btn rounded-[4px]">
                          Read Full Insight <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover/btn:translate-x-1" />
                        </Button>
                     </div>
                   </CardContent>
                 </Card>
 
-                {/* Recent Activity Stream */}
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-[14px] font-semibold text-slate-900 uppercase tracking-wider">Recent Activity Stream</h3>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    {communityActivity.map(item => (
-                      <Card key={item.id} className="rounded-[16px] border-slate-200 shadow-sm bg-white overflow-hidden hover:shadow-md transition-shadow group cursor-pointer">
-                        <div className="flex flex-col sm:flex-row h-auto sm:h-[120px]">
-                          <div className="relative w-full sm:w-[110px] sm:h-full h-32 shrink-0">
+                {/* Recent Activity Feed */}
+                <Card className="rounded-[16px] border-[#E8ECF2] shadow-sm bg-white overflow-hidden">
+                  <CardHeader className="p-6 border-b border-slate-50">
+                    <h3 className="text-[18px] font-bold text-[#0F172A]">Recent Activity</h3>
+                  </CardHeader>
+                  <CardContent className="p-0">
+                    <div className="flex flex-col">
+                      {communityActivity.map((item, idx) => (
+                        <div key={item.id} className={cn(
+                          "p-6 flex flex-col md:flex-row gap-6 hover:bg-[#F8FAFC] transition-colors group cursor-pointer",
+                          idx !== communityActivity.length - 1 && "border-b border-slate-100"
+                        )}>
+                          <div className="relative w-full md:w-[130px] h-[85px] shrink-0 rounded-[4px] overflow-hidden border border-slate-100 shadow-sm">
                             <Image 
-                              src={`https://picsum.photos/seed/act${item.id}/220/140`} 
+                              src={`https://picsum.photos/seed/${item.id + 100}/260/170`} 
                               alt={item.title} 
                               fill 
                               className="object-cover transition-transform group-hover:scale-105"
                             />
                           </div>
-                          <div className="flex-grow p-4 flex flex-col justify-center min-w-0">
-                            <h4 className="font-semibold text-[18px] text-slate-900 leading-tight truncate group-hover:text-primary transition-colors">{item.title}</h4>
-                            <p className="text-[13px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">
+                          
+                          <div className="flex-1 space-y-2">
+                            <div className="flex items-center gap-2">
+                               <Badge className="bg-[#4169E1] hover:bg-[#4169E1] text-white text-[10px] rounded-[2px] px-2 py-0.5 font-bold uppercase tracking-tight border-none">
+                                 {item.category}
+                               </Badge>
+                               {item.isExclusive && (
+                                 <Badge className="bg-[#F25140] hover:bg-[#F25140] text-white text-[10px] rounded-[2px] px-2 py-0.5 font-bold uppercase tracking-tight flex items-center gap-1 border-none">
+                                   <Lock size={10} fill="currentColor" /> EXCLUSIVE
+                                 </Badge>
+                               )}
+                            </div>
+                            
+                            <h4 className="text-[18px] font-bold text-[#0F172A] leading-tight group-hover:text-primary transition-colors">
+                              {item.title}
+                            </h4>
+                            
+                            <p className="text-[14px] text-[#64748B] line-clamp-2 leading-relaxed font-medium font-body">
                               {item.excerpt}
                             </p>
-                            <div className="flex flex-wrap items-center gap-4 mt-2 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-                              <span>{item.author}</span>
-                              <span>• {item.postedTime}</span>
-                              <span className="flex items-center gap-1"><Eye size={12} /> {item.views}</span>
-                              <span className="flex items-center gap-1"><MessageCircleIcon size={12} /> {item.replies}</span>
-                              <Link href="#" className="ml-auto text-primary flex items-center gap-1 hover:underline">
-                                Join Discussion <ArrowRight className="h-3 w-3" />
+                            
+                            <div className="flex items-center gap-3 pt-1">
+                               <Avatar className="h-6 w-6">
+                                 <AvatarFallback className="text-[10px] font-bold bg-slate-100 text-slate-500">RB</AvatarFallback>
+                               </Avatar>
+                               <span className="text-[13px] text-[#64748B] font-medium">{item.author}</span>
+                               <span className="text-[13px] text-[#64748B] font-medium tracking-tight opacity-70">{item.postedTime}</span>
+                            </div>
+                            
+                            <div className="pt-2">
+                              <Link href="#" className="text-[#F25140] text-[14px] font-bold hover:underline flex items-center gap-1 group/link">
+                                Read & Join Discussion <ArrowRight className="h-3 w-3 transition-transform group-hover/link:translate-x-1" />
                               </Link>
                             </div>
                           </div>
                         </div>
-                      </Card>
-                    ))}
-                  </div>
-
-                  <div className="text-center pt-4">
-                    <Button variant="outline" className="rounded-full px-8 border-slate-300 font-bold text-slate-600">
-                      Load More Insights
-                    </Button>
-                  </div>
-                </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                  <CardFooter className="p-6 border-t border-slate-50">
+                    <Link href="#" className="text-[#3B5998] hover:text-[#284B86] font-bold text-[15px] flex items-center gap-2 group">
+                      Join the Community <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </CardFooter>
+                </Card>
 
               </div>
 
               {/* Column 3 (Right Rail) - 280px */}
-              <div className="col-span-12 lg:col-span-3 space-y-6">
+              <div className="col-span-12 lg:col-span-3 space-y-8">
                 
                 {/* Announcements Timeline */}
-                <Card className="rounded-[16px] border-slate-200 shadow-sm bg-white">
-                  <CardHeader className="pb-3 border-b border-slate-50">
-                    <h3 className="text-[14px] font-semibold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                <Card className="rounded-[16px] border-[#E8ECF2] shadow-sm bg-white overflow-hidden">
+                  <CardHeader className="p-6 pb-3 border-b border-slate-50">
+                    <h3 className="text-[14px] font-bold text-[#0F172A] uppercase tracking-wider flex items-center gap-2">
                       <Megaphone className="h-4 w-4 text-primary" /> Announcements
                     </h3>
                   </CardHeader>
                   <CardContent className="p-6">
-                    <div className="space-y-6 relative before:absolute before:left-1.5 before:top-2 before:bottom-2 before:w-[1px] before:bg-slate-100">
+                    <div className="space-y-8 relative before:absolute before:left-1 before:top-2 before:bottom-2 before:w-[2px] before:bg-slate-100">
                       {announcements.map((ann, idx) => (
-                        <div key={idx} className="relative pl-6">
-                          <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-primary border-2 border-white shadow-sm ring-4 ring-primary/5" />
-                          <p className="text-[14px] font-bold text-slate-900 leading-tight hover:text-primary cursor-pointer transition-colors">{ann.title}</p>
-                          <p className="text-[12px] text-slate-400 mt-1 font-medium">{ann.date}</p>
+                        <div key={idx} className="relative pl-6 group cursor-pointer">
+                          <div className="absolute left-[-3px] top-1.5 w-3 h-3 rounded-full bg-primary border-2 border-white shadow-sm ring-4 ring-primary/5 transition-transform group-hover:scale-125" />
+                          <p className="text-[14px] font-bold text-[#0F172A] leading-tight group-hover:text-primary transition-colors">{ann.title}</p>
+                          <p className="text-[12px] text-[#64748B] mt-1.5 font-bold uppercase tracking-tight">{ann.date}</p>
                         </div>
                       ))}
                     </div>
                   </CardContent>
                   <CardFooter className="p-4 bg-slate-50/50 justify-center">
-                    <Button variant="link" className="text-slate-600 hover:text-primary font-bold text-xs p-0 h-auto">
+                    <Button variant="link" className="text-[#64748B] hover:text-primary font-bold text-xs p-0 h-auto">
                       View All Updates <ArrowRight className="ml-1 h-3 w-3" />
                     </Button>
                   </CardFooter>
                 </Card>
 
                 {/* Sponsored Ad 2 */}
-                <div className="relative rounded-[16px] overflow-hidden bg-white aspect-square shadow-sm border border-slate-200 p-4">
-                  <div className="w-full h-full border-[3px] border-dashed border-black flex flex-col items-center justify-center text-center px-2">
-                    <div className="space-y-0.5 mb-6">
-                      <p className="text-[28px] font-black leading-none tracking-tighter text-black">PLACE</p>
-                      <p className="text-[28px] font-black leading-none tracking-tighter text-black">YOUR</p>
-                      <p className="text-[28px] font-black leading-none tracking-tighter text-black">AD</p>
-                      <p className="text-[28px] font-black leading-none tracking-tighter text-black">HERE</p>
+                <Card className="rounded-[16px] border-[#E8ECF2] shadow-[0_10px_30px_rgba(0,0,0,0.08)] overflow-hidden bg-white aspect-square relative group">
+                   <Badge className="absolute top-4 left-4 z-10 bg-slate-100 text-slate-500 text-[8px] uppercase tracking-widest border-none font-bold rounded-[4px]">Sponsored</Badge>
+                   <CardContent className="h-full p-4 flex items-center justify-center">
+                    <div className="w-full h-full border-[3px] border-dashed border-black flex flex-col items-center justify-center text-center px-4 bg-white">
+                      <div className="space-y-0.5 mb-6">
+                        <p className="text-[28px] font-black leading-none tracking-tighter text-black">PLACE</p>
+                        <p className="text-[28px] font-black leading-none tracking-tighter text-black">YOUR</p>
+                        <p className="text-[28px] font-black leading-none tracking-tighter text-black">AD</p>
+                        <p className="text-[28px] font-black leading-none tracking-tighter text-black">HERE</p>
+                      </div>
+                      <p className="text-[9px] font-bold text-black uppercase tracking-tight">Mail to hello@sapsecurityexpert.com</p>
                     </div>
-                    <p className="text-[9px] font-medium text-black">Mail to hello@sapsecurityexpert.com</p>
-                  </div>
-                  <Badge className="absolute top-2 left-2 z-10 bg-slate-100 text-slate-500 text-[8px] uppercase tracking-widest border-none">Sponsored</Badge>
-                </div>
+                  </CardContent>
+                </Card>
 
                 {/* Community Stats */}
-                <Card className="rounded-[16px] border-slate-200 shadow-sm bg-white">
-                  <CardContent className="p-6 space-y-6">
-                    <div className="text-center space-y-1">
-                      <p className="text-4xl font-bold text-slate-900 font-headline tracking-tighter">369</p>
-                      <p className="text-[13px] font-bold text-slate-500 uppercase tracking-wider">Active Members</p>
-                      <Badge variant="outline" className="text-[10px] border-primary/20 bg-primary/5 text-primary font-bold">+14 this month</Badge>
+                <Card className="rounded-[16px] border-[#E8ECF2] shadow-sm bg-white overflow-hidden">
+                  <CardContent className="p-6 space-y-8">
+                    <div className="text-center space-y-1.5">
+                      <p className="text-[42px] font-bold text-[#0F172A] font-headline tracking-tighter leading-none">369</p>
+                      <p className="text-[13px] font-bold text-[#64748B] uppercase tracking-wider">Active Community Members</p>
+                      <Badge variant="outline" className="text-[10px] border-primary/20 bg-primary/5 text-primary font-black px-2 py-0.5">+14 this month</Badge>
                     </div>
                     
                     <div className="grid grid-cols-2 gap-3">
-                      <div className="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                        <p className="text-xl font-bold text-slate-900">45</p>
-                        <p className="text-[10px] text-slate-500 font-bold uppercase">Discussions</p>
+                      <div className="p-4 bg-slate-50/80 rounded-xl border border-slate-100 flex flex-col items-center justify-center text-center">
+                        <p className="text-2xl font-bold text-[#0F172A]">45</p>
+                        <p className="text-[10px] text-[#64748B] font-bold uppercase tracking-tight">Discussions</p>
                       </div>
-                      <div className="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                        <p className="text-xl font-bold text-slate-900">12</p>
-                        <p className="text-[10px] text-slate-500 font-bold uppercase">New Articles</p>
+                      <div className="p-4 bg-slate-50/80 rounded-xl border border-slate-100 flex flex-col items-center justify-center text-center">
+                        <p className="text-2xl font-bold text-[#0F172A]">12</p>
+                        <p className="text-[10px] text-[#64748B] font-bold uppercase tracking-tight">New Articles</p>
                       </div>
-                      <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 col-span-2">
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <p className="text-xl font-bold text-slate-900">24</p>
-                            <p className="text-[10px] text-slate-500 font-bold uppercase">Weekly Contributions</p>
-                          </div>
-                          <TrendingUp className="text-primary h-5 w-5" />
+                      <div className="p-4 bg-slate-50/80 rounded-xl border border-slate-100 col-span-2 flex items-center justify-between px-6">
+                        <div className="space-y-0.5">
+                          <p className="text-2xl font-bold text-[#0F172A]">24</p>
+                          <p className="text-[10px] text-[#64748B] font-bold uppercase tracking-tight">Weekly Contributions</p>
                         </div>
+                        <TrendingUp className="text-primary h-6 w-6 opacity-80" />
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                {/* Newsletter Small Card */}
-                <Card className="rounded-[16px] border-none bg-slate-900 text-white shadow-xl overflow-hidden relative">
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-full -mr-12 -mt-12 blur-2xl" />
-                  <CardHeader className="pb-2">
-                    <h3 className="text-[16px] font-bold">Stay Ahead of SAP Security</h3>
-                    <p className="text-xs text-white/60 leading-relaxed mt-1">
+                {/* Newsletter Card */}
+                <Card className="rounded-[16px] border-none bg-[#0F172A] text-white shadow-2xl overflow-hidden relative">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-16 -mt-16 blur-3xl" />
+                  <CardHeader className="p-6 pb-2">
+                    <h3 className="text-[20px] font-bold font-headline leading-tight">Stay Ahead of SAP Security</h3>
+                    <p className="text-xs text-white/60 leading-relaxed mt-2 font-medium">
                       Weekly research, implementation guides, and expert insights.
                     </p>
                   </CardHeader>
-                  <CardContent className="space-y-3 pt-2 pb-6">
+                  <CardContent className="space-y-4 p-6 pt-4">
                     <Input 
                       placeholder="Email Address" 
-                      className="bg-white/10 border-white/20 h-10 text-white placeholder:text-white/40 focus:ring-primary h-[48px] rounded-lg" 
+                      className="bg-white/10 border-white/20 h-[48px] text-white placeholder:text-white/40 focus:ring-primary rounded-lg" 
                     />
                     <Button className="w-full bg-primary hover:bg-primary/90 text-white font-black h-[48px] rounded-lg shadow-lg">
                       Subscribe Now
                     </Button>
-                    <p className="text-[9px] text-white/30 text-center font-medium">Join 2,400+ SAP Professionals</p>
+                    <p className="text-[10px] text-white/30 text-center font-bold uppercase tracking-widest">Join 2,400+ SAP Professionals</p>
                   </CardContent>
                 </Card>
 
@@ -343,7 +367,7 @@ export default function Home() {
               <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Research Library
               </h2>
-              <p className="mx-auto mt-2 max-w-[700px] text-muted-foreground md:text-xl">
+              <p className="mx-auto mt-2 max-w-[700px] text-muted-foreground md:text-xl font-body">
                 Curated articles & technical frameworks to help you stay ahead of the curve.
               </p>
             </div>
@@ -364,7 +388,7 @@ export default function Home() {
               </TabsContent>
             </Tabs>
             <div className="mt-8 text-center md:mt-12">
-              <Button variant="outline" className="rounded-full px-8">View Research Repository</Button>
+              <Button variant="outline" className="rounded-full px-8 border-slate-300 font-bold text-slate-600">View Research Repository</Button>
             </div>
           </div>
         </section>
@@ -384,7 +408,7 @@ export default function Home() {
               <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
                 Knowledge Domains
               </h2>
-              <p className="mx-auto mt-2 max-w-[700px] text-slate-500 md:text-xl">
+              <p className="mx-auto mt-2 max-w-[700px] text-slate-500 md:text-xl font-body">
                 Deep-dive into specialized SAP security domains with practitioner-curated content.
               </p>
             </div>
@@ -392,7 +416,7 @@ export default function Home() {
               {expertise.map(item => (
                 <Card
                   key={item.title}
-                  className="flex flex-col items-start p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 rounded-[16px] border-slate-200"
+                  className="flex flex-col items-start p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 rounded-[16px] border-[#E8ECF2]"
                 >
                   <CardHeader className="flex flex-row items-center gap-4 p-0">
                     <div className="rounded-xl bg-primary/10 p-3 text-primary shadow-sm">
@@ -408,9 +432,9 @@ export default function Home() {
                     </div>
                   </CardHeader>
                   <CardContent className="flex-grow p-0 pt-4">
-                    <p className="text-slate-500 leading-relaxed">{item.description}</p>
+                    <p className="text-slate-500 leading-relaxed font-body">{item.description}</p>
                   </CardContent>
-                  <CardFooter className="p-0 pt-6 w-full border-t border-slate-50 mt-4">
+                  <CardFooter className="p-0 pt-6 w-full border-t border-slate-100 mt-4">
                     <Link
                       href="#"
                       className="flex items-center text-sm font-bold text-primary hover:underline group"
@@ -434,7 +458,7 @@ export default function Home() {
               <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Expert-Led Intelligence
               </h2>
-              <p className="mx-auto mt-2 max-w-[700px] text-white/50 md:text-xl">
+              <p className="mx-auto mt-2 max-w-[700px] text-white/50 md:text-xl font-body">
                 Built by SAP security architects, for the global security community.
               </p>
             </div>
@@ -452,7 +476,7 @@ export default function Home() {
                   <CardHeader className="p-0">
                     <CardTitle className="text-xl font-headline font-bold">{testimonial.name}</CardTitle>
                   </CardHeader>
-                  <CardContent className="flex-grow p-0 pt-4 text-white/70 leading-relaxed font-medium">
+                  <CardContent className="flex-grow p-0 pt-4 text-white/70 leading-relaxed font-medium font-body">
                     <p>{testimonial.quote}</p>
                   </CardContent>
                 </Card>

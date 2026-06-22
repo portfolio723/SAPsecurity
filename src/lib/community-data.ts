@@ -9,44 +9,48 @@ export type CommunityActivity = {
     views: number;
     replies: number;
     likes: number;
+    isExclusive?: boolean;
 };
 
 export const communityActivity: CommunityActivity[] = [
     {
         id: 1,
-        title: "Optimizing SAP License Compliance Using STAR vs LAW",
-        excerpt: "Has anyone successfully reduced indirect access exposure using LAW without triggering audit issues? Sharing our S/4HANA experience…",
-        author: "Ramesh_K",
-        authorRole: "SAP GRC Consultant",
-        category: "License Compliance",
-        postedTime: "18 mins ago",
-        views: 124,
-        replies: 6,
-        likes: 14,
+        title: "When Agents Become Users: Governing Non-Human Identities in SAP's...",
+        excerpt: "As SAP's Autonomous Enterprise vision becomes reality, AI agents are emerging as a new class of iden...",
+        author: "Raghu Boddu",
+        authorRole: "SAP Security Expert",
+        category: "EXPERT-RECOMMENDATIONS",
+        postedTime: "June 10, 2026",
+        views: 452,
+        replies: 18,
+        likes: 45,
+        isExclusive: false
     },
     {
         id: 2,
-        title: "Segregation of Duties conflicts in S/4HANA Public Cloud",
-        excerpt: "We are facing SoD conflicts after moving to Public Cloud — how are teams handling role design without classic SUIM access?",
-        author: "Ananya_S",
-        authorRole: "Security Architect",
-        category: "SAP GRC",
-        postedTime: "32 mins ago",
-        views: 89,
-        replies: 4,
-        likes: 9,
+        title: "Your SAP Process Control Is a Filing Cabinet. It Was Built to Be a Watchdog",
+        excerpt: "Most SAP Process Control environments are used to collect evidence and support audits. Continuous Co...",
+        author: "Raghu Boddu",
+        authorRole: "SAP Security Expert",
+        category: "PROCESS-CONTROL",
+        postedTime: "June 7, 2026",
+        views: 312,
+        replies: 9,
+        likes: 24,
+        isExclusive: true
     },
     {
         id: 3,
-        title: "Is SAP IAG enough without GRC AC?",
-        excerpt: "For mid-size implementations, is IAG standalone sufficient or does it create audit gaps later?",
-        author: "Michael_P",
-        authorRole: "IAM Lead",
-        category: "SAP IAG",
-        postedTime: "1 hour ago",
-        views: 201,
-        replies: 12,
-        likes: 21,
+        title: "Who Owns Your SAP BTP? A Practical Governance Framework",
+        excerpt: "SAP BTP enables rapid innovation, but without governance it can quickly become fragmented, costly, a...",
+        author: "Raghu Boddu",
+        authorRole: "SAP Security Expert",
+        category: "BTP-SECURITY",
+        postedTime: "June 5, 2026",
+        views: 289,
+        replies: 14,
+        likes: 31,
+        isExclusive: true
     },
 ];
 
@@ -68,6 +72,12 @@ export type TopContributor = {
 
 export const topContributors: TopContributor[] = [
     {
+        avatarUrl: "https://i.pravatar.cc/150?u=raghu",
+        name: "Raghu Boddu",
+        role: "SAP Security Expert",
+        likes: 124,
+    },
+    {
         avatarUrl: "https://i.pravatar.cc/150?u=a042581f4e29026704d",
         name: "Ramesh_K",
         role: "SAP GRC Consultant",
@@ -78,12 +88,6 @@ export const topContributors: TopContributor[] = [
         name: "Sandra_Rossi",
         role: "GRC Architect",
         likes: 39,
-    },
-    {
-        avatarUrl: "https://i.pravatar.cc/150?u=a042581f4e29026706d",
-        name: "Lakshmi_Pathi",
-        role: "SAP IAM Specialist",
-        likes: 34,
     },
 ];
 
