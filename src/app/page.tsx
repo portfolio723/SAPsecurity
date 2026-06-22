@@ -63,23 +63,6 @@ export default function Home() {
         <section id="intelligence-center" className="w-full bg-[#F8FAFC] py-8 md:py-12 border-b">
           <div className="container mx-auto px-4 md:px-8 max-w-[1280px]">
             
-            {/* Header / Search Bar */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6">
-              <h1 className="text-2xl md:text-3xl font-bold font-headline text-slate-900 leading-tight">
-                SAP Security <span className="text-primary italic">Intelligence Center</span>
-              </h1>
-              <div className="flex items-center gap-3 w-full md:w-auto">
-                <div className="relative flex-grow md:w-[300px]">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-                  <Input placeholder="Search Intelligence..." className="pl-9 bg-white border-slate-200 h-10 text-sm rounded-full shadow-sm" />
-                </div>
-                <Button size="sm" className="rounded-full px-5 h-10 font-semibold shadow-sm">
-                  <PlusCircle className="mr-2 h-4 w-4" />
-                  Post Insight
-                </Button>
-              </div>
-            </div>
-
             <div className="grid grid-cols-12 gap-6 items-start">
               
               {/* Column 1 (Left Rail) - 280px */}
