@@ -15,7 +15,7 @@ type NavLink = {
   label: string;
   href?: string;
   hasDropdown?: boolean;
-  dropdownItems?: { label: string; href: string }[];
+  dropdownItems?: { label: string; href: string; desc?: string }[];
 };
 
 type MobileNavProps = {
@@ -35,7 +35,7 @@ export function MobileNav({ isOpen, setIsOpen, navLinks }: MobileNavProps) {
       onClick={closeMenu}
     >
       <div
-        className="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-background p-6 shadow-lg"
+        className="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-background p-6 shadow-lg overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between pb-4 border-b">
@@ -49,19 +49,22 @@ export function MobileNav({ isOpen, setIsOpen, navLinks }: MobileNavProps) {
             {navLinks.map((link) =>
               link.hasDropdown ? (
                 <AccordionItem value={link.label} key={link.label}>
-                  <AccordionTrigger className="py-3 font-medium text-muted-foreground hover:text-foreground transition-colors no-underline">
+                  <AccordionTrigger className="py-3 font-bold text-muted-foreground hover:text-foreground transition-colors no-underline">
                     {link.label}
                   </AccordionTrigger>
                   <AccordionContent>
-                    <div className="pl-4">
+                    <div className="pl-2 space-y-1">
                       {link.dropdownItems?.map((item) => (
                         <Link
                           key={item.label}
                           href={item.href}
-                          className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                          className="block p-3 rounded-lg hover:bg-slate-50 transition-colors"
                           onClick={closeMenu}
                         >
-                          {item.label}
+                          <div className="flex flex-col">
+                            <span className="text-sm font-bold text-[#0F172A]">{item.label}</span>
+                            {item.desc && <span className="text-xs text-slate-500 line-clamp-1">{item.desc}</span>}
+                          </div>
                         </Link>
                       ))}
                     </div>
@@ -71,7 +74,7 @@ export function MobileNav({ isOpen, setIsOpen, navLinks }: MobileNavProps) {
                 <Link
                   key={link.label}
                   href={link.href || '#'}
-                  className="block py-3 text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="block py-3 text-base font-bold text-muted-foreground hover:text-foreground transition-colors"
                   onClick={closeMenu}
                 >
                   {link.label}
@@ -83,12 +86,12 @@ export function MobileNav({ isOpen, setIsOpen, navLinks }: MobileNavProps) {
             <Button
               variant="ghost"
               size="sm"
-              className="w-full justify-start"
+              className="w-full justify-start font-bold"
               asChild
             >
               <Link href="#" onClick={closeMenu}>Login</Link>
             </Button>
-            <Button size="sm" className="w-full" asChild>
+            <Button size="sm" className="w-full font-bold" asChild>
               <Link href="#" onClick={closeMenu}>Become a Contributor</Link>
             </Button>
           </div>
