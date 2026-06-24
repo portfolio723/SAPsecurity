@@ -63,8 +63,8 @@ export default function Home() {
         
         {/* Intelligence Center */}
         <section id="intelligence-center" className="w-full bg-[#F8FAFC] py-12 md:py-16 border-b">
-          {/* Reduced padding and increased max-width to allow center section to breathe */}
-          <div className="container mx-auto px-2 md:px-4 max-w-[1440px]">
+          {/* Minimizing padding and setting a generous max-width to prioritize content density */}
+          <div className="container mx-auto px-1 md:px-2 max-w-[1440px]">
             
             <div className="grid grid-cols-12 gap-6 items-start">
               
@@ -148,7 +148,7 @@ export default function Home() {
 
               </div>
 
-              {/* Column 2 (Main Content) - Increased prominence with reduced container padding */}
+              {/* Column 2 (Main Content) */}
               <div className="col-span-12 lg:col-span-6 space-y-8">
                 
                 {/* Premium Editorial Featured Insights Carousel */}
@@ -205,7 +205,7 @@ export default function Home() {
                             
                             <div className="pt-2">
                               <Link href="#" className="text-[#F25140] text-[14px] font-bold hover:underline flex items-center gap-1 group/link">
-                                Read & Join Discussion <ArrowRight className="h-3 w-3 transition-transform group-hover/link:translate-x-1" />
+                                Read & Join Discussion <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-1" />
                               </Link>
                             </div>
                           </div>
