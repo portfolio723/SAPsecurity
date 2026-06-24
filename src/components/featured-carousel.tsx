@@ -79,9 +79,8 @@ export function FeaturedCarousel() {
                     className="object-cover transition-transform duration-700 group-hover/card:scale-105"
                     priority={index === 0}
                   />
-                  {/* Brand Overlay */}
-                  <div className="absolute inset-0 bg-[#3B5998]/35 z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1432]/85 via-[#0A1432]/40 to-transparent z-20" />
+                  {/* Brand Overlay - Minimal Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1432]/90 via-[#0A1432]/40 to-transparent z-20" />
 
                   <div className="absolute inset-0 z-30 p-8 flex flex-col justify-between">
                     <Badge className="w-fit bg-primary text-white font-black text-[10px] uppercase tracking-widest px-3 py-1 rounded-full shadow-lg border-none">
@@ -90,7 +89,7 @@ export function FeaturedCarousel() {
 
                     <div className="space-y-6">
                        <div className="backdrop-blur-[4px] bg-white/5 border border-white/10 p-6 rounded-xl transition-all duration-500">
-                         <h2 className="text-2xl md:text-3xl font-bold text-white leading-[1.1] tracking-tight font-headline line-clamp-3 transition-colors">
+                         <h2 className="text-2xl md:text-3xl font-bold text-white leading-[1.1] tracking-tight font-headline line-clamp-3">
                            {item.title}
                          </h2>
                          
@@ -107,7 +106,7 @@ export function FeaturedCarousel() {
                             <span className="flex items-center gap-1.5"><Clock size={12} className="text-primary" /> {item.readTime}</span>
                             <span className="flex items-center gap-1.5"><Shield size={12} className="text-primary" /> {item.category}</span>
                           </div>
-                          <span className="text-white font-black text-xs inline-flex items-center gap-1 hover:text-white transition-colors">
+                          <span className="text-white font-black text-xs inline-flex items-center gap-1">
                             READ INSIGHT <ArrowRight className="h-4 w-4" />
                           </span>
                        </div>
@@ -120,7 +119,7 @@ export function FeaturedCarousel() {
         </CarouselContent>
       </Carousel>
 
-      {/* Three Dots Pagination */}
+      {/* Pagination dots */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-40 flex gap-2">
         {items.map((_, i) => (
           <button
