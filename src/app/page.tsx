@@ -52,7 +52,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Input } from '@/components/ui/input';
-import { AdsensePlaceholder } from '@/components/adsense-placeholder';
 import { cn } from '@/lib/utils';
 
 export default function Home() {
@@ -63,8 +62,8 @@ export default function Home() {
         
         {/* Intelligence Center */}
         <section id="intelligence-center" className="w-full bg-[#F8FAFC] py-12 md:py-16 border-b">
-          {/* Minimizing padding and setting a generous max-width to prioritize content density */}
-          <div className="container mx-auto px-1 md:px-2 max-w-[1440px]">
+          {/* Minimum padding to maximize content area */}
+          <div className="container mx-auto px-0.5 md:px-1 max-w-[1440px]">
             
             <div className="grid grid-cols-12 gap-6 items-start">
               
@@ -187,7 +186,7 @@ export default function Home() {
                                )}
                             </div>
                             
-                            <h4 className="text-[18px] font-bold text-[#0F172A] leading-tight group-hover:text-primary transition-colors">
+                            <h4 className="text-[18px] font-bold text-[#0F172A] leading-tight transition-colors">
                               {item.title}
                             </h4>
                             
@@ -303,16 +302,18 @@ export default function Home() {
                   <h3 className="text-[20px] font-bold text-[#0F172A] leading-tight mb-2 font-headline">Subscribe for Expert Insights</h3>
                   <p className="text-[13px] text-[#64748B] font-medium mb-8 font-body">Check Latest Updates</p>
                   
-                  <form className="flex w-full rounded-lg overflow-hidden border border-[#F25140] bg-[#F8FAFC] mb-6 shadow-sm group focus-within:ring-2 focus-within:ring-[#F25140]/10">
-                    <input 
-                      placeholder="Type your email..." 
-                      className="flex-1 bg-transparent px-4 py-3 text-sm outline-none placeholder:text-slate-400 min-w-0" 
-                      required
-                    />
-                    <Button type="submit" className="bg-[#F25140] hover:bg-[#D94436] text-white font-bold h-12 rounded-[4px] px-6 border-none text-xs">Subscribe</Button>
+                  <form className="flex flex-col w-full gap-2">
+                    <div className="flex w-full rounded-lg overflow-hidden border border-[#F25140] bg-[#F8FAFC] shadow-sm group focus-within:ring-2 focus-within:ring-[#F25140]/10">
+                      <input 
+                        placeholder="Type your email..." 
+                        className="flex-1 bg-transparent px-4 py-3 text-sm outline-none placeholder:text-slate-400 min-w-0" 
+                        required
+                      />
+                      <Button type="submit" className="bg-[#F25140] hover:bg-[#D94436] text-white font-bold h-12 rounded-[4px] px-6 border-none text-xs">Subscribe</Button>
+                    </div>
                   </form>
                   
-                  <div className="space-y-4">
+                  <div className="space-y-4 pt-4">
                     <p className="text-[11px] text-[#64748B] leading-relaxed font-medium">
                       By subscribing you agree to <Link href="#" className="underline hover:text-[#F25140]">Substack's Terms of Use</Link>, <Link href="#" className="underline hover:text-[#F25140]">our Privacy Policy</Link> and our <Link href="#" className="underline hover:text-[#F25140]">Information collection notice</Link>
                     </p>
@@ -365,12 +366,6 @@ export default function Home() {
             <div className="mt-8 text-center md:mt-12">
               <Button variant="outline" className="rounded-full px-8 border-slate-300 font-bold text-slate-600">View Research Repository</Button>
             </div>
-          </div>
-        </section>
-
-        <section className="w-full py-12 md:py-16">
-          <div className="container px-4 md:px-6">
-            <AdsensePlaceholder height={100} />
           </div>
         </section>
 
