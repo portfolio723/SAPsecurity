@@ -63,7 +63,8 @@ export default function Home() {
         
         {/* Intelligence Center */}
         <section id="intelligence-center" className="w-full bg-[#F8FAFC] py-12 md:py-16 border-b">
-          <div className="container mx-auto px-4 md:px-8 max-w-[1280px]">
+          {/* Reduced padding and increased max-width to allow center section to breathe */}
+          <div className="container mx-auto px-2 md:px-4 max-w-[1440px]">
             
             <div className="grid grid-cols-12 gap-6 items-start">
               
@@ -147,7 +148,7 @@ export default function Home() {
 
               </div>
 
-              {/* Column 2 (Main Content) - 540px */}
+              {/* Column 2 (Main Content) - Increased prominence with reduced container padding */}
               <div className="col-span-12 lg:col-span-6 space-y-8">
                 
                 {/* Premium Editorial Featured Insights Carousel */}
@@ -308,7 +309,7 @@ export default function Home() {
                       className="flex-1 bg-transparent px-4 py-3 text-sm outline-none placeholder:text-slate-400 min-w-0" 
                       required
                     />
-                    <Button type="submit" className="bg-[#F25140] hover:bg-[#D94436] text-white font-bold h-12 rounded-none px-6 border-none text-xs">Subscribe</Button>
+                    <Button type="submit" className="bg-[#F25140] hover:bg-[#D94436] text-white font-bold h-12 rounded-[4px] px-6 border-none text-xs">Subscribe</Button>
                   </form>
                   
                   <div className="space-y-4">
